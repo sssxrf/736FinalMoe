@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory=$true)]
-    [ValidateSet('doctor','deploy','setup','smoke','pilot','fixtures','status','fetch')]
+    [ValidateSet('doctor','deploy','setup','recovery','reference','smoke','pilot','fixtures','status','fetch')]
     [string]$Action,
     [string]$ConfigFile = '',
     [string]$RunId = '',
@@ -32,11 +32,6 @@ if (-not (Test-Path -LiteralPath $Machine.identity_file -PathType Leaf)) { throw
 $Target = "$($Machine.user)@$($Machine.host)"
 $SshArguments = @('-o','BatchMode=yes','-o','ConnectTimeout=20','-o','IdentitiesOnly=yes','-i',[string]$Machine.identity_file,'-p',[string]$Machine.port,$Target)
 $ScpArguments = @('-q','-o','BatchMode=yes','-o','ConnectTimeout=20','-o','IdentitiesOnly=yes','-i',[string]$Machine.identity_file,'-P',[string]$Machine.port)
-# EFabric's Paramiko gateway requires legacy SCP; ordinary OpenSSH targets can select sftp.
-$ScpProtocol = 'legacy'
-if ($Machine.PSObject.Properties['scp_protocol']) { $ScpProtocol = [string]$Machine.scp_protocol }
-if ($ScpProtocol -notin @('legacy','sftp')) { throw 'scp_protocol must be legacy or sftp' }
-if ($ScpProtocol -eq 'legacy') { $ScpArguments = @('-O') + $ScpArguments }
 # EFabric's Paramiko gateway requires legacy SCP; ordinary OpenSSH targets can select sftp.
 $ScpProtocol = 'legacy'
 if ($Machine.PSObject.Properties['scp_protocol']) { $ScpProtocol = [string]$Machine.scp_protocol }
@@ -106,7 +101,7 @@ if ($Action -eq 'deploy') {
     Deploy-Snapshot | ConvertTo-Json -Depth 12
     exit 0
 }
-if ($Action -in @('doctor','setup','smoke','pilot','fixtures')) {
+if ($Action -in @('doctor','setup','recovery','reference','smoke','pilot','fixtures')) {
     $deployment = Deploy-Snapshot
     Write-Host "Verified release $($deployment.release_id) ($($deployment.file_count) source files)."
     # Record the intended ID before SSH so a lost launch reply can be reconciled after reconnecting.

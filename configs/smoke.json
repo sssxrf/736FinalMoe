@@ -1,5 +1,7 @@
 {
   "name": "real-pretrained-correctness-smoke",
+  "storage_mode": "persistent",
+  "verify_kv_restore": true,
   "seed": 736,
   "paused_prefix_tokens": 8,
   "active_prefix_tokens": 8,

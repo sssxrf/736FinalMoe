@@ -39,19 +39,21 @@ class KVManager:
     caller; cache length and seen-token metadata are retained here.
     """
 
-    def __init__(self, pool, directory, event=None, device="cuda"):
+    def __init__(self, pool, directory, event=None, device="cuda", verify_restore=False):
         self.pool = pool
         self.directory = Path(directory)
         self.directory.mkdir(parents=True, exist_ok=True)
         self.event = event
         self.device = device
+        self.verify_restore = verify_restore
         self.handles = {}
         self.counters = {key: 0 for key in ("retain", "spill", "recompute", "reloads",
             "logical_read_bytes", "logical_write_bytes", "h2d_bytes", "d2h_bytes",
-            "paused_bytes", "resumed_bytes")}
+            "paused_bytes", "resumed_bytes", "restoration_checks", "restoration_failures",
+            "payload_integrity_checks", "payload_integrity_failures", "validation_d2h_bytes")}
         self.counters.update({key: 0.0 for key in
                              ("pause_seconds", "resume_seconds", "read_seconds", "write_seconds",
-                              "h2d_seconds", "d2h_seconds")})
+                              "h2d_seconds", "d2h_seconds", "verification_seconds")})
 
     def _emit(self, name, **fields):
         if self.event is not None:
@@ -100,6 +102,10 @@ class KVManager:
                 self._sync()
                 self.counters["d2h_seconds"] += time.perf_counter() - transfer_start
                 self.counters["d2h_bytes"] += offset
+                if self.verify_restore:
+                    # Hash already-accounted allocations through zero-copy views.
+                    # Do not keep a second cache or hidden CPU snapshot.
+                    handle.metadata["payload_sha256"] = self._payload_hash(handle.tensors)
                 if action == "spill":
                     self._write(handle)
                     handle.tensors.clear()
@@ -122,6 +128,7 @@ class KVManager:
         self.counters["pause_seconds"] += elapsed
         self._emit("kv_pause", action=action, session_id=str(session_id), nbytes=offset,
                    seq_length=handle.seq_length, seconds=elapsed, host_pool=self.pool.stats(),
+                   payload_sha256=handle.metadata.get("payload_sha256"),
                    stale_gpu_cache_entries=len(cache.key_cache))
         return handle
 
@@ -178,6 +185,11 @@ class KVManager:
                 self.pool.release(handle.tag)
                 raise
         try:
+            if self.verify_restore:
+                self.counters["payload_integrity_checks"] += 1
+                if self._payload_hash(handle.tensors) != handle.metadata["payload_sha256"]:
+                    self.counters["payload_integrity_failures"] += 1
+                    raise IOError("paused KV payload checksum changed")
             cache = DynamicCache()
             transfer_start = time.perf_counter()
             for item, cpu in zip(handle.metadata["layout"], handle.tensors):
@@ -190,6 +202,8 @@ class KVManager:
             self.counters["h2d_bytes"] += handle.nbytes
             del cpu, gpu
             assert cache.get_seq_length() == handle.seq_length
+            if self.verify_restore:
+                self._verify_restored(cache, handle)
         except BaseException:
             if handle.action == "spill":
                 handle.tensors.clear()
@@ -204,6 +218,49 @@ class KVManager:
         self._emit("kv_resume", action=handle.action, nbytes=handle.nbytes,
                    seq_length=handle.seq_length, seconds=elapsed, host_pool=self.pool.stats())
         return cache
+
+    @staticmethod
+    def _payload_hash(tensors):
+        digest = hashlib.sha256()
+        for tensor in tensors:
+            digest.update(tensor_bytes(tensor))
+        return digest.hexdigest()
+
+    def _verify_restored(self, cache, handle):
+        """Exact restoration check with one explicitly counted readback tensor.
+
+        This optional correctness instrumentation is included in resume latency.
+        Pilot runs can disable it; ordinary spill-file checksums remain enabled.
+        """
+        started = time.perf_counter()
+        checks_before = self.counters["restoration_checks"]
+        tag = handle.tag + ":validation_readback"
+        try:
+            for item, original_cpu in zip(handle.metadata["layout"], handle.tensors):
+                restored_gpu = (cache.key_cache if item["role"] == "key"
+                                else cache.value_cache)[item["layer"]]
+                self.pool.reserve(tag, item["nbytes"], "validation")
+                readback = None
+                try:
+                    readback = torch.empty(tuple(item["shape"]), dtype=original_cpu.dtype, device="cpu")
+                    readback.copy_(restored_gpu)
+                    self._sync()
+                    if self.device.startswith("cuda"):
+                        self.counters["validation_d2h_bytes"] += item["nbytes"]
+                    self.counters["restoration_checks"] += 1
+                    if not torch.equal(readback, original_cpu):
+                        self.counters["restoration_failures"] += 1
+                        raise AssertionError("restored GPU KV differs from its paused host payload")
+                finally:
+                    del readback
+                    self.pool.release(tag)
+        finally:
+            elapsed = time.perf_counter() - started
+            self.counters["verification_seconds"] += elapsed
+        self._emit("kv_restore_verified", action=handle.action, nbytes=handle.nbytes,
+                   tensor_checks=self.counters["restoration_checks"]-checks_before,
+                   payload_sha256=handle.metadata["payload_sha256"], seconds=elapsed,
+                   validation_mode="one pool-reserved CPU readback tensor at a time")
 
     def _read(self, handle):
         started = time.perf_counter()
@@ -249,5 +306,6 @@ class KVManager:
 
     def stats(self):
         return {**self.counters, "live_handles": len(self.handles), "pinned_staging_bytes": 0,
+                "verify_restore": self.verify_restore,
                 "transfer_mode": "synchronous pageable copies and fsync on spill",
-                "timing_note": "action totals overlap component timings; do not add them"}
+                "timing_note": "action totals overlap component timings; optional restoration checks are included in resume latency; do not add them"}

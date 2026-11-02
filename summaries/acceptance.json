@@ -1,0 +1,3540 @@
+{
+  "runs": [
+    {
+      "run_id": "20261102T053807Z-setup-e3ca7579",
+      "status": "completed",
+      "exit_code": 0,
+      "kind": "setup",
+      "command_succeeded": true,
+      "experiment_complete": null,
+      "experiment_passed": null,
+      "acceptance_scope": "setup",
+      "model_kind": null,
+      "wall_seconds": 255.18583222478628,
+      "source_release": {
+        "release_id": "20261102T053801Z-88aef2ba1b",
+        "archive_sha256": "168b575219bdd6601adb7d5480899ef7a9ca1857762a571778972ac76aa2eead",
+        "file_count": 37,
+        "created_utc": "2026-11-02T05:38:07.250900+00:00",
+        "hostname": "rxu292-advanced-os-final-0"
+      },
+      "preparation_seconds": null,
+      "preparation_excluded_from_experiment_timing": null,
+      "storage_mode": null,
+      "storage_claim": null,
+      "cache_conditions": null,
+      "git": {
+        "commit": "236706e5140ea3db7afd06e7e391373b532dac76",
+        "dirty": true,
+        "status": [
+          " M .gitignore",
+          " M configs/pilot.json",
+          " M configs/smoke.json",
+          " M moe_shared/kv.py",
+          " M moe_shared/prepare.py",
+          " M moe_shared/run.py",
+          " M scripts/acquire_model.py",
+          " M scripts/bootstrap.sh",
+          " M scripts/control.py",
+          " M scripts/linux.py",
+          " M scripts/remote.ps1",
+          " M tests/test_control.py",
+          " M tests/test_tiny_gpu.py",
+          "?? .vscode/settings.json",
+          "?? moe_shared/artifacts.py",
+          "?? moe_shared/lifecycle.py",
+          "?? moe_shared/staging.py",
+          "?? tests/test_artifacts.py",
+          "?? tests/test_staging.py"
+        ],
+        "git_available": true
+      },
+      "source_file_hashes": {
+        ".gitattributes": {
+          "sha256": "a8fe7e450017f38c38c3c4c1069ed01d86cf5d2882e61ea504c898dca639de5c",
+          "bytes": 223
+        },
+        ".gitignore": {
+          "sha256": "4246fbdffda97f872168ec1d11c2a6e4686018df7da984952c6bb2671c2484b8",
+          "bytes": 385
+        },
+        "README.md": {
+          "sha256": "d8e9f6c1a72d6d8586608bce7e429bc8833707bedadd93400ef36bd99beba899",
+          "bytes": 14557
+        },
+        "configs/machine.example.json": {
+          "sha256": "d5d090486a1b2f0e9d391303974c42bbdc4fe19a9e608671b6e97b7e69a57e58",
+          "bytes": 278
+        },
+        "configs/model.json": {
+          "sha256": "94c184582bf830bc34249bb3bbb02c9d2ae71cd34bf4f4fab7bb622a9a986f8b",
+          "bytes": 402
+        },
+        "configs/pilot.json": {
+          "sha256": "a2b481f1da1d2f65dd0e96b36140332939552b7d4c427029300ba1f00afd1a8e",
+          "bytes": 716
+        },
+        "configs/smoke.json": {
+          "sha256": "dc7ef97812969851a646c9388c41707f8ff9c20c31da029183e8a8db953d4f5b",
+          "bytes": 718
+        },
+        "docs/validation.md": {
+          "sha256": "1fed10b92f9f14d515d71db5f6ea4754722fec7a80b5d731317df70ec1ebb24c",
+          "bytes": 6374
+        },
+        "moe_shared/__init__.py": {
+          "sha256": "ea46616d32af4d2c2c254d45c63c136ddba7adb344fea03527a3b30e038573f9",
+          "bytes": 75
+        },
+        "moe_shared/artifacts.py": {
+          "sha256": "23ee73638c0cc48a561502e4ecef5ed4e3639d4ff601085d165c5681d281a760",
+          "bytes": 8724
+        },
+        "moe_shared/audit.py": {
+          "sha256": "498dc8ee2cfcde8c19787fa4240669745765d917dcb85a1df636dbe0dc08bdf9",
+          "bytes": 12088
+        },
+        "moe_shared/experts.py": {
+          "sha256": "8ccf37097168062554f0f61b6a8b8dcc39932dc3ececd88b2686a30ea6e7f03c",
+          "bytes": 10328
+        },
+        "moe_shared/fixtures.py": {
+          "sha256": "ed164471daeb9103851d4fa72db42e10b59bccf1c7881aed0efc4807d5720a73",
+          "bytes": 1411
+        },
+        "moe_shared/kv.py": {
+          "sha256": "f889498c173e5383dd94513c31483ec198bbc6a1944bb8073e0ca9eb1d47d20e",
+          "bytes": 14636
+        },
+        "moe_shared/lifecycle.py": {
+          "sha256": "fff9355e7aba02fe36f9ab8dbd1c08afa68ad522087afa8418bdc3156481e165",
+          "bytes": 6015
+        },
+        "moe_shared/pool.py": {
+          "sha256": "b2cdf6412069358b69c271f62b67e442c54852959e5f3d2fc56d73d5e90dfa36",
+          "bytes": 3201
+        },
+        "moe_shared/prepare.py": {
+          "sha256": "c51a99bb91db56e9c43da5f3b46832d87c3d8ba9bf8d82de093a0193666d0c87",
+          "bytes": 11613
+        },
+        "moe_shared/run.py": {
+          "sha256": "c5a1294276e2b3434baa5056d4c921eed17bc3bc58ed8db062c8f108619f9d9f",
+          "bytes": 33804
+        },
+        "moe_shared/staging.py": {
+          "sha256": "f31ba019476b01af01e7c69c032eac36d5cf963e12aedac9a551b08431cec8c7",
+          "bytes": 6192
+        },
+        "moe_shared/workload.py": {
+          "sha256": "33ed66557b3bbc8f5ff02169cb9976a3b0c4363bd5483a62f8daf29941e353ad",
+          "bytes": 4032
+        },
+        "requirements.lock": {
+          "sha256": "2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193",
+          "bytes": 1027
+        },
+        "scripts/acquire_model.py": {
+          "sha256": "400e9da3cd5b20fbba1b330f53157d17dd33c4f74de27281445fddbc6512cfed",
+          "bytes": 7480
+        },
+        "scripts/bootstrap.sh": {
+          "sha256": "932a7730612c64be7a77f116f245f24d278990bb241c278b9326f5f0919b0682",
+          "bytes": 4367
+        },
+        "scripts/control.py": {
+          "sha256": "c5c78b0d65e402ece867bdd27c9d6df60d1eb9e43b408d3eab5d0debf302dfa7",
+          "bytes": 18559
+        },
+        "scripts/linux.py": {
+          "sha256": "9e0c8fa77b3503a38caedea9214ded9b0ef91b25b80b345d7a6aebb85bc72e99",
+          "bytes": 4419
+        },
+        "scripts/remote.ps1": {
+          "sha256": "9fc02cbe3d3aa18a56eedd12a1b1c8ed27d428b4401e414833119e5bd09fce72",
+          "bytes": 9034
+        },
+        "scripts/snapshot.py": {
+          "sha256": "d8fbd8ed50a6e0525506766803a9824eb939a23e73417fb19f4861a36c8b21ab",
+          "bytes": 7937
+        },
+        "scripts/summarize.py": {
+          "sha256": "c45331512a06b1c91b3fa9cd07639bdade05afe67b9a37c0f1f7d4e90435547a",
+          "bytes": 4108
+        },
+        "summaries/validation.json": {
+          "sha256": "8806b1f4d45b16afc7210e7b240a9d0abb6716148f4278a3b06dacac142eb810",
+          "bytes": 62740
+        },
+        "tests/test_artifacts.py": {
+          "sha256": "ce8e5cb6feb5d0bcf3e3fb08d0656f23b1488e8b73e798f37104395076ffdc39",
+          "bytes": 5679
+        },
+        "tests/test_audit.py": {
+          "sha256": "f6fed7d257889dcc39be64c2c43a704ec090eb600de9d8f93aa663806986664d",
+          "bytes": 1858
+        },
+        "tests/test_control.py": {
+          "sha256": "f6dfc408d61c41a3c35ad8c889eab3ed2d429974b1f7bdc7da81ce417787d007",
+          "bytes": 3764
+        },
+        "tests/test_pool.py": {
+          "sha256": "5a7fac5cf7d10531d6c32973a96e0ffff27ee6054220923c9555ef730679ec19",
+          "bytes": 1774
+        },
+        "tests/test_snapshot.py": {
+          "sha256": "0c3b3978e0c3b519e8c10daab97baf563951c17cc5f8b9d15cb58e8fad10d421",
+          "bytes": 2981
+        },
+        "tests/test_staging.py": {
+          "sha256": "15901175dd5059b9b0605b0146a6f5bd45a19be20817a68058b76a78623314bc",
+          "bytes": 4596
+        },
+        "tests/test_tiny_gpu.py": {
+          "sha256": "87479450e22a5fb11147327852108a7e395090777acf31e77cc1ba9074498305",
+          "bytes": 16687
+        },
+        "tests/test_workload.py": {
+          "sha256": "485999c98044f6b92c4f26954f9bc8fd1a275f4acb1264bb61c6cb3cad4dce51",
+          "bytes": 1577
+        }
+      },
+      "model": null,
+      "torch": "2.5.1+cu124",
+      "transformers": "4.46.3",
+      "gpu": "NVIDIA RTX A5000",
+      "trajectory_sha256": null,
+      "config": null,
+      "transfer": {
+        "archive_sha256": "27eec69b73f7b33a4ee069a511eddc09a487d3f18c54e941e3048d33a5fa16b2",
+        "verified_files": 25,
+        "verified_bytes": 1058912,
+        "fetched_utc": "2026-11-02T05:44:03.029441+00:00"
+      },
+      "fixtures": null,
+      "limitations": [],
+      "cases": [],
+      "artifact_completion": {
+        "schema_version": 1,
+        "complete": true,
+        "completed_at_utc": "2026-11-02T05:42:01.526294+00:00",
+        "model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+        "revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+        "model_dir": "7f1c97f440f06ce36705e4f2b843edb5925f4498/model",
+        "backing_dir": "7f1c97f440f06ce36705e4f2b843edb5925f4498/backing-c51a99bb91db56e9",
+        "model_provenance_sha256": "56655d269431d97a02f1dccc78a565095d14b4b479645e0acc5a11d57aa97cae",
+        "backing_manifest_sha256": "eb0921fedaef5f4eccb2a0efc187f798dbfa69a888f02fc9f02c71ae9f65f498",
+        "converter_format_version": 1,
+        "converter_source_sha256": "c51a99bb91db56e9c43da5f3b46832d87c3d8ba9bf8d82de093a0193666d0c87",
+        "expert_count": 1024,
+        "backing_bytes": 13838323712,
+        "artifact_guard": {
+          "additional_bytes": 0,
+          "filesystem_free_bytes": 35137986560,
+          "free_space_is_reserved": false,
+          "headroom_bytes": 21474836480,
+          "max_scratch_bytes": 37580963840,
+          "scratch": "/home/rxu292/advanced-os-final/artifacts",
+          "task_logical_bytes": 27680980390
+        }
+      },
+      "artifact_completion_sha256": "ca27d5a83f2053f20e39dbb5f7d5d4ab52de71ead3b90dd6ba1f4e26c9e8d080",
+      "checkpoint_stage": {
+        "complete": true,
+        "model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+        "revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+        "model_provenance_sha256": "56655d269431d97a02f1dccc78a565095d14b4b479645e0acc5a11d57aa97cae",
+        "verified_files": 9
+      },
+      "artifact_storage_before": {
+        "utc": "2026-11-02T05:38:09.132973+00:00",
+        "account_home_bytes": 5799162892,
+        "artifact_bytes": 190,
+        "runtime_bytes": 5539808635,
+        "filesystem_total_bytes": 68719476736,
+        "filesystem_used_bytes": 5896962048,
+        "filesystem_free_bytes": 62822514688,
+        "required_headroom_bytes": 21474836480,
+        "quota_query": {
+          "argv": [
+            "quota",
+            "-s"
+          ],
+          "unavailable": "[Errno 2] No such file or directory: 'quota'"
+        },
+        "quota_note": "statvfs reports mounted filesystem headroom; quota command may be unavailable. All other home usage is included in free bytes."
+      },
+      "log_tail": "{\"audit\": \"/home/rxu292/advanced-os-final/runs/20261102T053807Z-setup-e3ca7579/audit-before.json\", \"hostname\": \"rxu292-advanced-os-final-0\", \"torch\": {\"unavailable\": \"No module named 'torch'\"}, \"scratch_guard\": {\"scratch\": \"/tmp/cs736-rxu292-moe\", \"task_logical_bytes\": 31, \"filesystem_free_bytes\": 113266196480, \"additional_bytes\": 0, \"max_scratch_bytes\": 37580963840, \"headroom_bytes\": 21474836480, \"free_space_is_reserved\": false}}\nReusing dependency-locked environment 2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193\n{\"download_bytes\": 13841132070, \"estimated_conversion_bytes\": 13838721960, \"artifact_root\": \"/home/rxu292/advanced-os-final/artifacts\", \"model_dir\": \"/home/rxu292/advanced-os-final/artifacts/7f1c97f440f06ce36705e4f2b843edb5925f4498/model\", \"reused_verified_files\": 0, \"revision\": \"7f1c97f440f06ce36705e4f2b843edb5925f4498\"}\n{\"model\": \"/home/rxu292/advanced-os-final/artifacts/7f1c97f440f06ce36705e4f2b843edb5925f4498/model\", \"revision\": \"7f1c97f440f06ce36705e4f2b843edb5925f4498\", \"verified_files\": 9}\n{\"persistent_artifacts_complete\": true, \"model_dir\": \"/home/rxu292/advanced-os-final/artifacts/7f1c97f440f06ce36705e4f2b843edb5925f4498/model\", \"backing_dir\": \"/home/rxu292/advanced-os-final/artifacts/7f1c97f440f06ce36705e4f2b843edb5925f4498/backing-c51a99bb91db56e9\", \"artifact_guard\": {\"scratch\": \"/home/rxu292/advanced-os-final/artifacts\", \"task_logical_bytes\": 27680980390, \"filesystem_free_bytes\": 35137986560, \"additional_bytes\": 0, \"max_scratch_bytes\": 37580963840, \"headroom_bytes\": 21474836480, \"free_space_is_reserved\": false}}\n{\"audit\": \"/home/rxu292/advanced-os-final/runs/20261102T053807Z-setup-e3ca7579/audit-after.json\", \"hostname\": \"rxu292-advanced-os-final-0\", \"torch\": {\"version\": \"2.5.1+cu124\", \"cuda_build\": \"12.4\", \"cuda_available\": true, \"device\": \"NVIDIA RTX A5000\", \"capability\": [8, 6], \"bf16_supported\": true}, \"scratch_guard\": {\"scratch\": \"/tmp/cs736-rxu292-moe\", \"task_logical_bytes\": 202, \"filesystem_free_bytes\": 113792950272, \"additional_bytes\": 0, \"max_scratch_bytes\": 37580963840, \"headroom_bytes\": 21474836480, \"free_space_is_reserved\": false}}\nSetup complete: env=/home/rxu292/advanced-os-final/envs/2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193 persistent-artifacts=/home/rxu292/advanced-os-final/artifacts\n",
+      "actual_model_revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+      "actual_model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+      "scratch_guard": {
+        "scratch": "/tmp/cs736-rxu292-moe",
+        "task_logical_bytes": 202,
+        "filesystem_free_bytes": 113792950272,
+        "additional_bytes": 0,
+        "max_scratch_bytes": 37580963840,
+        "headroom_bytes": 21474836480,
+        "free_space_is_reserved": false
+      },
+      "cgroup_memory_max": 68719476736,
+      "cgroup_historical_peak": 28512587776,
+      "cpu_max": "2400000 100000",
+      "storage_label": "ext4; physical backing unverified"
+    },
+    {
+      "run_id": "20261102T055000Z-setup-51bc802f",
+      "status": "completed",
+      "exit_code": 0,
+      "kind": "setup",
+      "command_succeeded": true,
+      "experiment_complete": null,
+      "experiment_passed": null,
+      "acceptance_scope": "setup",
+      "model_kind": null,
+      "wall_seconds": 72.21575931133702,
+      "source_release": {
+        "release_id": "20261102T054954Z-905eec6181",
+        "archive_sha256": "61bc4a8607a3a9fbe0d67bea07c8f3162d651ecd6668cfb0b2266d167e92369c",
+        "file_count": 37,
+        "created_utc": "2026-11-02T05:50:00.441079+00:00",
+        "hostname": "rxu292-advanced-os-final-0"
+      },
+      "preparation_seconds": null,
+      "preparation_excluded_from_experiment_timing": null,
+      "storage_mode": null,
+      "storage_claim": null,
+      "cache_conditions": null,
+      "git": {
+        "commit": "236706e5140ea3db7afd06e7e391373b532dac76",
+        "dirty": true,
+        "status": [
+          " M .gitignore",
+          " M README.md",
+          " M configs/pilot.json",
+          " M configs/smoke.json",
+          " M moe_shared/kv.py",
+          " M moe_shared/prepare.py",
+          " M moe_shared/run.py",
+          " M scripts/acquire_model.py",
+          " M scripts/bootstrap.sh",
+          " M scripts/control.py",
+          " M scripts/linux.py",
+          " M scripts/remote.ps1",
+          " M tests/test_control.py",
+          " M tests/test_tiny_gpu.py",
+          "?? .vscode/settings.json",
+          "?? moe_shared/artifacts.py",
+          "?? moe_shared/lifecycle.py",
+          "?? moe_shared/staging.py",
+          "?? tests/test_artifacts.py",
+          "?? tests/test_staging.py"
+        ],
+        "git_available": true
+      },
+      "source_file_hashes": {
+        ".gitattributes": {
+          "sha256": "a8fe7e450017f38c38c3c4c1069ed01d86cf5d2882e61ea504c898dca639de5c",
+          "bytes": 223
+        },
+        ".gitignore": {
+          "sha256": "4246fbdffda97f872168ec1d11c2a6e4686018df7da984952c6bb2671c2484b8",
+          "bytes": 385
+        },
+        "README.md": {
+          "sha256": "da4534e688c4f919ac53439b6b1a82cbfa0d34cc800f8ef3e551517dba27cd7e",
+          "bytes": 17223
+        },
+        "configs/machine.example.json": {
+          "sha256": "d5d090486a1b2f0e9d391303974c42bbdc4fe19a9e608671b6e97b7e69a57e58",
+          "bytes": 278
+        },
+        "configs/model.json": {
+          "sha256": "94c184582bf830bc34249bb3bbb02c9d2ae71cd34bf4f4fab7bb622a9a986f8b",
+          "bytes": 402
+        },
+        "configs/pilot.json": {
+          "sha256": "a2b481f1da1d2f65dd0e96b36140332939552b7d4c427029300ba1f00afd1a8e",
+          "bytes": 716
+        },
+        "configs/smoke.json": {
+          "sha256": "dc7ef97812969851a646c9388c41707f8ff9c20c31da029183e8a8db953d4f5b",
+          "bytes": 718
+        },
+        "docs/validation.md": {
+          "sha256": "1fed10b92f9f14d515d71db5f6ea4754722fec7a80b5d731317df70ec1ebb24c",
+          "bytes": 6374
+        },
+        "moe_shared/__init__.py": {
+          "sha256": "ea46616d32af4d2c2c254d45c63c136ddba7adb344fea03527a3b30e038573f9",
+          "bytes": 75
+        },
+        "moe_shared/artifacts.py": {
+          "sha256": "0137608cafc6c039b3feaff1273e534db83a5e2afc17c3781ad2fee413c5473c",
+          "bytes": 10107
+        },
+        "moe_shared/audit.py": {
+          "sha256": "498dc8ee2cfcde8c19787fa4240669745765d917dcb85a1df636dbe0dc08bdf9",
+          "bytes": 12088
+        },
+        "moe_shared/experts.py": {
+          "sha256": "8ccf37097168062554f0f61b6a8b8dcc39932dc3ececd88b2686a30ea6e7f03c",
+          "bytes": 10328
+        },
+        "moe_shared/fixtures.py": {
+          "sha256": "ed164471daeb9103851d4fa72db42e10b59bccf1c7881aed0efc4807d5720a73",
+          "bytes": 1411
+        },
+        "moe_shared/kv.py": {
+          "sha256": "f889498c173e5383dd94513c31483ec198bbc6a1944bb8073e0ca9eb1d47d20e",
+          "bytes": 14636
+        },
+        "moe_shared/lifecycle.py": {
+          "sha256": "fff9355e7aba02fe36f9ab8dbd1c08afa68ad522087afa8418bdc3156481e165",
+          "bytes": 6015
+        },
+        "moe_shared/pool.py": {
+          "sha256": "b2cdf6412069358b69c271f62b67e442c54852959e5f3d2fc56d73d5e90dfa36",
+          "bytes": 3201
+        },
+        "moe_shared/prepare.py": {
+          "sha256": "c51a99bb91db56e9c43da5f3b46832d87c3d8ba9bf8d82de093a0193666d0c87",
+          "bytes": 11613
+        },
+        "moe_shared/run.py": {
+          "sha256": "c1bbde25619240b8e32aca9539d10302d113078c54f565aa0200a20a378bb095",
+          "bytes": 34457
+        },
+        "moe_shared/staging.py": {
+          "sha256": "ccbe80328360b9af66b237fab13130b800e70953736e12b19c62fb56846e26b1",
+          "bytes": 12888
+        },
+        "moe_shared/workload.py": {
+          "sha256": "33ed66557b3bbc8f5ff02169cb9976a3b0c4363bd5483a62f8daf29941e353ad",
+          "bytes": 4032
+        },
+        "requirements.lock": {
+          "sha256": "2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193",
+          "bytes": 1027
+        },
+        "scripts/acquire_model.py": {
+          "sha256": "13bb47e77460b77631e41841b1453e44baf5a5eb9b68b7c3b9bbeb3f5ea429f4",
+          "bytes": 8575
+        },
+        "scripts/bootstrap.sh": {
+          "sha256": "932a7730612c64be7a77f116f245f24d278990bb241c278b9326f5f0919b0682",
+          "bytes": 4367
+        },
+        "scripts/control.py": {
+          "sha256": "32fb812c71d5abd8a5e97d0c5b290f6c15f1b4ff81a130d574f7f413b6486363",
+          "bytes": 19367
+        },
+        "scripts/linux.py": {
+          "sha256": "72b5a7fa62aab3c729f9089635fc27257ab00537c68d25b6fa21c6f937ee46d8",
+          "bytes": 4452
+        },
+        "scripts/remote.ps1": {
+          "sha256": "0c49134b176b2a878d7353911bebae1eab939fce7112ef17934f6857fb96c006",
+          "bytes": 9056
+        },
+        "scripts/snapshot.py": {
+          "sha256": "d8fbd8ed50a6e0525506766803a9824eb939a23e73417fb19f4861a36c8b21ab",
+          "bytes": 7937
+        },
+        "scripts/summarize.py": {
+          "sha256": "c45331512a06b1c91b3fa9cd07639bdade05afe67b9a37c0f1f7d4e90435547a",
+          "bytes": 4108
+        },
+        "summaries/validation.json": {
+          "sha256": "8806b1f4d45b16afc7210e7b240a9d0abb6716148f4278a3b06dacac142eb810",
+          "bytes": 62740
+        },
+        "tests/test_artifacts.py": {
+          "sha256": "ea8bbca07433b11c0c36809c501e3b73d7a338b0ccbcd4a8e0a92fe16e3c051a",
+          "bytes": 7987
+        },
+        "tests/test_audit.py": {
+          "sha256": "f6fed7d257889dcc39be64c2c43a704ec090eb600de9d8f93aa663806986664d",
+          "bytes": 1858
+        },
+        "tests/test_control.py": {
+          "sha256": "10c8d7100c0ef819afee7d0c980f8939a6ace0d320bc057468aa91a23066cf45",
+          "bytes": 3963
+        },
+        "tests/test_pool.py": {
+          "sha256": "5a7fac5cf7d10531d6c32973a96e0ffff27ee6054220923c9555ef730679ec19",
+          "bytes": 1774
+        },
+        "tests/test_snapshot.py": {
+          "sha256": "0c3b3978e0c3b519e8c10daab97baf563951c17cc5f8b9d15cb58e8fad10d421",
+          "bytes": 2981
+        },
+        "tests/test_staging.py": {
+          "sha256": "c1968e42cc6aa375eb38c53a2a77643afb176a65afec3beb4424bf9c5d26b015",
+          "bytes": 5770
+        },
+        "tests/test_tiny_gpu.py": {
+          "sha256": "87479450e22a5fb11147327852108a7e395090777acf31e77cc1ba9074498305",
+          "bytes": 16687
+        },
+        "tests/test_workload.py": {
+          "sha256": "485999c98044f6b92c4f26954f9bc8fd1a275f4acb1264bb61c6cb3cad4dce51",
+          "bytes": 1577
+        }
+      },
+      "model": null,
+      "torch": "2.5.1+cu124",
+      "transformers": "4.46.3",
+      "gpu": "NVIDIA RTX A5000",
+      "trajectory_sha256": null,
+      "config": null,
+      "transfer": {
+        "archive_sha256": "acd4f6e7bc41b06ca80ebabd580427c563c8f63af6c7e202e700e2367f017816",
+        "verified_files": 26,
+        "verified_bytes": 1035582,
+        "fetched_utc": "2026-11-02T05:53:40.263652+00:00"
+      },
+      "fixtures": null,
+      "limitations": [],
+      "cases": [],
+      "artifact_completion": {
+        "schema_version": 1,
+        "complete": true,
+        "completed_at_utc": "2026-11-02T05:44:48.214971+00:00",
+        "model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+        "revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+        "model_dir": "7f1c97f440f06ce36705e4f2b843edb5925f4498/model",
+        "backing_dir": "7f1c97f440f06ce36705e4f2b843edb5925f4498/backing-c51a99bb91db56e9",
+        "model_provenance_sha256": "56655d269431d97a02f1dccc78a565095d14b4b479645e0acc5a11d57aa97cae",
+        "backing_manifest_sha256": "eb0921fedaef5f4eccb2a0efc187f798dbfa69a888f02fc9f02c71ae9f65f498",
+        "converter_version": 2,
+        "converter_format_version": 1,
+        "converter_source_sha256": "c51a99bb91db56e9c43da5f3b46832d87c3d8ba9bf8d82de093a0193666d0c87",
+        "expert_count": 1024,
+        "backing_bytes": 13838323712,
+        "artifact_guard": {
+          "additional_bytes": 0,
+          "filesystem_free_bytes": 35135361024,
+          "free_space_is_reserved": false,
+          "headroom_bytes": 21474836480,
+          "max_scratch_bytes": 37580963840,
+          "scratch": "/home/rxu292/advanced-os-final/artifacts",
+          "task_logical_bytes": 27680981437
+        }
+      },
+      "artifact_completion_sha256": "154ef707c9cf4997f714555102f9faed265ffd6ba9d98835938965d89260773e",
+      "artifact_reuse": {
+        "reused_completion_manifest": true,
+        "completion_sha256": "154ef707c9cf4997f714555102f9faed265ffd6ba9d98835938965d89260773e",
+        "verified_at_utc": "2026-11-02T05:51:09.792305+00:00",
+        "current_artifact_guard": {
+          "additional_bytes": 0,
+          "filesystem_free_bytes": 35129544704,
+          "free_space_is_reserved": false,
+          "headroom_bytes": 21474836480,
+          "max_scratch_bytes": 37580963840,
+          "scratch": "/home/rxu292/advanced-os-final/artifacts",
+          "task_logical_bytes": 27680981463
+        }
+      },
+      "checkpoint_stage": {
+        "complete": true,
+        "model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+        "revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+        "model_provenance_sha256": "56655d269431d97a02f1dccc78a565095d14b4b479645e0acc5a11d57aa97cae",
+        "verified_files": 9
+      },
+      "artifact_storage_before": {
+        "utc": "2026-11-02T05:50:02.248049+00:00",
+        "account_home_bytes": 33486864644,
+        "artifact_bytes": 27680981463,
+        "runtime_bytes": 33227510387,
+        "filesystem_total_bytes": 68719476736,
+        "filesystem_used_bytes": 33589374976,
+        "filesystem_free_bytes": 35130101760,
+        "required_headroom_bytes": 21474836480,
+        "quota_query": {
+          "argv": [
+            "quota",
+            "-s"
+          ],
+          "unavailable": "[Errno 2] No such file or directory: 'quota'"
+        },
+        "quota_note": "statvfs reports mounted filesystem headroom; quota command may be unavailable. All other home usage is included in free bytes."
+      },
+      "log_tail": "{\"audit\": \"/home/rxu292/advanced-os-final/runs/20261102T055000Z-setup-51bc802f/audit-before.json\", \"hostname\": \"rxu292-advanced-os-final-0\", \"torch\": {\"unavailable\": \"No module named 'torch'\"}, \"scratch_guard\": {\"scratch\": \"/tmp/cs736-rxu292-moe\", \"task_logical_bytes\": 25177631, \"filesystem_free_bytes\": 113767723008, \"additional_bytes\": 0, \"max_scratch_bytes\": 37580963840, \"headroom_bytes\": 21474836480, \"free_space_is_reserved\": false}}\nReusing dependency-locked environment 2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193\n{\"model\": \"/home/rxu292/advanced-os-final/artifacts/7f1c97f440f06ce36705e4f2b843edb5925f4498/model\", \"revision\": \"7f1c97f440f06ce36705e4f2b843edb5925f4498\", \"reuse\": \"verified\"}\n{\"persistent_artifacts_complete\": true, \"model_dir\": \"/home/rxu292/advanced-os-final/artifacts/7f1c97f440f06ce36705e4f2b843edb5925f4498/model\", \"backing_dir\": \"/home/rxu292/advanced-os-final/artifacts/7f1c97f440f06ce36705e4f2b843edb5925f4498/backing-c51a99bb91db56e9\", \"artifact_guard\": {\"additional_bytes\": 0, \"filesystem_free_bytes\": 35135361024, \"free_space_is_reserved\": false, \"headroom_bytes\": 21474836480, \"max_scratch_bytes\": 37580963840, \"scratch\": \"/home/rxu292/advanced-os-final/artifacts\", \"task_logical_bytes\": 27680981437}}\n{\"audit\": \"/home/rxu292/advanced-os-final/runs/20261102T055000Z-setup-51bc802f/audit-after.json\", \"hostname\": \"rxu292-advanced-os-final-0\", \"torch\": {\"version\": \"2.5.1+cu124\", \"cuda_build\": \"12.4\", \"cuda_available\": true, \"device\": \"NVIDIA RTX A5000\", \"capability\": [8, 6], \"bf16_supported\": true}, \"scratch_guard\": {\"scratch\": \"/tmp/cs736-rxu292-moe\", \"task_logical_bytes\": 25177631, \"filesystem_free_bytes\": 113760727040, \"additional_bytes\": 0, \"max_scratch_bytes\": 37580963840, \"headroom_bytes\": 21474836480, \"free_space_is_reserved\": false}}\nSetup complete: env=/home/rxu292/advanced-os-final/envs/2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193 persistent-artifacts=/home/rxu292/advanced-os-final/artifacts\n",
+      "actual_model_revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+      "actual_model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+      "scratch_guard": {
+        "scratch": "/tmp/cs736-rxu292-moe",
+        "task_logical_bytes": 25177631,
+        "filesystem_free_bytes": 113760727040,
+        "additional_bytes": 0,
+        "max_scratch_bytes": 37580963840,
+        "headroom_bytes": 21474836480,
+        "free_space_is_reserved": false
+      },
+      "cgroup_memory_max": 68719476736,
+      "cgroup_historical_peak": 29351075840,
+      "cpu_max": "2400000 100000",
+      "storage_label": "ext4; physical backing unverified"
+    },
+    {
+      "run_id": "20261102T054613Z-recovery-2f181d51",
+      "status": "completed",
+      "exit_code": 0,
+      "kind": "recovery",
+      "command_succeeded": true,
+      "experiment_complete": null,
+      "experiment_passed": null,
+      "acceptance_scope": "recovery",
+      "model_kind": null,
+      "wall_seconds": 0.6070534470491111,
+      "source_release": {
+        "release_id": "20261102T054608Z-dbb4cfb93f",
+        "archive_sha256": "52d9eb22328af9aba5e4fd615da647d389fb9ad09b246a61a6a340036bde19b1",
+        "file_count": 37,
+        "created_utc": "2026-11-02T05:46:13.579914+00:00",
+        "hostname": "rxu292-advanced-os-final-0"
+      },
+      "preparation_seconds": null,
+      "preparation_excluded_from_experiment_timing": null,
+      "storage_mode": null,
+      "storage_claim": null,
+      "cache_conditions": null,
+      "git": {
+        "commit": "236706e5140ea3db7afd06e7e391373b532dac76",
+        "dirty": true,
+        "status": [
+          " M .gitignore",
+          " M README.md",
+          " M configs/pilot.json",
+          " M configs/smoke.json",
+          " M moe_shared/kv.py",
+          " M moe_shared/prepare.py",
+          " M moe_shared/run.py",
+          " M scripts/acquire_model.py",
+          " M scripts/bootstrap.sh",
+          " M scripts/control.py",
+          " M scripts/linux.py",
+          " M scripts/remote.ps1",
+          " M tests/test_control.py",
+          " M tests/test_tiny_gpu.py",
+          "?? .vscode/settings.json",
+          "?? moe_shared/artifacts.py",
+          "?? moe_shared/lifecycle.py",
+          "?? moe_shared/staging.py",
+          "?? tests/test_artifacts.py",
+          "?? tests/test_staging.py"
+        ],
+        "git_available": true
+      },
+      "source_file_hashes": {
+        ".gitattributes": {
+          "sha256": "a8fe7e450017f38c38c3c4c1069ed01d86cf5d2882e61ea504c898dca639de5c",
+          "bytes": 223
+        },
+        ".gitignore": {
+          "sha256": "4246fbdffda97f872168ec1d11c2a6e4686018df7da984952c6bb2671c2484b8",
+          "bytes": 385
+        },
+        "README.md": {
+          "sha256": "da4534e688c4f919ac53439b6b1a82cbfa0d34cc800f8ef3e551517dba27cd7e",
+          "bytes": 17223
+        },
+        "configs/machine.example.json": {
+          "sha256": "d5d090486a1b2f0e9d391303974c42bbdc4fe19a9e608671b6e97b7e69a57e58",
+          "bytes": 278
+        },
+        "configs/model.json": {
+          "sha256": "94c184582bf830bc34249bb3bbb02c9d2ae71cd34bf4f4fab7bb622a9a986f8b",
+          "bytes": 402
+        },
+        "configs/pilot.json": {
+          "sha256": "a2b481f1da1d2f65dd0e96b36140332939552b7d4c427029300ba1f00afd1a8e",
+          "bytes": 716
+        },
+        "configs/smoke.json": {
+          "sha256": "dc7ef97812969851a646c9388c41707f8ff9c20c31da029183e8a8db953d4f5b",
+          "bytes": 718
+        },
+        "docs/validation.md": {
+          "sha256": "1fed10b92f9f14d515d71db5f6ea4754722fec7a80b5d731317df70ec1ebb24c",
+          "bytes": 6374
+        },
+        "moe_shared/__init__.py": {
+          "sha256": "ea46616d32af4d2c2c254d45c63c136ddba7adb344fea03527a3b30e038573f9",
+          "bytes": 75
+        },
+        "moe_shared/artifacts.py": {
+          "sha256": "0137608cafc6c039b3feaff1273e534db83a5e2afc17c3781ad2fee413c5473c",
+          "bytes": 10107
+        },
+        "moe_shared/audit.py": {
+          "sha256": "498dc8ee2cfcde8c19787fa4240669745765d917dcb85a1df636dbe0dc08bdf9",
+          "bytes": 12088
+        },
+        "moe_shared/experts.py": {
+          "sha256": "8ccf37097168062554f0f61b6a8b8dcc39932dc3ececd88b2686a30ea6e7f03c",
+          "bytes": 10328
+        },
+        "moe_shared/fixtures.py": {
+          "sha256": "ed164471daeb9103851d4fa72db42e10b59bccf1c7881aed0efc4807d5720a73",
+          "bytes": 1411
+        },
+        "moe_shared/kv.py": {
+          "sha256": "f889498c173e5383dd94513c31483ec198bbc6a1944bb8073e0ca9eb1d47d20e",
+          "bytes": 14636
+        },
+        "moe_shared/lifecycle.py": {
+          "sha256": "fff9355e7aba02fe36f9ab8dbd1c08afa68ad522087afa8418bdc3156481e165",
+          "bytes": 6015
+        },
+        "moe_shared/pool.py": {
+          "sha256": "b2cdf6412069358b69c271f62b67e442c54852959e5f3d2fc56d73d5e90dfa36",
+          "bytes": 3201
+        },
+        "moe_shared/prepare.py": {
+          "sha256": "c51a99bb91db56e9c43da5f3b46832d87c3d8ba9bf8d82de093a0193666d0c87",
+          "bytes": 11613
+        },
+        "moe_shared/run.py": {
+          "sha256": "c5a1294276e2b3434baa5056d4c921eed17bc3bc58ed8db062c8f108619f9d9f",
+          "bytes": 33804
+        },
+        "moe_shared/staging.py": {
+          "sha256": "ccbe80328360b9af66b237fab13130b800e70953736e12b19c62fb56846e26b1",
+          "bytes": 12888
+        },
+        "moe_shared/workload.py": {
+          "sha256": "33ed66557b3bbc8f5ff02169cb9976a3b0c4363bd5483a62f8daf29941e353ad",
+          "bytes": 4032
+        },
+        "requirements.lock": {
+          "sha256": "2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193",
+          "bytes": 1027
+        },
+        "scripts/acquire_model.py": {
+          "sha256": "13bb47e77460b77631e41841b1453e44baf5a5eb9b68b7c3b9bbeb3f5ea429f4",
+          "bytes": 8575
+        },
+        "scripts/bootstrap.sh": {
+          "sha256": "932a7730612c64be7a77f116f245f24d278990bb241c278b9326f5f0919b0682",
+          "bytes": 4367
+        },
+        "scripts/control.py": {
+          "sha256": "32fb812c71d5abd8a5e97d0c5b290f6c15f1b4ff81a130d574f7f413b6486363",
+          "bytes": 19367
+        },
+        "scripts/linux.py": {
+          "sha256": "72b5a7fa62aab3c729f9089635fc27257ab00537c68d25b6fa21c6f937ee46d8",
+          "bytes": 4452
+        },
+        "scripts/remote.ps1": {
+          "sha256": "0c49134b176b2a878d7353911bebae1eab939fce7112ef17934f6857fb96c006",
+          "bytes": 9056
+        },
+        "scripts/snapshot.py": {
+          "sha256": "d8fbd8ed50a6e0525506766803a9824eb939a23e73417fb19f4861a36c8b21ab",
+          "bytes": 7937
+        },
+        "scripts/summarize.py": {
+          "sha256": "c45331512a06b1c91b3fa9cd07639bdade05afe67b9a37c0f1f7d4e90435547a",
+          "bytes": 4108
+        },
+        "summaries/validation.json": {
+          "sha256": "8806b1f4d45b16afc7210e7b240a9d0abb6716148f4278a3b06dacac142eb810",
+          "bytes": 62740
+        },
+        "tests/test_artifacts.py": {
+          "sha256": "ea8bbca07433b11c0c36809c501e3b73d7a338b0ccbcd4a8e0a92fe16e3c051a",
+          "bytes": 7987
+        },
+        "tests/test_audit.py": {
+          "sha256": "f6fed7d257889dcc39be64c2c43a704ec090eb600de9d8f93aa663806986664d",
+          "bytes": 1858
+        },
+        "tests/test_control.py": {
+          "sha256": "10c8d7100c0ef819afee7d0c980f8939a6ace0d320bc057468aa91a23066cf45",
+          "bytes": 3963
+        },
+        "tests/test_pool.py": {
+          "sha256": "5a7fac5cf7d10531d6c32973a96e0ffff27ee6054220923c9555ef730679ec19",
+          "bytes": 1774
+        },
+        "tests/test_snapshot.py": {
+          "sha256": "0c3b3978e0c3b519e8c10daab97baf563951c17cc5f8b9d15cb58e8fad10d421",
+          "bytes": 2981
+        },
+        "tests/test_staging.py": {
+          "sha256": "c1968e42cc6aa375eb38c53a2a77643afb176a65afec3beb4424bf9c5d26b015",
+          "bytes": 5770
+        },
+        "tests/test_tiny_gpu.py": {
+          "sha256": "87479450e22a5fb11147327852108a7e395090777acf31e77cc1ba9074498305",
+          "bytes": 16687
+        },
+        "tests/test_workload.py": {
+          "sha256": "485999c98044f6b92c4f26954f9bc8fd1a275f4acb1264bb61c6cb3cad4dce51",
+          "bytes": 1577
+        }
+      },
+      "model": null,
+      "torch": "2.5.1+cu124",
+      "transformers": "4.46.3",
+      "gpu": "NVIDIA RTX A5000",
+      "trajectory_sha256": null,
+      "config": null,
+      "transfer": {
+        "archive_sha256": "f3a20f80560e44a6d857d86841c879a5267ea9e1d80d920232aa538c97176e15",
+        "verified_files": 26,
+        "verified_bytes": 92684,
+        "fetched_utc": "2026-11-02T05:46:45.946074+00:00"
+      },
+      "fixtures": null,
+      "limitations": [],
+      "cases": [],
+      "artifact_completion": {
+        "schema_version": 1,
+        "complete": true,
+        "completed_at_utc": "2026-11-02T05:44:48.214971+00:00",
+        "model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+        "revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+        "model_dir": "7f1c97f440f06ce36705e4f2b843edb5925f4498/model",
+        "backing_dir": "7f1c97f440f06ce36705e4f2b843edb5925f4498/backing-c51a99bb91db56e9",
+        "model_provenance_sha256": "56655d269431d97a02f1dccc78a565095d14b4b479645e0acc5a11d57aa97cae",
+        "backing_manifest_sha256": "eb0921fedaef5f4eccb2a0efc187f798dbfa69a888f02fc9f02c71ae9f65f498",
+        "converter_version": 2,
+        "converter_format_version": 1,
+        "converter_source_sha256": "c51a99bb91db56e9c43da5f3b46832d87c3d8ba9bf8d82de093a0193666d0c87",
+        "expert_count": 1024,
+        "backing_bytes": 13838323712,
+        "artifact_guard": {
+          "additional_bytes": 0,
+          "filesystem_free_bytes": 35135361024,
+          "free_space_is_reserved": false,
+          "headroom_bytes": 21474836480,
+          "max_scratch_bytes": 37580963840,
+          "scratch": "/home/rxu292/advanced-os-final/artifacts",
+          "task_logical_bytes": 27680981437
+        }
+      },
+      "artifact_completion_sha256": "154ef707c9cf4997f714555102f9faed265ffd6ba9d98835938965d89260773e",
+      "recovery": {
+        "complete": true,
+        "passed": true,
+        "scope": "Recovery of one real pretrained expert; not inference acceptance",
+        "model_revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+        "expert": "0.0",
+        "expert_bytes": 12582912,
+        "canonical_manifest_sha256": "eb0921fedaef5f4eccb2a0efc187f798dbfa69a888f02fc9f02c71ae9f65f498",
+        "canonical_expert_sha256": "e9e22c00747cb2c36535715877f1bcab34c4ad6d357aae9c50ba26bc6ba25c55",
+        "initial_stage_sha256": "e9e22c00747cb2c36535715877f1bcab34c4ad6d357aae9c50ba26bc6ba25c55",
+        "stage_exists_after_delete": false,
+        "canonical_unchanged_while_stage_missing": true,
+        "reconstructed_stage_sha256": "e9e22c00747cb2c36535715877f1bcab34c4ad6d357aae9c50ba26bc6ba25c55",
+        "canonical_unchanged_after_reconstruction": true
+      },
+      "staging": {
+        "initial-stage/staging.json": {
+          "complete": true,
+          "canonical_manifest_sha256": "e1215980853f63eafeda2c0907761d19c8bf6e59a9e7dade335398165a268e03",
+          "verified_files": 1,
+          "reused_files": 0,
+          "copied_files": 1,
+          "copied_bytes": 12582912,
+          "seconds": 0.06111894501373172,
+          "scope": "Preparation outside measured experiment timing",
+          "cache_condition": "File hashing/copying warms filesystem cache; no cold-device claim",
+          "space": {
+            "scratch": "/tmp/cs736-rxu292-moe",
+            "task_logical_bytes": 25176759,
+            "filesystem_free_bytes": 113769553920,
+            "additional_bytes": 0,
+            "max_scratch_bytes": 37580963840,
+            "headroom_bytes": 21474836480,
+            "free_space_is_reserved": false
+          }
+        },
+        "reconstructed-stage/staging.json": {
+          "complete": true,
+          "canonical_manifest_sha256": "e1215980853f63eafeda2c0907761d19c8bf6e59a9e7dade335398165a268e03",
+          "verified_files": 1,
+          "reused_files": 0,
+          "copied_files": 1,
+          "copied_bytes": 12582912,
+          "seconds": 0.06835211208090186,
+          "scope": "Preparation outside measured experiment timing",
+          "cache_condition": "File hashing/copying warms filesystem cache; no cold-device claim",
+          "space": {
+            "scratch": "/tmp/cs736-rxu292-moe",
+            "task_logical_bytes": 25176759,
+            "filesystem_free_bytes": 113769504768,
+            "additional_bytes": 0,
+            "max_scratch_bytes": 37580963840,
+            "headroom_bytes": 21474836480,
+            "free_space_is_reserved": false
+          }
+        }
+      },
+      "log_tail": "{\"complete\": true, \"passed\": true, \"scope\": \"Recovery of one real pretrained expert; not inference acceptance\", \"model_revision\": \"7f1c97f440f06ce36705e4f2b843edb5925f4498\", \"expert\": \"0.0\", \"expert_bytes\": 12582912, \"canonical_manifest_sha256\": \"eb0921fedaef5f4eccb2a0efc187f798dbfa69a888f02fc9f02c71ae9f65f498\", \"canonical_expert_sha256\": \"e9e22c00747cb2c36535715877f1bcab34c4ad6d357aae9c50ba26bc6ba25c55\", \"probe_root\": \"/tmp/cs736-rxu292-moe/recovery/20261102T054613Z-recovery-2f181d51\", \"initial_stage_sha256\": \"e9e22c00747cb2c36535715877f1bcab34c4ad6d357aae9c50ba26bc6ba25c55\", \"stage_exists_after_delete\": false, \"canonical_unchanged_while_stage_missing\": true, \"reconstructed_stage_sha256\": \"e9e22c00747cb2c36535715877f1bcab34c4ad6d357aae9c50ba26bc6ba25c55\", \"canonical_unchanged_after_reconstruction\": true}\n",
+      "actual_model_revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+      "actual_model_id": "allenai/OLMoE-1B-7B-0924-Instruct"
+    },
+    {
+      "run_id": "20261102T055349Z-reference-5789fd68",
+      "status": "completed",
+      "exit_code": 0,
+      "kind": "reference",
+      "command_succeeded": true,
+      "experiment_complete": true,
+      "experiment_passed": true,
+      "acceptance_scope": "resident reference only",
+      "model_kind": "real pretrained OLMoE BF16",
+      "wall_seconds": 7.635620232205838,
+      "source_release": {
+        "release_id": "20261102T055343Z-f10596f6a9",
+        "archive_sha256": "b49c669ff36252dcefd88ca343ad1d2ddcabf3835ff936cfc78b26d827a79aae",
+        "file_count": 37,
+        "created_utc": "2026-11-02T05:53:49.894086+00:00",
+        "hostname": "rxu292-advanced-os-final-0"
+      },
+      "preparation_seconds": 23.469235084950924,
+      "preparation_excluded_from_experiment_timing": true,
+      "storage_mode": "persistent",
+      "storage_claim": "Correctness-only persistent filesystem; no local-SSD performance claim",
+      "cache_conditions": "New application caches per trial; kernel page cache uncontrolled, probably warm after conversion/reference. No global cache drop.",
+      "git": {
+        "commit": "236706e5140ea3db7afd06e7e391373b532dac76",
+        "dirty": true,
+        "status": [
+          " M .gitignore",
+          " M README.md",
+          " M configs/pilot.json",
+          " M configs/smoke.json",
+          " M moe_shared/kv.py",
+          " M moe_shared/prepare.py",
+          " M moe_shared/run.py",
+          " M scripts/acquire_model.py",
+          " M scripts/bootstrap.sh",
+          " M scripts/control.py",
+          " M scripts/linux.py",
+          " M scripts/remote.ps1",
+          " M tests/test_control.py",
+          " M tests/test_tiny_gpu.py",
+          "?? .vscode/settings.json",
+          "?? moe_shared/artifacts.py",
+          "?? moe_shared/lifecycle.py",
+          "?? moe_shared/staging.py",
+          "?? tests/test_artifacts.py",
+          "?? tests/test_staging.py"
+        ],
+        "git_available": true
+      },
+      "source_file_hashes": {
+        ".gitattributes": {
+          "sha256": "a8fe7e450017f38c38c3c4c1069ed01d86cf5d2882e61ea504c898dca639de5c",
+          "bytes": 223
+        },
+        ".gitignore": {
+          "sha256": "4246fbdffda97f872168ec1d11c2a6e4686018df7da984952c6bb2671c2484b8",
+          "bytes": 385
+        },
+        "README.md": {
+          "sha256": "da4534e688c4f919ac53439b6b1a82cbfa0d34cc800f8ef3e551517dba27cd7e",
+          "bytes": 17223
+        },
+        "configs/machine.example.json": {
+          "sha256": "d5d090486a1b2f0e9d391303974c42bbdc4fe19a9e608671b6e97b7e69a57e58",
+          "bytes": 278
+        },
+        "configs/model.json": {
+          "sha256": "94c184582bf830bc34249bb3bbb02c9d2ae71cd34bf4f4fab7bb622a9a986f8b",
+          "bytes": 402
+        },
+        "configs/pilot.json": {
+          "sha256": "a2b481f1da1d2f65dd0e96b36140332939552b7d4c427029300ba1f00afd1a8e",
+          "bytes": 716
+        },
+        "configs/smoke.json": {
+          "sha256": "dc7ef97812969851a646c9388c41707f8ff9c20c31da029183e8a8db953d4f5b",
+          "bytes": 718
+        },
+        "docs/validation.md": {
+          "sha256": "1fed10b92f9f14d515d71db5f6ea4754722fec7a80b5d731317df70ec1ebb24c",
+          "bytes": 6374
+        },
+        "moe_shared/__init__.py": {
+          "sha256": "ea46616d32af4d2c2c254d45c63c136ddba7adb344fea03527a3b30e038573f9",
+          "bytes": 75
+        },
+        "moe_shared/artifacts.py": {
+          "sha256": "0137608cafc6c039b3feaff1273e534db83a5e2afc17c3781ad2fee413c5473c",
+          "bytes": 10107
+        },
+        "moe_shared/audit.py": {
+          "sha256": "498dc8ee2cfcde8c19787fa4240669745765d917dcb85a1df636dbe0dc08bdf9",
+          "bytes": 12088
+        },
+        "moe_shared/experts.py": {
+          "sha256": "8ccf37097168062554f0f61b6a8b8dcc39932dc3ececd88b2686a30ea6e7f03c",
+          "bytes": 10328
+        },
+        "moe_shared/fixtures.py": {
+          "sha256": "ed164471daeb9103851d4fa72db42e10b59bccf1c7881aed0efc4807d5720a73",
+          "bytes": 1411
+        },
+        "moe_shared/kv.py": {
+          "sha256": "f889498c173e5383dd94513c31483ec198bbc6a1944bb8073e0ca9eb1d47d20e",
+          "bytes": 14636
+        },
+        "moe_shared/lifecycle.py": {
+          "sha256": "fff9355e7aba02fe36f9ab8dbd1c08afa68ad522087afa8418bdc3156481e165",
+          "bytes": 6015
+        },
+        "moe_shared/pool.py": {
+          "sha256": "b2cdf6412069358b69c271f62b67e442c54852959e5f3d2fc56d73d5e90dfa36",
+          "bytes": 3201
+        },
+        "moe_shared/prepare.py": {
+          "sha256": "c51a99bb91db56e9c43da5f3b46832d87c3d8ba9bf8d82de093a0193666d0c87",
+          "bytes": 11613
+        },
+        "moe_shared/run.py": {
+          "sha256": "c1bbde25619240b8e32aca9539d10302d113078c54f565aa0200a20a378bb095",
+          "bytes": 34457
+        },
+        "moe_shared/staging.py": {
+          "sha256": "ccbe80328360b9af66b237fab13130b800e70953736e12b19c62fb56846e26b1",
+          "bytes": 12888
+        },
+        "moe_shared/workload.py": {
+          "sha256": "33ed66557b3bbc8f5ff02169cb9976a3b0c4363bd5483a62f8daf29941e353ad",
+          "bytes": 4032
+        },
+        "requirements.lock": {
+          "sha256": "2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193",
+          "bytes": 1027
+        },
+        "scripts/acquire_model.py": {
+          "sha256": "13bb47e77460b77631e41841b1453e44baf5a5eb9b68b7c3b9bbeb3f5ea429f4",
+          "bytes": 8575
+        },
+        "scripts/bootstrap.sh": {
+          "sha256": "932a7730612c64be7a77f116f245f24d278990bb241c278b9326f5f0919b0682",
+          "bytes": 4367
+        },
+        "scripts/control.py": {
+          "sha256": "32fb812c71d5abd8a5e97d0c5b290f6c15f1b4ff81a130d574f7f413b6486363",
+          "bytes": 19367
+        },
+        "scripts/linux.py": {
+          "sha256": "72b5a7fa62aab3c729f9089635fc27257ab00537c68d25b6fa21c6f937ee46d8",
+          "bytes": 4452
+        },
+        "scripts/remote.ps1": {
+          "sha256": "0c49134b176b2a878d7353911bebae1eab939fce7112ef17934f6857fb96c006",
+          "bytes": 9056
+        },
+        "scripts/snapshot.py": {
+          "sha256": "d8fbd8ed50a6e0525506766803a9824eb939a23e73417fb19f4861a36c8b21ab",
+          "bytes": 7937
+        },
+        "scripts/summarize.py": {
+          "sha256": "c45331512a06b1c91b3fa9cd07639bdade05afe67b9a37c0f1f7d4e90435547a",
+          "bytes": 4108
+        },
+        "summaries/validation.json": {
+          "sha256": "8806b1f4d45b16afc7210e7b240a9d0abb6716148f4278a3b06dacac142eb810",
+          "bytes": 62740
+        },
+        "tests/test_artifacts.py": {
+          "sha256": "ea8bbca07433b11c0c36809c501e3b73d7a338b0ccbcd4a8e0a92fe16e3c051a",
+          "bytes": 7987
+        },
+        "tests/test_audit.py": {
+          "sha256": "f6fed7d257889dcc39be64c2c43a704ec090eb600de9d8f93aa663806986664d",
+          "bytes": 1858
+        },
+        "tests/test_control.py": {
+          "sha256": "10c8d7100c0ef819afee7d0c980f8939a6ace0d320bc057468aa91a23066cf45",
+          "bytes": 3963
+        },
+        "tests/test_pool.py": {
+          "sha256": "5a7fac5cf7d10531d6c32973a96e0ffff27ee6054220923c9555ef730679ec19",
+          "bytes": 1774
+        },
+        "tests/test_snapshot.py": {
+          "sha256": "0c3b3978e0c3b519e8c10daab97baf563951c17cc5f8b9d15cb58e8fad10d421",
+          "bytes": 2981
+        },
+        "tests/test_staging.py": {
+          "sha256": "c1968e42cc6aa375eb38c53a2a77643afb176a65afec3beb4424bf9c5d26b015",
+          "bytes": 5770
+        },
+        "tests/test_tiny_gpu.py": {
+          "sha256": "87479450e22a5fb11147327852108a7e395090777acf31e77cc1ba9074498305",
+          "bytes": 16687
+        },
+        "tests/test_workload.py": {
+          "sha256": "485999c98044f6b92c4f26954f9bc8fd1a275f4acb1264bb61c6cb3cad4dce51",
+          "bytes": 1577
+        }
+      },
+      "model": {
+        "attention_implementation": "eager",
+        "dtype": "bfloat16",
+        "model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+        "parameter_count": 6919161856,
+        "revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+        "revision_source": "https://huggingface.co/api/models/allenai/OLMoE-1B-7B-0924-Instruct",
+        "scope": "Mechanism validation on OLMoE; not evidence for Qwen3 FP8.",
+        "trust_remote_code": false
+      },
+      "torch": "2.5.1+cu124",
+      "transformers": "4.46.3",
+      "gpu": "NVIDIA RTX A5000",
+      "trajectory_sha256": "d89bd52f2114601dad5c4a4dca16ee876d60b5cfbad00b199e3f7b586e144111",
+      "config": {
+        "actions": [
+          "retain",
+          "spill",
+          "recompute"
+        ],
+        "active_output_tokens": 5,
+        "active_prefix_tokens": 8,
+        "first_turn_tokens": 2,
+        "gpu_expert_slots": 4,
+        "gpu_workspace_reservation_bytes": 2147483648,
+        "host_expert_slots": [
+          64
+        ],
+        "host_slack_bytes": 524288,
+        "logit_atol": 0.125,
+        "logit_rtol": 0.02,
+        "max_context_tokens": 128,
+        "max_wall_seconds": 900,
+        "minimum_argmax_agreement": 0.95,
+        "name": "real-pretrained-correctness-smoke",
+        "paused_prefix_tokens": 8,
+        "repeats": 1,
+        "return_output_tokens": 2,
+        "return_prompt_tokens": 2,
+        "seed": 736,
+        "storage_mode": "persistent",
+        "think_seconds": 0.05,
+        "torch_threads": 4,
+        "total_gpu_budget_bytes": 23622320128,
+        "verify_kv_restore": true
+      },
+      "transfer": {
+        "archive_sha256": "bebf17db4b3c872401bbfe434de6928516644757bdbb86c27c97084d1c6b4061",
+        "verified_files": 34,
+        "verified_bytes": 1949013,
+        "fetched_utc": "2026-11-02T05:54:40.721385+00:00"
+      },
+      "fixtures": {
+        "errors": 0,
+        "failures": 0,
+        "passed": true,
+        "run": 34,
+        "skipped": 0
+      },
+      "limitations": [],
+      "cases": [
+        {
+          "action": "resident",
+          "active_gpu_kv_peak_bytes": 3145728,
+          "active_steps_while_paused": 2,
+          "case": "resident-reference",
+          "cgroup_historical_peak_bytes": 29358575616,
+          "cgroup_peak_note": "Sampled current is run-local lower bound; kernel peak can include prior setup/other jobs and was not reset.",
+          "cgroup_sampled_peak_bytes": 29354663936,
+          "correctness": {
+            "all_logits_within_tolerance": true,
+            "argmax_agreement": 1.0,
+            "atol": 0.125,
+            "checkpoints": 0,
+            "passed": true,
+            "returning_argmax_agreement": null,
+            "returning_checkpoints": 0,
+            "rtol": 0.02
+          },
+          "gpu_peak_allocated_bytes": 13850363392,
+          "gpu_peak_reserved_bytes": 13866369024,
+          "initial_ttft_seconds": {
+            "count": 2,
+            "max": 0.37081213667988777,
+            "mean": 0.27980277966707945,
+            "median": 0.27980277966707945
+          },
+          "inter_token_seconds": {
+            "count": 6,
+            "max": 0.3286493392661214,
+            "mean": 0.27588941793267924,
+            "median": 0.2930483762174845
+          },
+          "per_session_inter_token_seconds": {
+            "active": {
+              "count": 4,
+              "max": 0.3286493392661214,
+              "mean": 0.26815090351738036,
+              "median": 0.29907793807797134
+            },
+            "paused": {
+              "count": 2,
+              "max": 0.29278559936210513,
+              "mean": 0.29136644676327705,
+              "median": 0.29136644676327705
+            }
+          },
+          "returning_ttft_seconds": {
+            "count": 1,
+            "max": 0.40298499586060643,
+            "mean": 0.40298499586060643,
+            "median": 0.40298499586060643
+          },
+          "turns": [
+            {
+              "session": "paused",
+              "tokens": 2,
+              "tpot_seconds": 0.29278559936210513,
+              "ttft_seconds": 0.37081213667988777,
+              "turn": 0
+            },
+            {
+              "session": "active",
+              "tokens": 5,
+              "tpot_seconds": 0.26815090351738036,
+              "ttft_seconds": 0.18879342265427113,
+              "turn": 0
+            },
+            {
+              "session": "paused",
+              "tokens": 2,
+              "tpot_seconds": 0.289947294164449,
+              "ttft_seconds": 0.40298499586060643,
+              "turn": 1
+            }
+          ],
+          "wall_seconds": 1.4078451758250594,
+          "observed_process_io_delta": {
+            "cancelled_write_bytes": 0,
+            "rchar": 29052,
+            "read_bytes": 0,
+            "syscr": 405,
+            "syscw": 22,
+            "wchar": 9480,
+            "write_bytes": 0
+          },
+          "observed_cgroup_io_delta": {
+            "/sys/fs/cgroup": {
+              "252:0": {
+                "dbytes": 0,
+                "dios": 0,
+                "rbytes": 0,
+                "rios": 0,
+                "wbytes": 0,
+                "wios": 0
+              },
+              "259:0": {
+                "dbytes": 0,
+                "dios": 0,
+                "rbytes": 0,
+                "rios": 0,
+                "wbytes": 0,
+                "wios": 0
+              }
+            }
+          }
+        }
+      ],
+      "artifact_completion": {
+        "schema_version": 1,
+        "complete": true,
+        "completed_at_utc": "2026-11-02T05:44:48.214971+00:00",
+        "model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+        "revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+        "model_dir": "7f1c97f440f06ce36705e4f2b843edb5925f4498/model",
+        "backing_dir": "7f1c97f440f06ce36705e4f2b843edb5925f4498/backing-c51a99bb91db56e9",
+        "model_provenance_sha256": "56655d269431d97a02f1dccc78a565095d14b4b479645e0acc5a11d57aa97cae",
+        "backing_manifest_sha256": "eb0921fedaef5f4eccb2a0efc187f798dbfa69a888f02fc9f02c71ae9f65f498",
+        "converter_version": 2,
+        "converter_format_version": 1,
+        "converter_source_sha256": "c51a99bb91db56e9c43da5f3b46832d87c3d8ba9bf8d82de093a0193666d0c87",
+        "expert_count": 1024,
+        "backing_bytes": 13838323712,
+        "artifact_guard": {
+          "additional_bytes": 0,
+          "filesystem_free_bytes": 35135361024,
+          "free_space_is_reserved": false,
+          "headroom_bytes": 21474836480,
+          "max_scratch_bytes": 37580963840,
+          "scratch": "/home/rxu292/advanced-os-final/artifacts",
+          "task_logical_bytes": 27680981437
+        }
+      },
+      "artifact_completion_sha256": "154ef707c9cf4997f714555102f9faed265ffd6ba9d98835938965d89260773e",
+      "reference": {
+        "complete": true,
+        "scope": "resident reference only; offloaded acceptance is separate",
+        "model_kind": "real pretrained OLMoE BF16",
+        "checkpoint_count": 9,
+        "logits_file": "reference-logits.npz",
+        "logits_file_bytes": 792699,
+        "logits_file_sha256": "1637140ccce8529af2ff3121ac1f6d0a153aec80c8e7cef4dcec1f089ba2589d",
+        "files": {
+          "reference-outputs.json": {
+            "sha256": "ec83af0e3026d97502f4f5bad4212464d0dd7e58204c54c05af660a3e33b95e6",
+            "bytes": 87800
+          },
+          "reference-logits.npz": {
+            "sha256": "1637140ccce8529af2ff3121ac1f6d0a153aec80c8e7cef4dcec1f089ba2589d",
+            "bytes": 792699
+          },
+          "trajectories.json": {
+            "sha256": "1f467cfb3dbc571c660eb60c135c6d0396383267b3b36dd7ba6dcb13760d3308",
+            "bytes": 1097
+          }
+        },
+        "token_histories": {
+          "active": {
+            "token_count": 13,
+            "sha256": "c1021ca6a82e00cd965cf64e5848bdd934aa2102c15e54fa2708b40bd912c7be"
+          },
+          "paused": {
+            "token_count": 14,
+            "sha256": "e215adcc1a244915b49a811936e0bcdaefaa6465164e2c629fb611f0c94f933f"
+          }
+        }
+      },
+      "actual_model_revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+      "actual_model_id": "allenai/OLMoE-1B-7B-0924-Instruct"
+    },
+    {
+      "run_id": "20261102T060152Z-smoke-a42a4b3d",
+      "status": "completed",
+      "exit_code": 0,
+      "kind": "smoke",
+      "command_succeeded": true,
+      "experiment_complete": true,
+      "experiment_passed": true,
+      "acceptance_scope": "smoke",
+      "model_kind": "real pretrained OLMoE BF16",
+      "wall_seconds": 48.53190240683034,
+      "source_release": {
+        "release_id": "20261102T060146Z-ab54c8b9ee",
+        "archive_sha256": "ec02d0a0cb47e8639affb0613233abda7f1312925715745d7ca9db86fe66ff78",
+        "file_count": 37,
+        "created_utc": "2026-11-02T06:01:52.486944+00:00",
+        "hostname": "rxu292-advanced-os-final-0"
+      },
+      "preparation_seconds": 23.705739923752844,
+      "preparation_excluded_from_experiment_timing": true,
+      "storage_mode": "persistent",
+      "storage_claim": "Correctness-only persistent filesystem; no local-SSD performance claim",
+      "cache_conditions": "New application caches per trial; kernel page cache uncontrolled, probably warm after conversion/reference. No global cache drop.",
+      "git": {
+        "commit": "236706e5140ea3db7afd06e7e391373b532dac76",
+        "dirty": true,
+        "status": [
+          " M .gitignore",
+          " M README.md",
+          " M configs/pilot.json",
+          " M configs/smoke.json",
+          " M moe_shared/kv.py",
+          " M moe_shared/prepare.py",
+          " M moe_shared/run.py",
+          " M scripts/acquire_model.py",
+          " M scripts/bootstrap.sh",
+          " M scripts/control.py",
+          " M scripts/linux.py",
+          " M scripts/remote.ps1",
+          " M scripts/summarize.py",
+          " M tests/test_control.py",
+          " M tests/test_tiny_gpu.py",
+          "?? .vscode/settings.json",
+          "?? moe_shared/artifacts.py",
+          "?? moe_shared/lifecycle.py",
+          "?? moe_shared/staging.py",
+          "?? tests/test_artifacts.py",
+          "?? tests/test_staging.py"
+        ],
+        "git_available": true
+      },
+      "source_file_hashes": {
+        ".gitattributes": {
+          "sha256": "a8fe7e450017f38c38c3c4c1069ed01d86cf5d2882e61ea504c898dca639de5c",
+          "bytes": 223
+        },
+        ".gitignore": {
+          "sha256": "4246fbdffda97f872168ec1d11c2a6e4686018df7da984952c6bb2671c2484b8",
+          "bytes": 385
+        },
+        "README.md": {
+          "sha256": "da4534e688c4f919ac53439b6b1a82cbfa0d34cc800f8ef3e551517dba27cd7e",
+          "bytes": 17223
+        },
+        "configs/machine.example.json": {
+          "sha256": "d5d090486a1b2f0e9d391303974c42bbdc4fe19a9e608671b6e97b7e69a57e58",
+          "bytes": 278
+        },
+        "configs/model.json": {
+          "sha256": "94c184582bf830bc34249bb3bbb02c9d2ae71cd34bf4f4fab7bb622a9a986f8b",
+          "bytes": 402
+        },
+        "configs/pilot.json": {
+          "sha256": "a2b481f1da1d2f65dd0e96b36140332939552b7d4c427029300ba1f00afd1a8e",
+          "bytes": 716
+        },
+        "configs/smoke.json": {
+          "sha256": "dc7ef97812969851a646c9388c41707f8ff9c20c31da029183e8a8db953d4f5b",
+          "bytes": 718
+        },
+        "docs/validation.md": {
+          "sha256": "1fed10b92f9f14d515d71db5f6ea4754722fec7a80b5d731317df70ec1ebb24c",
+          "bytes": 6374
+        },
+        "moe_shared/__init__.py": {
+          "sha256": "ea46616d32af4d2c2c254d45c63c136ddba7adb344fea03527a3b30e038573f9",
+          "bytes": 75
+        },
+        "moe_shared/artifacts.py": {
+          "sha256": "0137608cafc6c039b3feaff1273e534db83a5e2afc17c3781ad2fee413c5473c",
+          "bytes": 10107
+        },
+        "moe_shared/audit.py": {
+          "sha256": "498dc8ee2cfcde8c19787fa4240669745765d917dcb85a1df636dbe0dc08bdf9",
+          "bytes": 12088
+        },
+        "moe_shared/experts.py": {
+          "sha256": "8ccf37097168062554f0f61b6a8b8dcc39932dc3ececd88b2686a30ea6e7f03c",
+          "bytes": 10328
+        },
+        "moe_shared/fixtures.py": {
+          "sha256": "ed164471daeb9103851d4fa72db42e10b59bccf1c7881aed0efc4807d5720a73",
+          "bytes": 1411
+        },
+        "moe_shared/kv.py": {
+          "sha256": "f889498c173e5383dd94513c31483ec198bbc6a1944bb8073e0ca9eb1d47d20e",
+          "bytes": 14636
+        },
+        "moe_shared/lifecycle.py": {
+          "sha256": "fff9355e7aba02fe36f9ab8dbd1c08afa68ad522087afa8418bdc3156481e165",
+          "bytes": 6015
+        },
+        "moe_shared/pool.py": {
+          "sha256": "b2cdf6412069358b69c271f62b67e442c54852959e5f3d2fc56d73d5e90dfa36",
+          "bytes": 3201
+        },
+        "moe_shared/prepare.py": {
+          "sha256": "c51a99bb91db56e9c43da5f3b46832d87c3d8ba9bf8d82de093a0193666d0c87",
+          "bytes": 11613
+        },
+        "moe_shared/run.py": {
+          "sha256": "76f04482b8b9f364a9136db601a4544b17caf87d5a2f26509dbbdf8b7d88166a",
+          "bytes": 39372
+        },
+        "moe_shared/staging.py": {
+          "sha256": "ccbe80328360b9af66b237fab13130b800e70953736e12b19c62fb56846e26b1",
+          "bytes": 12888
+        },
+        "moe_shared/workload.py": {
+          "sha256": "33ed66557b3bbc8f5ff02169cb9976a3b0c4363bd5483a62f8daf29941e353ad",
+          "bytes": 4032
+        },
+        "requirements.lock": {
+          "sha256": "2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193",
+          "bytes": 1027
+        },
+        "scripts/acquire_model.py": {
+          "sha256": "13bb47e77460b77631e41841b1453e44baf5a5eb9b68b7c3b9bbeb3f5ea429f4",
+          "bytes": 8575
+        },
+        "scripts/bootstrap.sh": {
+          "sha256": "932a7730612c64be7a77f116f245f24d278990bb241c278b9326f5f0919b0682",
+          "bytes": 4367
+        },
+        "scripts/control.py": {
+          "sha256": "32fb812c71d5abd8a5e97d0c5b290f6c15f1b4ff81a130d574f7f413b6486363",
+          "bytes": 19367
+        },
+        "scripts/linux.py": {
+          "sha256": "72b5a7fa62aab3c729f9089635fc27257ab00537c68d25b6fa21c6f937ee46d8",
+          "bytes": 4452
+        },
+        "scripts/remote.ps1": {
+          "sha256": "6617adf9c98b54452cf598d0e46f34943a7c0d3c50eb63adb09294bc246214f0",
+          "bytes": 8674
+        },
+        "scripts/snapshot.py": {
+          "sha256": "d8fbd8ed50a6e0525506766803a9824eb939a23e73417fb19f4861a36c8b21ab",
+          "bytes": 7937
+        },
+        "scripts/summarize.py": {
+          "sha256": "e1d8f369d9f9cb643f79d30aac5a3c1e24338939e24329c8cd0741a7925401e9",
+          "bytes": 8955
+        },
+        "summaries/validation.json": {
+          "sha256": "8806b1f4d45b16afc7210e7b240a9d0abb6716148f4278a3b06dacac142eb810",
+          "bytes": 62740
+        },
+        "tests/test_artifacts.py": {
+          "sha256": "ea8bbca07433b11c0c36809c501e3b73d7a338b0ccbcd4a8e0a92fe16e3c051a",
+          "bytes": 7987
+        },
+        "tests/test_audit.py": {
+          "sha256": "f6fed7d257889dcc39be64c2c43a704ec090eb600de9d8f93aa663806986664d",
+          "bytes": 1858
+        },
+        "tests/test_control.py": {
+          "sha256": "10c8d7100c0ef819afee7d0c980f8939a6ace0d320bc057468aa91a23066cf45",
+          "bytes": 3963
+        },
+        "tests/test_pool.py": {
+          "sha256": "5a7fac5cf7d10531d6c32973a96e0ffff27ee6054220923c9555ef730679ec19",
+          "bytes": 1774
+        },
+        "tests/test_snapshot.py": {
+          "sha256": "0c3b3978e0c3b519e8c10daab97baf563951c17cc5f8b9d15cb58e8fad10d421",
+          "bytes": 2981
+        },
+        "tests/test_staging.py": {
+          "sha256": "c1968e42cc6aa375eb38c53a2a77643afb176a65afec3beb4424bf9c5d26b015",
+          "bytes": 5770
+        },
+        "tests/test_tiny_gpu.py": {
+          "sha256": "00ae6544a4690c6d0eee8abed26dfe52672322f0f14e7ffa6803c9e568eee0c2",
+          "bytes": 21637
+        },
+        "tests/test_workload.py": {
+          "sha256": "485999c98044f6b92c4f26954f9bc8fd1a275f4acb1264bb61c6cb3cad4dce51",
+          "bytes": 1577
+        }
+      },
+      "model": {
+        "attention_implementation": "eager",
+        "dtype": "bfloat16",
+        "model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+        "parameter_count": 6919161856,
+        "revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+        "revision_source": "https://huggingface.co/api/models/allenai/OLMoE-1B-7B-0924-Instruct",
+        "scope": "Mechanism validation on OLMoE; not evidence for Qwen3 FP8.",
+        "trust_remote_code": false
+      },
+      "torch": "2.5.1+cu124",
+      "transformers": "4.46.3",
+      "gpu": "NVIDIA RTX A5000",
+      "trajectory_sha256": "d89bd52f2114601dad5c4a4dca16ee876d60b5cfbad00b199e3f7b586e144111",
+      "config": {
+        "actions": [
+          "retain",
+          "spill",
+          "recompute"
+        ],
+        "active_output_tokens": 5,
+        "active_prefix_tokens": 8,
+        "first_turn_tokens": 2,
+        "gpu_expert_slots": 4,
+        "gpu_workspace_reservation_bytes": 2147483648,
+        "host_expert_slots": [
+          64
+        ],
+        "host_slack_bytes": 524288,
+        "logit_atol": 0.125,
+        "logit_rtol": 0.02,
+        "max_context_tokens": 128,
+        "max_wall_seconds": 900,
+        "minimum_argmax_agreement": 0.95,
+        "name": "real-pretrained-correctness-smoke",
+        "paused_prefix_tokens": 8,
+        "repeats": 1,
+        "return_output_tokens": 2,
+        "return_prompt_tokens": 2,
+        "seed": 736,
+        "storage_mode": "persistent",
+        "think_seconds": 0.05,
+        "torch_threads": 4,
+        "total_gpu_budget_bytes": 23622320128,
+        "verify_kv_restore": true
+      },
+      "transfer": {
+        "archive_sha256": "a6e6e49310ae5a5aabd8ece6fa4154fcc3b6f35de3481d6f855f420db62ec171",
+        "verified_files": 38,
+        "verified_bytes": 4938213,
+        "fetched_utc": "2026-11-02T06:03:43.407308+00:00"
+      },
+      "fixtures": {
+        "errors": 0,
+        "failures": 0,
+        "passed": true,
+        "run": 35,
+        "skipped": 0
+      },
+      "limitations": [
+        "Tiny sample; no p99 claim.",
+        "Application cache misses are logical reads, not proof of SSD reads.",
+        "Synchronous I/O; no concurrent device I/O or optimized serving.",
+        "Page cache and other cgroup activity can affect observed counters.",
+        "Two sessions, short real-text forced trajectories, single GPU BF16 only."
+      ],
+      "cases": [
+        {
+          "action": "resident",
+          "active_gpu_kv_peak_bytes": 3145728,
+          "active_steps_while_paused": 2,
+          "case": "resident-reference",
+          "cgroup_historical_peak_bytes": 30319685632,
+          "cgroup_peak_note": "Sampled current is run-local lower bound; kernel peak can include prior setup/other jobs and was not reset.",
+          "cgroup_sampled_peak_bytes": 29359800320,
+          "correctness": {
+            "all_logits_within_tolerance": true,
+            "argmax_agreement": 1.0,
+            "atol": 0.125,
+            "checkpoints": 0,
+            "passed": true,
+            "returning_argmax_agreement": null,
+            "returning_checkpoints": 0,
+            "rtol": 0.02
+          },
+          "forward_chunk_lengths": {
+            "active": [
+              8,
+              1,
+              1,
+              1,
+              1
+            ],
+            "paused": [
+              8,
+              1,
+              3,
+              1
+            ]
+          },
+          "gpu_peak_allocated_bytes": 13850363392,
+          "gpu_peak_reserved_bytes": 13866369024,
+          "initial_ttft_seconds": {
+            "count": 2,
+            "max": 0.373677346855402,
+            "mean": 0.28221513889729977,
+            "median": 0.28221513889729977
+          },
+          "inter_token_seconds": {
+            "count": 6,
+            "max": 0.328771554864943,
+            "mean": 0.27575496785963577,
+            "median": 0.2913671841379255
+          },
+          "per_session_inter_token_seconds": {
+            "active": {
+              "count": 4,
+              "max": 0.328771554864943,
+              "mean": 0.2679488597204909,
+              "median": 0.2988408103119582
+            },
+            "paused": {
+              "count": 2,
+              "max": 0.29154451517388225,
+              "mean": 0.2913671841379255,
+              "median": 0.2913671841379255
+            }
+          },
+          "returning_ttft_seconds": {
+            "count": 1,
+            "max": 0.40163259906694293,
+            "mean": 0.40163259906694293,
+            "median": 0.40163259906694293
+          },
+          "token_histories": {
+            "active": [
+              34,
+              5974,
+              310,
+              4028,
+              247,
+              1355,
+              2579,
+              326,
+              9172,
+              3533,
+              670,
+              2718,
+              15
+            ],
+            "paused": [
+              1145,
+              6498,
+              985,
+              10764,
+              3541,
+              2190,
+              4893,
+              1223,
+              7562,
+              3540,
+              273,
+              187,
+              4609,
+              7223
+            ]
+          },
+          "turns": [
+            {
+              "session": "paused",
+              "tokens": 2,
+              "tpot_seconds": 0.29118985310196877,
+              "ttft_seconds": 0.373677346855402,
+              "turn": 0
+            },
+            {
+              "session": "active",
+              "tokens": 5,
+              "tpot_seconds": 0.2679488597204909,
+              "ttft_seconds": 0.19075293093919754,
+              "turn": 0
+            },
+            {
+              "session": "paused",
+              "tokens": 2,
+              "tpot_seconds": 0.29154451517388225,
+              "ttft_seconds": 0.40163259906694293,
+              "turn": 1
+            }
+          ],
+          "wall_seconds": 1.409407515078783,
+          "observed_process_io_delta": {
+            "cancelled_write_bytes": 0,
+            "rchar": 29106,
+            "read_bytes": 0,
+            "syscr": 405,
+            "syscw": 22,
+            "wchar": 10609,
+            "write_bytes": 0
+          },
+          "observed_cgroup_io_delta": {
+            "/sys/fs/cgroup": {
+              "252:0": {
+                "dbytes": 0,
+                "dios": 0,
+                "rbytes": 0,
+                "rios": 0,
+                "wbytes": 0,
+                "wios": 0
+              },
+              "259:0": {
+                "dbytes": 0,
+                "dios": 0,
+                "rbytes": 0,
+                "rios": 0,
+                "wbytes": 0,
+                "wios": 0
+              }
+            }
+          }
+        },
+        {
+          "action": "retain",
+          "active_gpu_kv_peak_bytes": 3145728,
+          "active_steps_while_paused": 2,
+          "budget_passed": true,
+          "case": "retain-host64-repeat0",
+          "cgroup_historical_peak_bytes": 30319685632,
+          "cgroup_peak_note": "Sampled current is run-local lower bound; kernel peak can include prior setup/other jobs and was not reset.",
+          "cgroup_sampled_peak_bytes": 30293901312,
+          "correctness": {
+            "all_logits_within_tolerance": true,
+            "argmax_agreement": 1.0,
+            "atol": 0.125,
+            "checkpoints": 9,
+            "passed": true,
+            "returning_argmax_agreement": 1.0,
+            "returning_checkpoints": 2,
+            "rtol": 0.02
+          },
+          "expert_cache": {
+            "cuda_executions": 2209,
+            "empty_skips": 7007,
+            "expert_policy": "global LRU",
+            "gpu_budget_bytes": 50331648,
+            "gpu_bytes": 50331648,
+            "gpu_entries": 4,
+            "gpu_evictions": 2205,
+            "gpu_hits": 0,
+            "gpu_misses": 2209,
+            "gpu_peak_bytes": 50331648,
+            "h2d_bytes": 27795652608,
+            "h2d_seconds": 3.206324219238013,
+            "host_entries": 64,
+            "host_evictions": 2145,
+            "host_hits": 0,
+            "host_misses": 2209,
+            "logical_read_bytes": 27795652608,
+            "pinned_staging_bytes": 0,
+            "read_seconds": 5.75149636156857,
+            "requests": 2209,
+            "transfer_mode": "synchronous pageable H2D; measured wall time includes module construction"
+          },
+          "forward_chunk_lengths": {
+            "active": [
+              8,
+              1,
+              1,
+              1,
+              1
+            ],
+            "paused": [
+              8,
+              1,
+              3,
+              1
+            ]
+          },
+          "gpu_expert_budget_bytes": 50331648,
+          "gpu_peak_allocated_bytes": 1015793152,
+          "gpu_peak_reserved_bytes": 1115684864,
+          "host_expert_slots": 64,
+          "host_pool": {
+            "accounting_scope": "tensor payloads and explicit reservations; runtime and OS page cache separate",
+            "budget_bytes": 808848896,
+            "by_category": {
+              "expert": 805306368,
+              "validation": 3018240
+            },
+            "entries": 65,
+            "evictions": 2145,
+            "peak_bytes": 808324608,
+            "pinned_bytes": 0,
+            "used_bytes": 808324608
+          },
+          "initial_ttft_seconds": {
+            "count": 2,
+            "max": 5.524400834925473,
+            "mean": 4.236235443037003,
+            "median": 4.236235443037003
+          },
+          "inter_token_seconds": {
+            "count": 6,
+            "max": 3.245649992953986,
+            "mean": 1.6796635231779267,
+            "median": 1.3546076784841716
+          },
+          "kv": {
+            "d2h_bytes": 1179648,
+            "d2h_seconds": 0.0005185222253203392,
+            "h2d_bytes": 1179648,
+            "h2d_seconds": 0.0005179704166948795,
+            "live_handles": 0,
+            "logical_read_bytes": 0,
+            "logical_write_bytes": 0,
+            "pause_seconds": 0.0015122429467737675,
+            "paused_bytes": 1179648,
+            "payload_integrity_checks": 1,
+            "payload_integrity_failures": 0,
+            "pinned_staging_bytes": 0,
+            "read_seconds": 0.0,
+            "recompute": 0,
+            "reloads": 0,
+            "restoration_checks": 32,
+            "restoration_failures": 0,
+            "resume_seconds": 0.003136168234050274,
+            "resumed_bytes": 1179648,
+            "retain": 1,
+            "spill": 0,
+            "timing_note": "action totals overlap component timings; optional restoration checks are included in resume latency; do not add them",
+            "transfer_mode": "synchronous pageable copies and fsync on spill",
+            "validation_d2h_bytes": 1179648,
+            "verification_seconds": 0.0016834777779877186,
+            "verify_restore": true,
+            "write_seconds": 0.0
+          },
+          "mechanism_passed": true,
+          "per_session_inter_token_seconds": {
+            "active": {
+              "count": 4,
+              "max": 3.245649992953986,
+              "mean": 1.8451197179965675,
+              "median": 1.7369039510376751
+            },
+            "paused": {
+              "count": 2,
+              "max": 1.3685823599807918,
+              "mean": 1.3487511335406452,
+              "median": 1.3487511335406452
+            }
+          },
+          "repeat": 0,
+          "returning_ttft_seconds": {
+            "count": 1,
+            "max": 2.745302326977253,
+            "mean": 2.745302326977253,
+            "median": 2.745302326977253
+          },
+          "token_histories": {
+            "active": [
+              34,
+              5974,
+              310,
+              4028,
+              247,
+              1355,
+              2579,
+              326,
+              9172,
+              3533,
+              670,
+              2718,
+              15
+            ],
+            "paused": [
+              1145,
+              6498,
+              985,
+              10764,
+              3541,
+              2190,
+              4893,
+              1223,
+              7562,
+              3540,
+              273,
+              187,
+              4609,
+              7223
+            ]
+          },
+          "turns": [
+            {
+              "session": "paused",
+              "tokens": 2,
+              "tpot_seconds": 1.3289199071004987,
+              "ttft_seconds": 5.524400834925473,
+              "turn": 0
+            },
+            {
+              "session": "active",
+              "tokens": 5,
+              "tpot_seconds": 1.8451197179965675,
+              "ttft_seconds": 2.948070051148534,
+              "turn": 0
+            },
+            {
+              "session": "paused",
+              "tokens": 2,
+              "tpot_seconds": 1.3685823599807918,
+              "ttft_seconds": 2.745302326977253,
+              "turn": 1
+            }
+          ],
+          "validation_reservation_bytes": 3018240,
+          "wall_seconds": 11.019555278122425,
+          "observed_process_io_delta": {
+            "cancelled_write_bytes": 0,
+            "rchar": 27795681695,
+            "read_bytes": 0,
+            "syscr": 4823,
+            "syscw": 2234,
+            "wchar": 803287,
+            "write_bytes": 0
+          },
+          "observed_cgroup_io_delta": {
+            "/sys/fs/cgroup": {
+              "252:0": {
+                "dbytes": 0,
+                "dios": 0,
+                "rbytes": 0,
+                "rios": 0,
+                "wbytes": 4096,
+                "wios": 1
+              },
+              "259:0": {
+                "dbytes": 0,
+                "dios": 0,
+                "rbytes": 0,
+                "rios": 0,
+                "wbytes": 4096,
+                "wios": 1
+              }
+            }
+          }
+        },
+        {
+          "action": "spill",
+          "active_gpu_kv_peak_bytes": 3145728,
+          "active_steps_while_paused": 2,
+          "budget_passed": true,
+          "case": "spill-host64-repeat0",
+          "cgroup_historical_peak_bytes": 30319685632,
+          "cgroup_peak_note": "Sampled current is run-local lower bound; kernel peak can include prior setup/other jobs and was not reset.",
+          "cgroup_sampled_peak_bytes": 30295719936,
+          "correctness": {
+            "all_logits_within_tolerance": true,
+            "argmax_agreement": 1.0,
+            "atol": 0.125,
+            "checkpoints": 9,
+            "passed": true,
+            "returning_argmax_agreement": 1.0,
+            "returning_checkpoints": 2,
+            "rtol": 0.02
+          },
+          "expert_cache": {
+            "cuda_executions": 2209,
+            "empty_skips": 7007,
+            "expert_policy": "global LRU",
+            "gpu_budget_bytes": 50331648,
+            "gpu_bytes": 50331648,
+            "gpu_entries": 4,
+            "gpu_evictions": 2205,
+            "gpu_hits": 0,
+            "gpu_misses": 2209,
+            "gpu_peak_bytes": 50331648,
+            "h2d_bytes": 27795652608,
+            "h2d_seconds": 3.2055869344621897,
+            "host_entries": 64,
+            "host_evictions": 2145,
+            "host_hits": 0,
+            "host_misses": 2209,
+            "logical_read_bytes": 27795652608,
+            "pinned_staging_bytes": 0,
+            "read_seconds": 5.8037014924921095,
+            "requests": 2209,
+            "transfer_mode": "synchronous pageable H2D; measured wall time includes module construction"
+          },
+          "forward_chunk_lengths": {
+            "active": [
+              8,
+              1,
+              1,
+              1,
+              1
+            ],
+            "paused": [
+              8,
+              1,
+              3,
+              1
+            ]
+          },
+          "gpu_expert_budget_bytes": 50331648,
+          "gpu_peak_allocated_bytes": 1015793152,
+          "gpu_peak_reserved_bytes": 1115684864,
+          "host_expert_slots": 64,
+          "host_pool": {
+            "accounting_scope": "tensor payloads and explicit reservations; runtime and OS page cache separate",
+            "budget_bytes": 808848896,
+            "by_category": {
+              "expert": 805306368,
+              "validation": 3018240
+            },
+            "entries": 65,
+            "evictions": 2145,
+            "peak_bytes": 808324608,
+            "pinned_bytes": 0,
+            "used_bytes": 808324608
+          },
+          "initial_ttft_seconds": {
+            "count": 2,
+            "max": 5.536405103746802,
+            "mean": 4.253760786727071,
+            "median": 4.253760786727071
+          },
+          "inter_token_seconds": {
+            "count": 6,
+            "max": 3.236503904219717,
+            "mean": 1.6909164974931628,
+            "median": 1.3806760793086141
+          },
+          "kv": {
+            "d2h_bytes": 1179648,
+            "d2h_seconds": 0.0005239620804786682,
+            "h2d_bytes": 1179648,
+            "h2d_seconds": 0.0005441908724606037,
+            "live_handles": 0,
+            "logical_read_bytes": 1179648,
+            "logical_write_bytes": 1179648,
+            "pause_seconds": 0.03191532287746668,
+            "paused_bytes": 1179648,
+            "payload_integrity_checks": 1,
+            "payload_integrity_failures": 0,
+            "pinned_staging_bytes": 0,
+            "read_seconds": 0.00767350010573864,
+            "recompute": 0,
+            "reloads": 1,
+            "restoration_checks": 32,
+            "restoration_failures": 0,
+            "resume_seconds": 0.010806543286889791,
+            "resumed_bytes": 1179648,
+            "retain": 0,
+            "spill": 1,
+            "timing_note": "action totals overlap component timings; optional restoration checks are included in resume latency; do not add them",
+            "transfer_mode": "synchronous pageable copies and fsync on spill",
+            "validation_d2h_bytes": 1179648,
+            "verification_seconds": 0.001683287788182497,
+            "verify_restore": true,
+            "write_seconds": 0.025633428245782852
+          },
+          "mechanism_passed": true,
+          "per_session_inter_token_seconds": {
+            "active": {
+              "count": 4,
+              "max": 3.236503904219717,
+              "mean": 1.8619597675278783,
+              "median": 1.7732194154523313
+            },
+            "paused": {
+              "count": 2,
+              "max": 1.3702325336635113,
+              "mean": 1.3488299574237317,
+              "median": 1.3488299574237317
+            }
+          },
+          "repeat": 0,
+          "returning_ttft_seconds": {
+            "count": 1,
+            "max": 2.825201750267297,
+            "mean": 2.825201750267297,
+            "median": 2.825201750267297
+          },
+          "token_histories": {
+            "active": [
+              34,
+              5974,
+              310,
+              4028,
+              247,
+              1355,
+              2579,
+              326,
+              9172,
+              3533,
+              670,
+              2718,
+              15
+            ],
+            "paused": [
+              1145,
+              6498,
+              985,
+              10764,
+              3541,
+              2190,
+              4893,
+              1223,
+              7562,
+              3540,
+              273,
+              187,
+              4609,
+              7223
+            ]
+          },
+          "turns": [
+            {
+              "session": "paused",
+              "tokens": 2,
+              "tpot_seconds": 1.327427381183952,
+              "ttft_seconds": 5.536405103746802,
+              "turn": 0
+            },
+            {
+              "session": "active",
+              "tokens": 5,
+              "tpot_seconds": 1.8619597675278783,
+              "ttft_seconds": 2.97111646970734,
+              "turn": 0
+            },
+            {
+              "session": "paused",
+              "tokens": 2,
+              "tpot_seconds": 1.3702325336635113,
+              "ttft_seconds": 2.825201750267297,
+              "turn": 1
+            }
+          ],
+          "validation_reservation_bytes": 3018240,
+          "wall_seconds": 11.111583315767348,
+          "observed_process_io_delta": {
+            "cancelled_write_bytes": 0,
+            "rchar": 27796868211,
+            "read_bytes": 0,
+            "syscr": 4858,
+            "syscw": 2267,
+            "wchar": 1986912,
+            "write_bytes": 0
+          },
+          "observed_cgroup_io_delta": {
+            "/sys/fs/cgroup": {
+              "252:0": {
+                "dbytes": 0,
+                "dios": 0,
+                "rbytes": 0,
+                "rios": 0,
+                "wbytes": 8192,
+                "wios": 2
+              },
+              "259:0": {
+                "dbytes": 0,
+                "dios": 0,
+                "rbytes": 0,
+                "rios": 0,
+                "wbytes": 8192,
+                "wios": 2
+              }
+            }
+          }
+        },
+        {
+          "action": "recompute",
+          "active_gpu_kv_peak_bytes": 3145728,
+          "active_steps_while_paused": 2,
+          "budget_passed": true,
+          "case": "recompute-host64-repeat0",
+          "cgroup_historical_peak_bytes": 30359126016,
+          "cgroup_peak_note": "Sampled current is run-local lower bound; kernel peak can include prior setup/other jobs and was not reset.",
+          "cgroup_sampled_peak_bytes": 30359113728,
+          "correctness": {
+            "all_logits_within_tolerance": true,
+            "argmax_agreement": 1.0,
+            "atol": 0.125,
+            "checkpoints": 9,
+            "passed": true,
+            "returning_argmax_agreement": 1.0,
+            "returning_checkpoints": 2,
+            "rtol": 0.02
+          },
+          "expert_cache": {
+            "cuda_executions": 2885,
+            "empty_skips": 8379,
+            "expert_policy": "global LRU",
+            "gpu_budget_bytes": 50331648,
+            "gpu_bytes": 50331648,
+            "gpu_entries": 4,
+            "gpu_evictions": 2881,
+            "gpu_hits": 0,
+            "gpu_misses": 2885,
+            "gpu_peak_bytes": 50331648,
+            "h2d_bytes": 36301701120,
+            "h2d_seconds": 4.194943354930729,
+            "host_entries": 64,
+            "host_evictions": 2821,
+            "host_hits": 0,
+            "host_misses": 2885,
+            "logical_read_bytes": 36301701120,
+            "pinned_staging_bytes": 0,
+            "read_seconds": 7.506717100739479,
+            "requests": 2885,
+            "transfer_mode": "synchronous pageable H2D; measured wall time includes module construction"
+          },
+          "forward_chunk_lengths": {
+            "active": [
+              8,
+              1,
+              1,
+              1,
+              1
+            ],
+            "paused": [
+              8,
+              1,
+              3,
+              1
+            ]
+          },
+          "gpu_expert_budget_bytes": 50331648,
+          "gpu_peak_allocated_bytes": 1015793152,
+          "gpu_peak_reserved_bytes": 1115684864,
+          "host_expert_slots": 64,
+          "host_pool": {
+            "accounting_scope": "tensor payloads and explicit reservations; runtime and OS page cache separate",
+            "budget_bytes": 808848896,
+            "by_category": {
+              "expert": 805306368,
+              "validation": 3018240
+            },
+            "entries": 65,
+            "evictions": 2821,
+            "peak_bytes": 808324608,
+            "pinned_bytes": 0,
+            "used_bytes": 808324608
+          },
+          "initial_ttft_seconds": {
+            "count": 2,
+            "max": 5.545938775874674,
+            "mean": 4.255470343399793,
+            "median": 4.255470343399793
+          },
+          "inter_token_seconds": {
+            "count": 6,
+            "max": 5.377512510865927,
+            "mean": 2.226446877932176,
+            "median": 1.3479844017419964
+          },
+          "kv": {
+            "d2h_bytes": 0,
+            "d2h_seconds": 0.0,
+            "h2d_bytes": 0,
+            "h2d_seconds": 0.0,
+            "live_handles": 0,
+            "logical_read_bytes": 0,
+            "logical_write_bytes": 0,
+            "pause_seconds": 0.000171625055372715,
+            "paused_bytes": 1179648,
+            "payload_integrity_checks": 0,
+            "payload_integrity_failures": 0,
+            "pinned_staging_bytes": 0,
+            "read_seconds": 0.0,
+            "recompute": 1,
+            "reloads": 0,
+            "restoration_checks": 0,
+            "restoration_failures": 0,
+            "resume_seconds": 0.0,
+            "resumed_bytes": 0,
+            "retain": 0,
+            "spill": 0,
+            "timing_note": "action totals overlap component timings; optional restoration checks are included in resume latency; do not add them",
+            "transfer_mode": "synchronous pageable copies and fsync on spill",
+            "validation_d2h_bytes": 0,
+            "verification_seconds": 0.0,
+            "verify_restore": true,
+            "write_seconds": 0.0
+          },
+          "mechanism_passed": true,
+          "per_session_inter_token_seconds": {
+            "active": {
+              "count": 4,
+              "max": 5.377512510865927,
+              "mean": 2.6661536465398967,
+              "median": 2.30790759017691
+            },
+            "paused": {
+              "count": 2,
+              "max": 1.3473085863515735,
+              "mean": 1.3470333407167345,
+              "median": 1.3470333407167345
+            }
+          },
+          "repeat": 0,
+          "returning_ttft_seconds": {
+            "count": 1,
+            "max": 6.01263109780848,
+            "mean": 6.01263109780848,
+            "median": 6.01263109780848
+          },
+          "token_histories": {
+            "active": [
+              34,
+              5974,
+              310,
+              4028,
+              247,
+              1355,
+              2579,
+              326,
+              9172,
+              3533,
+              670,
+              2718,
+              15
+            ],
+            "paused": [
+              1145,
+              6498,
+              985,
+              10764,
+              3541,
+              2190,
+              4893,
+              1223,
+              7562,
+              3540,
+              273,
+              187,
+              4609,
+              7223
+            ]
+          },
+          "turns": [
+            {
+              "session": "paused",
+              "tokens": 2,
+              "tpot_seconds": 1.3473085863515735,
+              "ttft_seconds": 5.545938775874674,
+              "turn": 0
+            },
+            {
+              "session": "active",
+              "tokens": 5,
+              "tpot_seconds": 2.6661536465398967,
+              "ttft_seconds": 2.9650019109249115,
+              "turn": 0
+            },
+            {
+              "session": "paused",
+              "tokens": 2,
+              "tpot_seconds": 1.3467580950818956,
+              "ttft_seconds": 6.01263109780848,
+              "turn": 1
+            }
+          ],
+          "validation_reservation_bytes": 3018240,
+          "wall_seconds": 14.3045568712987,
+          "observed_process_io_delta": {
+            "cancelled_write_bytes": 0,
+            "rchar": 36301730215,
+            "read_bytes": 0,
+            "syscr": 6175,
+            "syscw": 2913,
+            "wchar": 1053200,
+            "write_bytes": 0
+          },
+          "observed_cgroup_io_delta": {
+            "/sys/fs/cgroup": {
+              "252:0": {
+                "dbytes": 0,
+                "dios": 0,
+                "rbytes": 0,
+                "rios": 0,
+                "wbytes": 0,
+                "wios": 0
+              },
+              "259:0": {
+                "dbytes": 0,
+                "dios": 0,
+                "rbytes": 0,
+                "rios": 0,
+                "wbytes": 0,
+                "wios": 0
+              }
+            }
+          }
+        }
+      ],
+      "artifact_completion": {
+        "schema_version": 1,
+        "complete": true,
+        "completed_at_utc": "2026-11-02T05:44:48.214971+00:00",
+        "model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+        "revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+        "model_dir": "7f1c97f440f06ce36705e4f2b843edb5925f4498/model",
+        "backing_dir": "7f1c97f440f06ce36705e4f2b843edb5925f4498/backing-c51a99bb91db56e9",
+        "model_provenance_sha256": "56655d269431d97a02f1dccc78a565095d14b4b479645e0acc5a11d57aa97cae",
+        "backing_manifest_sha256": "eb0921fedaef5f4eccb2a0efc187f798dbfa69a888f02fc9f02c71ae9f65f498",
+        "converter_version": 2,
+        "converter_format_version": 1,
+        "converter_source_sha256": "c51a99bb91db56e9c43da5f3b46832d87c3d8ba9bf8d82de093a0193666d0c87",
+        "expert_count": 1024,
+        "backing_bytes": 13838323712,
+        "artifact_guard": {
+          "additional_bytes": 0,
+          "filesystem_free_bytes": 35135361024,
+          "free_space_is_reserved": false,
+          "headroom_bytes": 21474836480,
+          "max_scratch_bytes": 37580963840,
+          "scratch": "/home/rxu292/advanced-os-final/artifacts",
+          "task_logical_bytes": 27680981437
+        }
+      },
+      "artifact_completion_sha256": "154ef707c9cf4997f714555102f9faed265ffd6ba9d98835938965d89260773e",
+      "reference": {
+        "complete": true,
+        "scope": "resident reference only; offloaded acceptance is separate",
+        "model_kind": "real pretrained OLMoE BF16",
+        "checkpoint_count": 9,
+        "logits_file": "reference-logits.npz",
+        "logits_file_bytes": 792699,
+        "logits_file_sha256": "1637140ccce8529af2ff3121ac1f6d0a153aec80c8e7cef4dcec1f089ba2589d",
+        "files": {
+          "reference-outputs.json": {
+            "sha256": "e7762e7e1240f06654b0570657ecd1a2fdd0442f6c01c489c71bd97f1b0e819b",
+            "bytes": 88668
+          },
+          "reference-logits.npz": {
+            "sha256": "1637140ccce8529af2ff3121ac1f6d0a153aec80c8e7cef4dcec1f089ba2589d",
+            "bytes": 792699
+          },
+          "trajectories.json": {
+            "sha256": "1f467cfb3dbc571c660eb60c135c6d0396383267b3b36dd7ba6dcb13760d3308",
+            "bytes": 1097
+          }
+        },
+        "token_histories": {
+          "active": {
+            "token_count": 13,
+            "sha256": "c1021ca6a82e00cd965cf64e5848bdd934aa2102c15e54fa2708b40bd912c7be"
+          },
+          "paused": {
+            "token_count": 14,
+            "sha256": "e215adcc1a244915b49a811936e0bcdaefaa6465164e2c629fb611f0c94f933f"
+          }
+        }
+      },
+      "actual_model_revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+      "actual_model_id": "allenai/OLMoE-1B-7B-0924-Instruct"
+    },
+    {
+      "run_id": "20261102T060402Z-pilot-35700330",
+      "status": "lost",
+      "exit_code": null,
+      "kind": "pilot",
+      "command_succeeded": false,
+      "experiment_complete": null,
+      "experiment_passed": null,
+      "acceptance_scope": "pilot",
+      "model_kind": null,
+      "wall_seconds": null,
+      "source_release": {
+        "release_id": "20261102T060356Z-dfaec23198",
+        "archive_sha256": "c3041719f2057bf0c26e4b58a692a00b34bd8b068d653136bed541067ed17b45",
+        "file_count": 37,
+        "created_utc": "2026-11-02T06:04:02.696686+00:00",
+        "hostname": "rxu292-advanced-os-final-0"
+      },
+      "preparation_seconds": null,
+      "preparation_excluded_from_experiment_timing": null,
+      "storage_mode": null,
+      "storage_claim": null,
+      "cache_conditions": null,
+      "git": {
+        "commit": "236706e5140ea3db7afd06e7e391373b532dac76",
+        "dirty": true,
+        "status": [
+          " M .gitignore",
+          " M README.md",
+          " M configs/pilot.json",
+          " M configs/smoke.json",
+          " M moe_shared/kv.py",
+          " M moe_shared/prepare.py",
+          " M moe_shared/run.py",
+          " M scripts/acquire_model.py",
+          " M scripts/bootstrap.sh",
+          " M scripts/control.py",
+          " M scripts/linux.py",
+          " M scripts/remote.ps1",
+          " M scripts/summarize.py",
+          " M tests/test_control.py",
+          " M tests/test_tiny_gpu.py",
+          "?? .vscode/settings.json",
+          "?? moe_shared/artifacts.py",
+          "?? moe_shared/lifecycle.py",
+          "?? moe_shared/staging.py",
+          "?? tests/test_artifacts.py",
+          "?? tests/test_staging.py"
+        ],
+        "git_available": true
+      },
+      "source_file_hashes": {
+        ".gitattributes": {
+          "sha256": "a8fe7e450017f38c38c3c4c1069ed01d86cf5d2882e61ea504c898dca639de5c",
+          "bytes": 223
+        },
+        ".gitignore": {
+          "sha256": "4246fbdffda97f872168ec1d11c2a6e4686018df7da984952c6bb2671c2484b8",
+          "bytes": 385
+        },
+        "README.md": {
+          "sha256": "2b5bf95e4a58d3c2dc43a5cde1f4113153fe702ad7acde841bc45c9f7bb172d0",
+          "bytes": 17601
+        },
+        "configs/machine.example.json": {
+          "sha256": "d5d090486a1b2f0e9d391303974c42bbdc4fe19a9e608671b6e97b7e69a57e58",
+          "bytes": 278
+        },
+        "configs/model.json": {
+          "sha256": "94c184582bf830bc34249bb3bbb02c9d2ae71cd34bf4f4fab7bb622a9a986f8b",
+          "bytes": 402
+        },
+        "configs/pilot.json": {
+          "sha256": "c744cdf2d7ee064ee3071c3f5690aa92a48afcb4c1daefb30dd19c142e417957",
+          "bytes": 716
+        },
+        "configs/smoke.json": {
+          "sha256": "dc7ef97812969851a646c9388c41707f8ff9c20c31da029183e8a8db953d4f5b",
+          "bytes": 718
+        },
+        "docs/validation.md": {
+          "sha256": "1fed10b92f9f14d515d71db5f6ea4754722fec7a80b5d731317df70ec1ebb24c",
+          "bytes": 6374
+        },
+        "moe_shared/__init__.py": {
+          "sha256": "ea46616d32af4d2c2c254d45c63c136ddba7adb344fea03527a3b30e038573f9",
+          "bytes": 75
+        },
+        "moe_shared/artifacts.py": {
+          "sha256": "0137608cafc6c039b3feaff1273e534db83a5e2afc17c3781ad2fee413c5473c",
+          "bytes": 10107
+        },
+        "moe_shared/audit.py": {
+          "sha256": "498dc8ee2cfcde8c19787fa4240669745765d917dcb85a1df636dbe0dc08bdf9",
+          "bytes": 12088
+        },
+        "moe_shared/experts.py": {
+          "sha256": "8ccf37097168062554f0f61b6a8b8dcc39932dc3ececd88b2686a30ea6e7f03c",
+          "bytes": 10328
+        },
+        "moe_shared/fixtures.py": {
+          "sha256": "ed164471daeb9103851d4fa72db42e10b59bccf1c7881aed0efc4807d5720a73",
+          "bytes": 1411
+        },
+        "moe_shared/kv.py": {
+          "sha256": "f889498c173e5383dd94513c31483ec198bbc6a1944bb8073e0ca9eb1d47d20e",
+          "bytes": 14636
+        },
+        "moe_shared/lifecycle.py": {
+          "sha256": "fff9355e7aba02fe36f9ab8dbd1c08afa68ad522087afa8418bdc3156481e165",
+          "bytes": 6015
+        },
+        "moe_shared/pool.py": {
+          "sha256": "b2cdf6412069358b69c271f62b67e442c54852959e5f3d2fc56d73d5e90dfa36",
+          "bytes": 3201
+        },
+        "moe_shared/prepare.py": {
+          "sha256": "c51a99bb91db56e9c43da5f3b46832d87c3d8ba9bf8d82de093a0193666d0c87",
+          "bytes": 11613
+        },
+        "moe_shared/run.py": {
+          "sha256": "76f04482b8b9f364a9136db601a4544b17caf87d5a2f26509dbbdf8b7d88166a",
+          "bytes": 39372
+        },
+        "moe_shared/staging.py": {
+          "sha256": "ccbe80328360b9af66b237fab13130b800e70953736e12b19c62fb56846e26b1",
+          "bytes": 12888
+        },
+        "moe_shared/workload.py": {
+          "sha256": "33ed66557b3bbc8f5ff02169cb9976a3b0c4363bd5483a62f8daf29941e353ad",
+          "bytes": 4032
+        },
+        "requirements.lock": {
+          "sha256": "2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193",
+          "bytes": 1027
+        },
+        "scripts/acquire_model.py": {
+          "sha256": "13bb47e77460b77631e41841b1453e44baf5a5eb9b68b7c3b9bbeb3f5ea429f4",
+          "bytes": 8575
+        },
+        "scripts/bootstrap.sh": {
+          "sha256": "932a7730612c64be7a77f116f245f24d278990bb241c278b9326f5f0919b0682",
+          "bytes": 4367
+        },
+        "scripts/control.py": {
+          "sha256": "32fb812c71d5abd8a5e97d0c5b290f6c15f1b4ff81a130d574f7f413b6486363",
+          "bytes": 19367
+        },
+        "scripts/linux.py": {
+          "sha256": "72b5a7fa62aab3c729f9089635fc27257ab00537c68d25b6fa21c6f937ee46d8",
+          "bytes": 4452
+        },
+        "scripts/remote.ps1": {
+          "sha256": "6617adf9c98b54452cf598d0e46f34943a7c0d3c50eb63adb09294bc246214f0",
+          "bytes": 8674
+        },
+        "scripts/snapshot.py": {
+          "sha256": "d8fbd8ed50a6e0525506766803a9824eb939a23e73417fb19f4861a36c8b21ab",
+          "bytes": 7937
+        },
+        "scripts/summarize.py": {
+          "sha256": "e1d8f369d9f9cb643f79d30aac5a3c1e24338939e24329c8cd0741a7925401e9",
+          "bytes": 8955
+        },
+        "summaries/validation.json": {
+          "sha256": "8806b1f4d45b16afc7210e7b240a9d0abb6716148f4278a3b06dacac142eb810",
+          "bytes": 62740
+        },
+        "tests/test_artifacts.py": {
+          "sha256": "ea8bbca07433b11c0c36809c501e3b73d7a338b0ccbcd4a8e0a92fe16e3c051a",
+          "bytes": 7987
+        },
+        "tests/test_audit.py": {
+          "sha256": "f6fed7d257889dcc39be64c2c43a704ec090eb600de9d8f93aa663806986664d",
+          "bytes": 1858
+        },
+        "tests/test_control.py": {
+          "sha256": "10c8d7100c0ef819afee7d0c980f8939a6ace0d320bc057468aa91a23066cf45",
+          "bytes": 3963
+        },
+        "tests/test_pool.py": {
+          "sha256": "5a7fac5cf7d10531d6c32973a96e0ffff27ee6054220923c9555ef730679ec19",
+          "bytes": 1774
+        },
+        "tests/test_snapshot.py": {
+          "sha256": "0c3b3978e0c3b519e8c10daab97baf563951c17cc5f8b9d15cb58e8fad10d421",
+          "bytes": 2981
+        },
+        "tests/test_staging.py": {
+          "sha256": "c1968e42cc6aa375eb38c53a2a77643afb176a65afec3beb4424bf9c5d26b015",
+          "bytes": 5770
+        },
+        "tests/test_tiny_gpu.py": {
+          "sha256": "00ae6544a4690c6d0eee8abed26dfe52672322f0f14e7ffa6803c9e568eee0c2",
+          "bytes": 21637
+        },
+        "tests/test_workload.py": {
+          "sha256": "485999c98044f6b92c4f26954f9bc8fd1a275f4acb1264bb61c6cb3cad4dce51",
+          "bytes": 1577
+        }
+      },
+      "model": null,
+      "torch": "2.5.1+cu124",
+      "transformers": "4.46.3",
+      "gpu": "NVIDIA RTX A5000",
+      "trajectory_sha256": null,
+      "config": {
+        "name": "small-shared-pool-pilot",
+        "storage_mode": "scratch",
+        "verify_kv_restore": false,
+        "seed": 736,
+        "paused_prefix_tokens": 96,
+        "active_prefix_tokens": 16,
+        "first_turn_tokens": 3,
+        "active_output_tokens": 10,
+        "return_prompt_tokens": 4,
+        "return_output_tokens": 3,
+        "think_seconds": 0.05,
+        "gpu_expert_slots": 24,
+        "total_gpu_budget_bytes": 23622320128,
+        "gpu_workspace_reservation_bytes": 2147483648,
+        "host_expert_slots": [
+          128,
+          256
+        ],
+        "host_slack_bytes": 524288,
+        "actions": [
+          "retain",
+          "spill",
+          "recompute"
+        ],
+        "repeats": 2,
+        "max_wall_seconds": 900,
+        "max_context_tokens": 160,
+        "logit_atol": 0.125,
+        "logit_rtol": 0.02,
+        "minimum_argmax_agreement": 0.95,
+        "torch_threads": 4
+      },
+      "transfer": {
+        "archive_sha256": "c10311053af291b30ce65d98026d0a1a067f35265b125c4bb71b16f01ff17386",
+        "verified_files": 16,
+        "verified_bytes": 67653,
+        "fetched_utc": "2026-11-02T06:07:27.377888+00:00"
+      },
+      "fixtures": null,
+      "limitations": [],
+      "cases": [],
+      "log_tail": ""
+    },
+    {
+      "run_id": "20261102T060739Z-doctor-a29a79f9",
+      "status": "completed",
+      "exit_code": 0,
+      "kind": "doctor",
+      "command_succeeded": true,
+      "experiment_complete": null,
+      "experiment_passed": null,
+      "acceptance_scope": "doctor",
+      "model_kind": null,
+      "wall_seconds": 5.424092483706772,
+      "source_release": {
+        "release_id": "20261102T060731Z-b8d339ae5f",
+        "archive_sha256": "1423153b561c0d87a8190ef167228287655cc174ec8a147c3b0ae9a70fddb984",
+        "file_count": 37,
+        "created_utc": "2026-11-02T06:07:39.505726+00:00",
+        "hostname": "rxu292-advanced-os-final-0"
+      },
+      "preparation_seconds": null,
+      "preparation_excluded_from_experiment_timing": null,
+      "storage_mode": null,
+      "storage_claim": null,
+      "cache_conditions": null,
+      "git": {
+        "commit": "236706e5140ea3db7afd06e7e391373b532dac76",
+        "dirty": true,
+        "status": [
+          " M .gitignore",
+          " M README.md",
+          " M configs/pilot.json",
+          " M configs/smoke.json",
+          " M docs/validation.md",
+          " M moe_shared/kv.py",
+          " M moe_shared/prepare.py",
+          " M moe_shared/run.py",
+          " M scripts/acquire_model.py",
+          " M scripts/bootstrap.sh",
+          " M scripts/control.py",
+          " M scripts/linux.py",
+          " M scripts/remote.ps1",
+          " M scripts/summarize.py",
+          " M tests/test_control.py",
+          " M tests/test_tiny_gpu.py",
+          "?? .vscode/settings.json",
+          "?? moe_shared/artifacts.py",
+          "?? moe_shared/lifecycle.py",
+          "?? moe_shared/staging.py",
+          "?? tests/test_artifacts.py",
+          "?? tests/test_staging.py"
+        ],
+        "git_available": true
+      },
+      "source_file_hashes": {
+        ".gitattributes": {
+          "sha256": "a8fe7e450017f38c38c3c4c1069ed01d86cf5d2882e61ea504c898dca639de5c",
+          "bytes": 223
+        },
+        ".gitignore": {
+          "sha256": "4246fbdffda97f872168ec1d11c2a6e4686018df7da984952c6bb2671c2484b8",
+          "bytes": 385
+        },
+        "README.md": {
+          "sha256": "2b5bf95e4a58d3c2dc43a5cde1f4113153fe702ad7acde841bc45c9f7bb172d0",
+          "bytes": 17601
+        },
+        "configs/machine.example.json": {
+          "sha256": "d5d090486a1b2f0e9d391303974c42bbdc4fe19a9e608671b6e97b7e69a57e58",
+          "bytes": 278
+        },
+        "configs/model.json": {
+          "sha256": "94c184582bf830bc34249bb3bbb02c9d2ae71cd34bf4f4fab7bb622a9a986f8b",
+          "bytes": 402
+        },
+        "configs/pilot.json": {
+          "sha256": "c744cdf2d7ee064ee3071c3f5690aa92a48afcb4c1daefb30dd19c142e417957",
+          "bytes": 716
+        },
+        "configs/smoke.json": {
+          "sha256": "dc7ef97812969851a646c9388c41707f8ff9c20c31da029183e8a8db953d4f5b",
+          "bytes": 718
+        },
+        "docs/validation.md": {
+          "sha256": "b88ab770f87362f4df7c23970868b7705fd8cecc6a9f76a976a43687190712b3",
+          "bytes": 11180
+        },
+        "moe_shared/__init__.py": {
+          "sha256": "ea46616d32af4d2c2c254d45c63c136ddba7adb344fea03527a3b30e038573f9",
+          "bytes": 75
+        },
+        "moe_shared/artifacts.py": {
+          "sha256": "0137608cafc6c039b3feaff1273e534db83a5e2afc17c3781ad2fee413c5473c",
+          "bytes": 10107
+        },
+        "moe_shared/audit.py": {
+          "sha256": "498dc8ee2cfcde8c19787fa4240669745765d917dcb85a1df636dbe0dc08bdf9",
+          "bytes": 12088
+        },
+        "moe_shared/experts.py": {
+          "sha256": "8ccf37097168062554f0f61b6a8b8dcc39932dc3ececd88b2686a30ea6e7f03c",
+          "bytes": 10328
+        },
+        "moe_shared/fixtures.py": {
+          "sha256": "ed164471daeb9103851d4fa72db42e10b59bccf1c7881aed0efc4807d5720a73",
+          "bytes": 1411
+        },
+        "moe_shared/kv.py": {
+          "sha256": "f889498c173e5383dd94513c31483ec198bbc6a1944bb8073e0ca9eb1d47d20e",
+          "bytes": 14636
+        },
+        "moe_shared/lifecycle.py": {
+          "sha256": "fff9355e7aba02fe36f9ab8dbd1c08afa68ad522087afa8418bdc3156481e165",
+          "bytes": 6015
+        },
+        "moe_shared/pool.py": {
+          "sha256": "b2cdf6412069358b69c271f62b67e442c54852959e5f3d2fc56d73d5e90dfa36",
+          "bytes": 3201
+        },
+        "moe_shared/prepare.py": {
+          "sha256": "c51a99bb91db56e9c43da5f3b46832d87c3d8ba9bf8d82de093a0193666d0c87",
+          "bytes": 11613
+        },
+        "moe_shared/run.py": {
+          "sha256": "76f04482b8b9f364a9136db601a4544b17caf87d5a2f26509dbbdf8b7d88166a",
+          "bytes": 39372
+        },
+        "moe_shared/staging.py": {
+          "sha256": "ccbe80328360b9af66b237fab13130b800e70953736e12b19c62fb56846e26b1",
+          "bytes": 12888
+        },
+        "moe_shared/workload.py": {
+          "sha256": "33ed66557b3bbc8f5ff02169cb9976a3b0c4363bd5483a62f8daf29941e353ad",
+          "bytes": 4032
+        },
+        "requirements.lock": {
+          "sha256": "2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193",
+          "bytes": 1027
+        },
+        "scripts/acquire_model.py": {
+          "sha256": "13bb47e77460b77631e41841b1453e44baf5a5eb9b68b7c3b9bbeb3f5ea429f4",
+          "bytes": 8575
+        },
+        "scripts/bootstrap.sh": {
+          "sha256": "932a7730612c64be7a77f116f245f24d278990bb241c278b9326f5f0919b0682",
+          "bytes": 4367
+        },
+        "scripts/control.py": {
+          "sha256": "32fb812c71d5abd8a5e97d0c5b290f6c15f1b4ff81a130d574f7f413b6486363",
+          "bytes": 19367
+        },
+        "scripts/linux.py": {
+          "sha256": "72b5a7fa62aab3c729f9089635fc27257ab00537c68d25b6fa21c6f937ee46d8",
+          "bytes": 4452
+        },
+        "scripts/remote.ps1": {
+          "sha256": "6617adf9c98b54452cf598d0e46f34943a7c0d3c50eb63adb09294bc246214f0",
+          "bytes": 8674
+        },
+        "scripts/snapshot.py": {
+          "sha256": "d8fbd8ed50a6e0525506766803a9824eb939a23e73417fb19f4861a36c8b21ab",
+          "bytes": 7937
+        },
+        "scripts/summarize.py": {
+          "sha256": "e1d8f369d9f9cb643f79d30aac5a3c1e24338939e24329c8cd0741a7925401e9",
+          "bytes": 8955
+        },
+        "summaries/validation.json": {
+          "sha256": "8806b1f4d45b16afc7210e7b240a9d0abb6716148f4278a3b06dacac142eb810",
+          "bytes": 62740
+        },
+        "tests/test_artifacts.py": {
+          "sha256": "ea8bbca07433b11c0c36809c501e3b73d7a338b0ccbcd4a8e0a92fe16e3c051a",
+          "bytes": 7987
+        },
+        "tests/test_audit.py": {
+          "sha256": "f6fed7d257889dcc39be64c2c43a704ec090eb600de9d8f93aa663806986664d",
+          "bytes": 1858
+        },
+        "tests/test_control.py": {
+          "sha256": "10c8d7100c0ef819afee7d0c980f8939a6ace0d320bc057468aa91a23066cf45",
+          "bytes": 3963
+        },
+        "tests/test_pool.py": {
+          "sha256": "5a7fac5cf7d10531d6c32973a96e0ffff27ee6054220923c9555ef730679ec19",
+          "bytes": 1774
+        },
+        "tests/test_snapshot.py": {
+          "sha256": "0c3b3978e0c3b519e8c10daab97baf563951c17cc5f8b9d15cb58e8fad10d421",
+          "bytes": 2981
+        },
+        "tests/test_staging.py": {
+          "sha256": "c1968e42cc6aa375eb38c53a2a77643afb176a65afec3beb4424bf9c5d26b015",
+          "bytes": 5770
+        },
+        "tests/test_tiny_gpu.py": {
+          "sha256": "00ae6544a4690c6d0eee8abed26dfe52672322f0f14e7ffa6803c9e568eee0c2",
+          "bytes": 21637
+        },
+        "tests/test_workload.py": {
+          "sha256": "485999c98044f6b92c4f26954f9bc8fd1a275f4acb1264bb61c6cb3cad4dce51",
+          "bytes": 1577
+        }
+      },
+      "model": null,
+      "torch": "2.5.1+cu124",
+      "transformers": "4.46.3",
+      "gpu": "NVIDIA RTX A5000",
+      "trajectory_sha256": null,
+      "config": null,
+      "transfer": {
+        "archive_sha256": "cfbdc1b693136bf82209deb7f86c4ea31ceddabceda5c82f8b7d6aa883078c46",
+        "verified_files": 15,
+        "verified_bytes": 84624,
+        "fetched_utc": "2026-11-02T06:08:49.817229+00:00"
+      },
+      "fixtures": null,
+      "limitations": [],
+      "cases": [],
+      "artifact_completion": {
+        "schema_version": 1,
+        "complete": true,
+        "completed_at_utc": "2026-11-02T05:44:48.214971+00:00",
+        "model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+        "revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+        "model_dir": "7f1c97f440f06ce36705e4f2b843edb5925f4498/model",
+        "backing_dir": "7f1c97f440f06ce36705e4f2b843edb5925f4498/backing-c51a99bb91db56e9",
+        "model_provenance_sha256": "56655d269431d97a02f1dccc78a565095d14b4b479645e0acc5a11d57aa97cae",
+        "backing_manifest_sha256": "eb0921fedaef5f4eccb2a0efc187f798dbfa69a888f02fc9f02c71ae9f65f498",
+        "converter_version": 2,
+        "converter_format_version": 1,
+        "converter_source_sha256": "c51a99bb91db56e9c43da5f3b46832d87c3d8ba9bf8d82de093a0193666d0c87",
+        "expert_count": 1024,
+        "backing_bytes": 13838323712,
+        "artifact_guard": {
+          "additional_bytes": 0,
+          "filesystem_free_bytes": 35135361024,
+          "free_space_is_reserved": false,
+          "headroom_bytes": 21474836480,
+          "max_scratch_bytes": 37580963840,
+          "scratch": "/home/rxu292/advanced-os-final/artifacts",
+          "task_logical_bytes": 27680981437
+        }
+      },
+      "artifact_completion_sha256": "154ef707c9cf4997f714555102f9faed265ffd6ba9d98835938965d89260773e",
+      "log_tail": "{\"audit\": \"/home/rxu292/advanced-os-final/runs/20261102T060739Z-doctor-a29a79f9/audit.json\", \"hostname\": \"rxu292-advanced-os-final-0\", \"torch\": {\"version\": \"2.5.1+cu124\", \"cuda_build\": \"12.4\", \"cuda_available\": true, \"device\": \"NVIDIA RTX A5000\", \"capability\": [8, 6], \"bf16_supported\": true}, \"scratch_guard\": {\"scratch\": \"/tmp/cs736-rxu292-moe\", \"task_logical_bytes\": 0, \"filesystem_free_bytes\": 113760952320, \"additional_bytes\": 0, \"max_scratch_bytes\": 37580963840, \"headroom_bytes\": 21474836480, \"free_space_is_reserved\": false}}\n",
+      "actual_model_revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+      "actual_model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+      "scratch_guard": {
+        "scratch": "/tmp/cs736-rxu292-moe",
+        "task_logical_bytes": 0,
+        "filesystem_free_bytes": 113760952320,
+        "additional_bytes": 0,
+        "max_scratch_bytes": 37580963840,
+        "headroom_bytes": 21474836480,
+        "free_space_is_reserved": false
+      },
+      "cgroup_memory_max": 68719476736,
+      "cgroup_historical_peak": 25530368,
+      "cpu_max": "2400000 100000",
+      "storage_label": "ext4; physical backing unverified"
+    },
+    {
+      "run_id": "20261102T060858Z-setup-37dbb694",
+      "status": "completed",
+      "exit_code": 0,
+      "kind": "setup",
+      "command_succeeded": true,
+      "experiment_complete": null,
+      "experiment_passed": null,
+      "acceptance_scope": "setup",
+      "model_kind": null,
+      "wall_seconds": 89.95462863193825,
+      "source_release": {
+        "release_id": "20261102T060853Z-2a45241dd9",
+        "archive_sha256": "4b0b094c3d1d14c2c70ddddb9cfcaf6b9f4eeeb9be8e1d7e3e531547c17b7b7f",
+        "file_count": 37,
+        "created_utc": "2026-11-02T06:08:58.401523+00:00",
+        "hostname": "rxu292-advanced-os-final-0"
+      },
+      "preparation_seconds": null,
+      "preparation_excluded_from_experiment_timing": null,
+      "storage_mode": null,
+      "storage_claim": null,
+      "cache_conditions": null,
+      "git": {
+        "commit": "236706e5140ea3db7afd06e7e391373b532dac76",
+        "dirty": true,
+        "status": [
+          " M .gitignore",
+          " M README.md",
+          " M configs/pilot.json",
+          " M configs/smoke.json",
+          " M docs/validation.md",
+          " M moe_shared/kv.py",
+          " M moe_shared/prepare.py",
+          " M moe_shared/run.py",
+          " M scripts/acquire_model.py",
+          " M scripts/bootstrap.sh",
+          " M scripts/control.py",
+          " M scripts/linux.py",
+          " M scripts/remote.ps1",
+          " M scripts/summarize.py",
+          " M tests/test_control.py",
+          " M tests/test_tiny_gpu.py",
+          "?? .vscode/settings.json",
+          "?? moe_shared/artifacts.py",
+          "?? moe_shared/lifecycle.py",
+          "?? moe_shared/staging.py",
+          "?? tests/test_artifacts.py",
+          "?? tests/test_staging.py"
+        ],
+        "git_available": true
+      },
+      "source_file_hashes": {
+        ".gitattributes": {
+          "sha256": "a8fe7e450017f38c38c3c4c1069ed01d86cf5d2882e61ea504c898dca639de5c",
+          "bytes": 223
+        },
+        ".gitignore": {
+          "sha256": "4246fbdffda97f872168ec1d11c2a6e4686018df7da984952c6bb2671c2484b8",
+          "bytes": 385
+        },
+        "README.md": {
+          "sha256": "2b5bf95e4a58d3c2dc43a5cde1f4113153fe702ad7acde841bc45c9f7bb172d0",
+          "bytes": 17601
+        },
+        "configs/machine.example.json": {
+          "sha256": "d5d090486a1b2f0e9d391303974c42bbdc4fe19a9e608671b6e97b7e69a57e58",
+          "bytes": 278
+        },
+        "configs/model.json": {
+          "sha256": "94c184582bf830bc34249bb3bbb02c9d2ae71cd34bf4f4fab7bb622a9a986f8b",
+          "bytes": 402
+        },
+        "configs/pilot.json": {
+          "sha256": "c744cdf2d7ee064ee3071c3f5690aa92a48afcb4c1daefb30dd19c142e417957",
+          "bytes": 716
+        },
+        "configs/smoke.json": {
+          "sha256": "dc7ef97812969851a646c9388c41707f8ff9c20c31da029183e8a8db953d4f5b",
+          "bytes": 718
+        },
+        "docs/validation.md": {
+          "sha256": "b88ab770f87362f4df7c23970868b7705fd8cecc6a9f76a976a43687190712b3",
+          "bytes": 11180
+        },
+        "moe_shared/__init__.py": {
+          "sha256": "ea46616d32af4d2c2c254d45c63c136ddba7adb344fea03527a3b30e038573f9",
+          "bytes": 75
+        },
+        "moe_shared/artifacts.py": {
+          "sha256": "0137608cafc6c039b3feaff1273e534db83a5e2afc17c3781ad2fee413c5473c",
+          "bytes": 10107
+        },
+        "moe_shared/audit.py": {
+          "sha256": "498dc8ee2cfcde8c19787fa4240669745765d917dcb85a1df636dbe0dc08bdf9",
+          "bytes": 12088
+        },
+        "moe_shared/experts.py": {
+          "sha256": "8ccf37097168062554f0f61b6a8b8dcc39932dc3ececd88b2686a30ea6e7f03c",
+          "bytes": 10328
+        },
+        "moe_shared/fixtures.py": {
+          "sha256": "ed164471daeb9103851d4fa72db42e10b59bccf1c7881aed0efc4807d5720a73",
+          "bytes": 1411
+        },
+        "moe_shared/kv.py": {
+          "sha256": "f889498c173e5383dd94513c31483ec198bbc6a1944bb8073e0ca9eb1d47d20e",
+          "bytes": 14636
+        },
+        "moe_shared/lifecycle.py": {
+          "sha256": "fff9355e7aba02fe36f9ab8dbd1c08afa68ad522087afa8418bdc3156481e165",
+          "bytes": 6015
+        },
+        "moe_shared/pool.py": {
+          "sha256": "b2cdf6412069358b69c271f62b67e442c54852959e5f3d2fc56d73d5e90dfa36",
+          "bytes": 3201
+        },
+        "moe_shared/prepare.py": {
+          "sha256": "c51a99bb91db56e9c43da5f3b46832d87c3d8ba9bf8d82de093a0193666d0c87",
+          "bytes": 11613
+        },
+        "moe_shared/run.py": {
+          "sha256": "76f04482b8b9f364a9136db601a4544b17caf87d5a2f26509dbbdf8b7d88166a",
+          "bytes": 39372
+        },
+        "moe_shared/staging.py": {
+          "sha256": "ccbe80328360b9af66b237fab13130b800e70953736e12b19c62fb56846e26b1",
+          "bytes": 12888
+        },
+        "moe_shared/workload.py": {
+          "sha256": "33ed66557b3bbc8f5ff02169cb9976a3b0c4363bd5483a62f8daf29941e353ad",
+          "bytes": 4032
+        },
+        "requirements.lock": {
+          "sha256": "2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193",
+          "bytes": 1027
+        },
+        "scripts/acquire_model.py": {
+          "sha256": "13bb47e77460b77631e41841b1453e44baf5a5eb9b68b7c3b9bbeb3f5ea429f4",
+          "bytes": 8575
+        },
+        "scripts/bootstrap.sh": {
+          "sha256": "932a7730612c64be7a77f116f245f24d278990bb241c278b9326f5f0919b0682",
+          "bytes": 4367
+        },
+        "scripts/control.py": {
+          "sha256": "32fb812c71d5abd8a5e97d0c5b290f6c15f1b4ff81a130d574f7f413b6486363",
+          "bytes": 19367
+        },
+        "scripts/linux.py": {
+          "sha256": "72b5a7fa62aab3c729f9089635fc27257ab00537c68d25b6fa21c6f937ee46d8",
+          "bytes": 4452
+        },
+        "scripts/remote.ps1": {
+          "sha256": "6617adf9c98b54452cf598d0e46f34943a7c0d3c50eb63adb09294bc246214f0",
+          "bytes": 8674
+        },
+        "scripts/snapshot.py": {
+          "sha256": "d8fbd8ed50a6e0525506766803a9824eb939a23e73417fb19f4861a36c8b21ab",
+          "bytes": 7937
+        },
+        "scripts/summarize.py": {
+          "sha256": "e1d8f369d9f9cb643f79d30aac5a3c1e24338939e24329c8cd0741a7925401e9",
+          "bytes": 8955
+        },
+        "summaries/validation.json": {
+          "sha256": "8806b1f4d45b16afc7210e7b240a9d0abb6716148f4278a3b06dacac142eb810",
+          "bytes": 62740
+        },
+        "tests/test_artifacts.py": {
+          "sha256": "ea8bbca07433b11c0c36809c501e3b73d7a338b0ccbcd4a8e0a92fe16e3c051a",
+          "bytes": 7987
+        },
+        "tests/test_audit.py": {
+          "sha256": "f6fed7d257889dcc39be64c2c43a704ec090eb600de9d8f93aa663806986664d",
+          "bytes": 1858
+        },
+        "tests/test_control.py": {
+          "sha256": "10c8d7100c0ef819afee7d0c980f8939a6ace0d320bc057468aa91a23066cf45",
+          "bytes": 3963
+        },
+        "tests/test_pool.py": {
+          "sha256": "5a7fac5cf7d10531d6c32973a96e0ffff27ee6054220923c9555ef730679ec19",
+          "bytes": 1774
+        },
+        "tests/test_snapshot.py": {
+          "sha256": "0c3b3978e0c3b519e8c10daab97baf563951c17cc5f8b9d15cb58e8fad10d421",
+          "bytes": 2981
+        },
+        "tests/test_staging.py": {
+          "sha256": "c1968e42cc6aa375eb38c53a2a77643afb176a65afec3beb4424bf9c5d26b015",
+          "bytes": 5770
+        },
+        "tests/test_tiny_gpu.py": {
+          "sha256": "00ae6544a4690c6d0eee8abed26dfe52672322f0f14e7ffa6803c9e568eee0c2",
+          "bytes": 21637
+        },
+        "tests/test_workload.py": {
+          "sha256": "485999c98044f6b92c4f26954f9bc8fd1a275f4acb1264bb61c6cb3cad4dce51",
+          "bytes": 1577
+        }
+      },
+      "model": null,
+      "torch": "2.5.1+cu124",
+      "transformers": "4.46.3",
+      "gpu": "NVIDIA RTX A5000",
+      "trajectory_sha256": null,
+      "config": null,
+      "transfer": {
+        "archive_sha256": "a989bc08fd23177f889114fd9d73b60cd05554bd2d23db4034e8f4cac60491d5",
+        "verified_files": 26,
+        "verified_bytes": 1033572,
+        "fetched_utc": "2026-11-02T06:11:44.773690+00:00"
+      },
+      "fixtures": null,
+      "limitations": [],
+      "cases": [],
+      "artifact_completion": {
+        "schema_version": 1,
+        "complete": true,
+        "completed_at_utc": "2026-11-02T05:44:48.214971+00:00",
+        "model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+        "revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+        "model_dir": "7f1c97f440f06ce36705e4f2b843edb5925f4498/model",
+        "backing_dir": "7f1c97f440f06ce36705e4f2b843edb5925f4498/backing-c51a99bb91db56e9",
+        "model_provenance_sha256": "56655d269431d97a02f1dccc78a565095d14b4b479645e0acc5a11d57aa97cae",
+        "backing_manifest_sha256": "eb0921fedaef5f4eccb2a0efc187f798dbfa69a888f02fc9f02c71ae9f65f498",
+        "converter_version": 2,
+        "converter_format_version": 1,
+        "converter_source_sha256": "c51a99bb91db56e9c43da5f3b46832d87c3d8ba9bf8d82de093a0193666d0c87",
+        "expert_count": 1024,
+        "backing_bytes": 13838323712,
+        "artifact_guard": {
+          "additional_bytes": 0,
+          "filesystem_free_bytes": 35135361024,
+          "free_space_is_reserved": false,
+          "headroom_bytes": 21474836480,
+          "max_scratch_bytes": 37580963840,
+          "scratch": "/home/rxu292/advanced-os-final/artifacts",
+          "task_logical_bytes": 27680981437
+        }
+      },
+      "artifact_completion_sha256": "154ef707c9cf4997f714555102f9faed265ffd6ba9d98835938965d89260773e",
+      "artifact_reuse": {
+        "reused_completion_manifest": true,
+        "completion_sha256": "154ef707c9cf4997f714555102f9faed265ffd6ba9d98835938965d89260773e",
+        "verified_at_utc": "2026-11-02T06:10:25.414511+00:00",
+        "current_artifact_guard": {
+          "additional_bytes": 0,
+          "filesystem_free_bytes": 35109650432,
+          "free_space_is_reserved": false,
+          "headroom_bytes": 21474836480,
+          "max_scratch_bytes": 37580963840,
+          "scratch": "/home/rxu292/advanced-os-final/artifacts",
+          "task_logical_bytes": 27680981463
+        }
+      },
+      "checkpoint_stage": {
+        "complete": true,
+        "model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+        "revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+        "model_provenance_sha256": "56655d269431d97a02f1dccc78a565095d14b4b479645e0acc5a11d57aa97cae",
+        "verified_files": 9
+      },
+      "artifact_storage_before": {
+        "utc": "2026-11-02T06:09:00.296195+00:00",
+        "account_home_bytes": 33505435118,
+        "artifact_bytes": 27680981463,
+        "runtime_bytes": 33246080861,
+        "filesystem_total_bytes": 68719476736,
+        "filesystem_used_bytes": 33609715712,
+        "filesystem_free_bytes": 35109761024,
+        "required_headroom_bytes": 21474836480,
+        "quota_query": {
+          "argv": [
+            "quota",
+            "-s"
+          ],
+          "unavailable": "[Errno 2] No such file or directory: 'quota'"
+        },
+        "quota_note": "statvfs reports mounted filesystem headroom; quota command may be unavailable. All other home usage is included in free bytes."
+      },
+      "log_tail": "{\"audit\": \"/home/rxu292/advanced-os-final/runs/20261102T060858Z-setup-37dbb694/audit-before.json\", \"hostname\": \"rxu292-advanced-os-final-0\", \"torch\": {\"unavailable\": \"No module named 'torch'\"}, \"scratch_guard\": {\"scratch\": \"/tmp/cs736-rxu292-moe\", \"task_logical_bytes\": 31, \"filesystem_free_bytes\": 113751322624, \"additional_bytes\": 0, \"max_scratch_bytes\": 37580963840, \"headroom_bytes\": 21474836480, \"free_space_is_reserved\": false}}\nReusing dependency-locked environment 2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193\n{\"model\": \"/home/rxu292/advanced-os-final/artifacts/7f1c97f440f06ce36705e4f2b843edb5925f4498/model\", \"revision\": \"7f1c97f440f06ce36705e4f2b843edb5925f4498\", \"reuse\": \"verified\"}\n{\"persistent_artifacts_complete\": true, \"model_dir\": \"/home/rxu292/advanced-os-final/artifacts/7f1c97f440f06ce36705e4f2b843edb5925f4498/model\", \"backing_dir\": \"/home/rxu292/advanced-os-final/artifacts/7f1c97f440f06ce36705e4f2b843edb5925f4498/backing-c51a99bb91db56e9\", \"artifact_guard\": {\"additional_bytes\": 0, \"filesystem_free_bytes\": 35135361024, \"free_space_is_reserved\": false, \"headroom_bytes\": 21474836480, \"max_scratch_bytes\": 37580963840, \"scratch\": \"/home/rxu292/advanced-os-final/artifacts\", \"task_logical_bytes\": 27680981437}}\n{\"audit\": \"/home/rxu292/advanced-os-final/runs/20261102T060858Z-setup-37dbb694/audit-after.json\", \"hostname\": \"rxu292-advanced-os-final-0\", \"torch\": {\"version\": \"2.5.1+cu124\", \"cuda_build\": \"12.4\", \"cuda_available\": true, \"device\": \"NVIDIA RTX A5000\", \"capability\": [8, 6], \"bf16_supported\": true}, \"scratch_guard\": {\"scratch\": \"/tmp/cs736-rxu292-moe\", \"task_logical_bytes\": 202, \"filesystem_free_bytes\": 112197750784, \"additional_bytes\": 0, \"max_scratch_bytes\": 37580963840, \"headroom_bytes\": 21474836480, \"free_space_is_reserved\": false}}\nSetup complete: env=/home/rxu292/advanced-os-final/envs/2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193 persistent-artifacts=/home/rxu292/advanced-os-final/artifacts\n",
+      "actual_model_revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+      "actual_model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+      "scratch_guard": {
+        "scratch": "/tmp/cs736-rxu292-moe",
+        "task_logical_bytes": 202,
+        "filesystem_free_bytes": 112197750784,
+        "additional_bytes": 0,
+        "max_scratch_bytes": 37580963840,
+        "headroom_bytes": 21474836480,
+        "free_space_is_reserved": false
+      },
+      "cgroup_memory_max": 68719476736,
+      "cgroup_historical_peak": 28341014528,
+      "cpu_max": "2400000 100000",
+      "storage_label": "ext4; physical backing unverified"
+    },
+    {
+      "run_id": "20261102T061153Z-fixtures-739ee745",
+      "status": "completed",
+      "exit_code": 0,
+      "kind": "fixtures",
+      "command_succeeded": true,
+      "experiment_complete": null,
+      "experiment_passed": null,
+      "acceptance_scope": "fixtures",
+      "model_kind": null,
+      "wall_seconds": 13.889264898840338,
+      "source_release": {
+        "release_id": "20261102T061148Z-7f7b7ba19e",
+        "archive_sha256": "6531f869e677bd2f59046c0dd4dc408cd029ef33c576fea00cc1f4dc9492cade",
+        "file_count": 37,
+        "created_utc": "2026-11-02T06:11:53.681737+00:00",
+        "hostname": "rxu292-advanced-os-final-0"
+      },
+      "preparation_seconds": null,
+      "preparation_excluded_from_experiment_timing": null,
+      "storage_mode": null,
+      "storage_claim": null,
+      "cache_conditions": null,
+      "git": {
+        "commit": "236706e5140ea3db7afd06e7e391373b532dac76",
+        "dirty": true,
+        "status": [
+          " M .gitignore",
+          " M README.md",
+          " M configs/pilot.json",
+          " M configs/smoke.json",
+          " M docs/validation.md",
+          " M moe_shared/kv.py",
+          " M moe_shared/prepare.py",
+          " M moe_shared/run.py",
+          " M scripts/acquire_model.py",
+          " M scripts/bootstrap.sh",
+          " M scripts/control.py",
+          " M scripts/linux.py",
+          " M scripts/remote.ps1",
+          " M scripts/summarize.py",
+          " M tests/test_control.py",
+          " M tests/test_tiny_gpu.py",
+          "?? .vscode/settings.json",
+          "?? moe_shared/artifacts.py",
+          "?? moe_shared/lifecycle.py",
+          "?? moe_shared/staging.py",
+          "?? tests/test_artifacts.py",
+          "?? tests/test_staging.py"
+        ],
+        "git_available": true
+      },
+      "source_file_hashes": {
+        ".gitattributes": {
+          "sha256": "a8fe7e450017f38c38c3c4c1069ed01d86cf5d2882e61ea504c898dca639de5c",
+          "bytes": 223
+        },
+        ".gitignore": {
+          "sha256": "4246fbdffda97f872168ec1d11c2a6e4686018df7da984952c6bb2671c2484b8",
+          "bytes": 385
+        },
+        "README.md": {
+          "sha256": "42a743931aad6a07e82831d8f65b35755a482485a04452ba03c456ec43e6f773",
+          "bytes": 18283
+        },
+        "configs/machine.example.json": {
+          "sha256": "d5d090486a1b2f0e9d391303974c42bbdc4fe19a9e608671b6e97b7e69a57e58",
+          "bytes": 278
+        },
+        "configs/model.json": {
+          "sha256": "94c184582bf830bc34249bb3bbb02c9d2ae71cd34bf4f4fab7bb622a9a986f8b",
+          "bytes": 402
+        },
+        "configs/pilot.json": {
+          "sha256": "c744cdf2d7ee064ee3071c3f5690aa92a48afcb4c1daefb30dd19c142e417957",
+          "bytes": 716
+        },
+        "configs/smoke.json": {
+          "sha256": "dc7ef97812969851a646c9388c41707f8ff9c20c31da029183e8a8db953d4f5b",
+          "bytes": 718
+        },
+        "docs/validation.md": {
+          "sha256": "7c64838b37649bcb9f1ecd9a761e4581912067dcc7246168555331c602f91948",
+          "bytes": 13249
+        },
+        "moe_shared/__init__.py": {
+          "sha256": "ea46616d32af4d2c2c254d45c63c136ddba7adb344fea03527a3b30e038573f9",
+          "bytes": 75
+        },
+        "moe_shared/artifacts.py": {
+          "sha256": "0137608cafc6c039b3feaff1273e534db83a5e2afc17c3781ad2fee413c5473c",
+          "bytes": 10107
+        },
+        "moe_shared/audit.py": {
+          "sha256": "498dc8ee2cfcde8c19787fa4240669745765d917dcb85a1df636dbe0dc08bdf9",
+          "bytes": 12088
+        },
+        "moe_shared/experts.py": {
+          "sha256": "8ccf37097168062554f0f61b6a8b8dcc39932dc3ececd88b2686a30ea6e7f03c",
+          "bytes": 10328
+        },
+        "moe_shared/fixtures.py": {
+          "sha256": "ed164471daeb9103851d4fa72db42e10b59bccf1c7881aed0efc4807d5720a73",
+          "bytes": 1411
+        },
+        "moe_shared/kv.py": {
+          "sha256": "f889498c173e5383dd94513c31483ec198bbc6a1944bb8073e0ca9eb1d47d20e",
+          "bytes": 14636
+        },
+        "moe_shared/lifecycle.py": {
+          "sha256": "fff9355e7aba02fe36f9ab8dbd1c08afa68ad522087afa8418bdc3156481e165",
+          "bytes": 6015
+        },
+        "moe_shared/pool.py": {
+          "sha256": "b2cdf6412069358b69c271f62b67e442c54852959e5f3d2fc56d73d5e90dfa36",
+          "bytes": 3201
+        },
+        "moe_shared/prepare.py": {
+          "sha256": "c51a99bb91db56e9c43da5f3b46832d87c3d8ba9bf8d82de093a0193666d0c87",
+          "bytes": 11613
+        },
+        "moe_shared/run.py": {
+          "sha256": "76f04482b8b9f364a9136db601a4544b17caf87d5a2f26509dbbdf8b7d88166a",
+          "bytes": 39372
+        },
+        "moe_shared/staging.py": {
+          "sha256": "ccbe80328360b9af66b237fab13130b800e70953736e12b19c62fb56846e26b1",
+          "bytes": 12888
+        },
+        "moe_shared/workload.py": {
+          "sha256": "33ed66557b3bbc8f5ff02169cb9976a3b0c4363bd5483a62f8daf29941e353ad",
+          "bytes": 4032
+        },
+        "requirements.lock": {
+          "sha256": "2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193",
+          "bytes": 1027
+        },
+        "scripts/acquire_model.py": {
+          "sha256": "13bb47e77460b77631e41841b1453e44baf5a5eb9b68b7c3b9bbeb3f5ea429f4",
+          "bytes": 8575
+        },
+        "scripts/bootstrap.sh": {
+          "sha256": "932a7730612c64be7a77f116f245f24d278990bb241c278b9326f5f0919b0682",
+          "bytes": 4367
+        },
+        "scripts/control.py": {
+          "sha256": "499c64f826c8f4f52ba9120906db8438ebcb06ff980615d6213c9ad0c5905a96",
+          "bytes": 19490
+        },
+        "scripts/linux.py": {
+          "sha256": "72b5a7fa62aab3c729f9089635fc27257ab00537c68d25b6fa21c6f937ee46d8",
+          "bytes": 4452
+        },
+        "scripts/remote.ps1": {
+          "sha256": "6617adf9c98b54452cf598d0e46f34943a7c0d3c50eb63adb09294bc246214f0",
+          "bytes": 8674
+        },
+        "scripts/snapshot.py": {
+          "sha256": "d8fbd8ed50a6e0525506766803a9824eb939a23e73417fb19f4861a36c8b21ab",
+          "bytes": 7937
+        },
+        "scripts/summarize.py": {
+          "sha256": "e1d8f369d9f9cb643f79d30aac5a3c1e24338939e24329c8cd0741a7925401e9",
+          "bytes": 8955
+        },
+        "summaries/validation.json": {
+          "sha256": "8806b1f4d45b16afc7210e7b240a9d0abb6716148f4278a3b06dacac142eb810",
+          "bytes": 62740
+        },
+        "tests/test_artifacts.py": {
+          "sha256": "ea8bbca07433b11c0c36809c501e3b73d7a338b0ccbcd4a8e0a92fe16e3c051a",
+          "bytes": 7987
+        },
+        "tests/test_audit.py": {
+          "sha256": "f6fed7d257889dcc39be64c2c43a704ec090eb600de9d8f93aa663806986664d",
+          "bytes": 1858
+        },
+        "tests/test_control.py": {
+          "sha256": "d4f72fe387e1cf0cabb32dfa70d54ccb6ce867245a7b251d0ae320807f91d059",
+          "bytes": 5400
+        },
+        "tests/test_pool.py": {
+          "sha256": "5a7fac5cf7d10531d6c32973a96e0ffff27ee6054220923c9555ef730679ec19",
+          "bytes": 1774
+        },
+        "tests/test_snapshot.py": {
+          "sha256": "0c3b3978e0c3b519e8c10daab97baf563951c17cc5f8b9d15cb58e8fad10d421",
+          "bytes": 2981
+        },
+        "tests/test_staging.py": {
+          "sha256": "c1968e42cc6aa375eb38c53a2a77643afb176a65afec3beb4424bf9c5d26b015",
+          "bytes": 5770
+        },
+        "tests/test_tiny_gpu.py": {
+          "sha256": "00ae6544a4690c6d0eee8abed26dfe52672322f0f14e7ffa6803c9e568eee0c2",
+          "bytes": 21637
+        },
+        "tests/test_workload.py": {
+          "sha256": "485999c98044f6b92c4f26954f9bc8fd1a275f4acb1264bb61c6cb3cad4dce51",
+          "bytes": 1577
+        }
+      },
+      "model": null,
+      "torch": "2.5.1+cu124",
+      "transformers": "4.46.3",
+      "gpu": "NVIDIA RTX A5000",
+      "trajectory_sha256": null,
+      "config": null,
+      "transfer": {
+        "archive_sha256": "302eeebca563505ae10dbe95efd4adcd6b743b2cc015924841dfe9b7b597887b",
+        "verified_files": 15,
+        "verified_bytes": 68289,
+        "fetched_utc": "2026-11-02T06:12:49.653923+00:00"
+      },
+      "fixtures": {
+        "model_kind": "tiny random fixture; NOT pretrained-model acceptance",
+        "tests_run": 36,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true,
+        "wall_seconds": 10.08181228628382,
+        "gpu_peak_allocated_bytes": 8605184,
+        "gpu_peak_reserved_bytes": 23068672
+      },
+      "limitations": [],
+      "cases": [],
+      "artifact_completion": {
+        "schema_version": 1,
+        "complete": true,
+        "completed_at_utc": "2026-11-02T05:44:48.214971+00:00",
+        "model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+        "revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+        "model_dir": "7f1c97f440f06ce36705e4f2b843edb5925f4498/model",
+        "backing_dir": "7f1c97f440f06ce36705e4f2b843edb5925f4498/backing-c51a99bb91db56e9",
+        "model_provenance_sha256": "56655d269431d97a02f1dccc78a565095d14b4b479645e0acc5a11d57aa97cae",
+        "backing_manifest_sha256": "eb0921fedaef5f4eccb2a0efc187f798dbfa69a888f02fc9f02c71ae9f65f498",
+        "converter_version": 2,
+        "converter_format_version": 1,
+        "converter_source_sha256": "c51a99bb91db56e9c43da5f3b46832d87c3d8ba9bf8d82de093a0193666d0c87",
+        "expert_count": 1024,
+        "backing_bytes": 13838323712,
+        "artifact_guard": {
+          "additional_bytes": 0,
+          "filesystem_free_bytes": 35135361024,
+          "free_space_is_reserved": false,
+          "headroom_bytes": 21474836480,
+          "max_scratch_bytes": 37580963840,
+          "scratch": "/home/rxu292/advanced-os-final/artifacts",
+          "task_logical_bytes": 27680981437
+        }
+      },
+      "artifact_completion_sha256": "154ef707c9cf4997f714555102f9faed265ffd6ba9d98835938965d89260773e",
+      "log_tail": " ... ok\ntest_includes_working_bytes_and_excludes_local_secret_and_results (test_snapshot.SnapshotTests.test_includes_working_bytes_and_excludes_local_secret_and_results) ... ok\ntest_manifest_integrity_and_traversal (test_snapshot.SnapshotTests.test_manifest_integrity_and_traversal) ... ok\ntest_corruption_is_repaired_without_touching_valid_source (test_staging.StagingRecoveryTests.test_corruption_is_repaired_without_touching_valid_source) ... ok\ntest_rebuild_missing_disposable_stage_preserves_canonical (test_staging.StagingRecoveryTests.test_rebuild_missing_disposable_stage_preserves_canonical) ... ok\ntest_recovery_probe_reports_deletion_reconstruction_and_source_integrity (test_staging.StagingRecoveryTests.test_recovery_probe_reports_deletion_reconstruction_and_source_integrity) ... ok\ntest_sentinel_disappearance_is_observed_without_recreation (test_staging.StagingRecoveryTests.test_sentinel_disappearance_is_observed_without_recreation) ... ok\ntest_stage_must_not_overlap_canonical (test_staging.StagingRecoveryTests.test_stage_must_not_overlap_canonical) ... ok\ntest_corrupted_retained_payload_is_detected_without_an_extra_snapshot (test_tiny_gpu.KVIntegrityTest.test_corrupted_retained_payload_is_detected_without_an_extra_snapshot) ... ok\ntest_corrupted_spill_rejected_and_reservation_released (test_tiny_gpu.KVIntegrityTest.test_corrupted_spill_rejected_and_reservation_released) ... ok\ntest_restore_readback_is_counted_and_released (test_tiny_gpu.KVIntegrityTest.test_restore_readback_is_counted_and_released) ... ok\ntest_real_tensor_misses_and_all_kv_actions (test_tiny_gpu.TinyGPUIntegrationTest.test_real_tensor_misses_and_all_kv_actions) ... ok\ntest_recompute_preserves_forward_boundaries_and_exact_kv (test_tiny_gpu.TinyGPUIntegrationTest.test_recompute_preserves_forward_boundaries_and_exact_kv) ... ok\ntest_token_scheduler_and_returning_turns (test_tiny_gpu.TinyGPUIntegrationTest.test_token_scheduler_and_returning_turns) ... ok\ntest_actual_token_ids_reused_and_segments_contiguous (test_workload.WorkloadTests.test_actual_token_ids_reused_and_segments_contiguous) ... ok\ntest_later_turn_is_not_admitted_before_completion_plus_think (test_workload.WorkloadTests.test_later_turn_is_not_admitted_before_completion_plus_think) ... ok\ntest_summary_has_sample_counts_not_extreme_quantiles (test_workload.WorkloadTests.test_summary_has_sample_counts_not_extreme_quantiles) ... ok\n\n----------------------------------------------------------------------\nRan 36 tests in 5.856s\n\nOK\n",
+      "actual_model_revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+      "actual_model_id": "allenai/OLMoE-1B-7B-0924-Instruct"
+    }
+  ]
+}

@@ -12,6 +12,8 @@ id_ed25519*
 results/
 weights/
 models/
+artifacts/
+*.npz
 backing/
 cache/
 .cache/

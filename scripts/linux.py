@@ -17,8 +17,8 @@ import snapshot
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", required=True, type=Path, help="Task runtime root, separate from the source checkout")
-    parser.add_argument("--scratch", type=Path, help="Task scratch under /tmp; needed for setup/doctor/smoke/pilot/fixtures")
-    parser.add_argument("action", choices=["deploy", "setup", "doctor", "smoke", "pilot", "fixtures", "status", "fetch"])
+    parser.add_argument("--scratch", type=Path, help="Task scratch under /tmp; needed for setup/doctor/recovery/reference/smoke/pilot/fixtures")
+    parser.add_argument("action", choices=["deploy", "setup", "doctor", "recovery", "reference", "smoke", "pilot", "fixtures", "status", "fetch"])
     parser.add_argument("--run", help="Run ID for status/fetch; defaults to last run launched here")
     parser.add_argument("--wait", action="store_true", help="Wait for an explicit worker completion receipt")
     parser.add_argument("--wait-timeout", type=int, default=7500)
@@ -32,7 +32,7 @@ def main():
     root = control.owned_root(args.root.resolve())
     state_path = root / "linux-controller-state.json"
     state = json.loads(state_path.read_text()) if state_path.exists() else {}
-    if args.action in {"deploy", "setup", "doctor", "smoke", "pilot", "fixtures"}:
+    if args.action in {"deploy", "setup", "doctor", "recovery", "reference", "smoke", "pilot", "fixtures"}:
         if args.action != "deploy" and args.scratch is None:
             parser.error("--scratch is required for this action")
         source = snapshot.create_snapshot(repo, root / "incoming/snapshots")

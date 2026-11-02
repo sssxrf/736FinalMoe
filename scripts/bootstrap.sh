@@ -29,7 +29,7 @@ cd -- "$release"
 export PYTHONDONTWRITEBYTECODE=1
 export HF_HUB_DISABLE_TELEMETRY=1
 export TOKENIZERS_PARALLELISM=false
-export HF_HOME="$scratch/hf-metadata"
+export HF_HOME="$root/artifacts/hf-metadata"
 export TMPDIR="$root/setup/tmp"
 mkdir -p -- "$TMPDIR"
 python3 - <<'PY'
@@ -81,7 +81,7 @@ else
   [[ $(cat "$env_dir/.complete") == "$lock_sha" ]] || { echo 'Environment completion marker mismatch' >&2; exit 4; }
   echo "Reusing dependency-locked environment $lock_sha"
 fi
-"$env_dir/bin/python" scripts/acquire_model.py --config configs/model.json --scratch "$scratch"
-"$env_dir/bin/python" -m moe_shared.prepare --model-dir "$scratch/model" --output "$scratch/backing"
+"$env_dir/bin/python" -m moe_shared.artifacts prepare --root "$root/artifacts" \
+  --config configs/model.json --output "$audit_dir" --scratch "$scratch"
 "$env_dir/bin/python" -m moe_shared.audit --output "$audit_dir/audit-after.json" --scratch "$scratch"
-printf 'Setup complete: env=%s model=%s backing=%s\n' "$env_dir" "$scratch/model" "$scratch/backing"
+printf 'Setup complete: env=%s persistent-artifacts=%s\n' "$env_dir" "$root/artifacts"

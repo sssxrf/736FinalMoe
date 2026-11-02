@@ -4,7 +4,9 @@ import gc
 import json
 from pathlib import Path
 import tempfile
+import time
 import unittest
+from unittest.mock import patch
 
 try:
     import torch
@@ -38,6 +40,83 @@ class TinyGPUIntegrationTest(unittest.TestCase):
             device_map={"": "cuda:0"}, low_cpu_mem_usage=True,
             attn_implementation="eager", local_files_only=True,
             trust_remote_code=False).eval()
+
+    def test_recompute_preserves_forward_boundaries_and_exact_kv(self):
+        from moe_shared.run import Recorder, rebuild_cache
+
+        # Include an initial prefill, a decode, and a later prompt boundary.
+        # Original KV is discarded after its fixture-only CPU expectation is saved.
+        prefix = [1, 7, 9, 3, 11, 13, 5, 2]
+        chunks = [4, 1, 3]
+        config = {"max_context_tokens": 32, "total_gpu_budget_bytes": 256 * 1024 * 1024}
+        with tempfile.TemporaryDirectory(prefix="moe-replay-fixture-") as tmp:
+            root = Path(tmp)
+            self.create_checkpoint(root)
+            model = self.load_resident(root)
+            original = DynamicCache()
+            offset = 0
+            with torch.inference_mode():
+                for length in chunks:
+                    end = offset + length
+                    positions = torch.arange(offset, end, device="cuda")
+                    result = model(
+                        input_ids=torch.tensor([prefix[offset:end]], device="cuda"),
+                        attention_mask=torch.ones((1, end), dtype=torch.long, device="cuda"),
+                        position_ids=positions.unsqueeze(0), cache_position=positions,
+                        past_key_values=original, use_cache=True,
+                        output_router_logits=False, return_dict=True)
+                    original = result.past_key_values
+                    offset = end
+                expected_kv = [(key.cpu(), value.cpu())
+                               for key, value in zip(original.key_cache, original.value_cache)]
+                expected_seen_tokens = original._seen_tokens
+                result = model(
+                    input_ids=torch.tensor([[17]], device="cuda"),
+                    attention_mask=torch.ones((1, len(prefix)+1), dtype=torch.long, device="cuda"),
+                    position_ids=torch.tensor([[len(prefix)]], device="cuda"),
+                    cache_position=torch.tensor([len(prefix)], device="cuda"),
+                    past_key_values=original, use_cache=True,
+                    output_router_logits=False, return_dict=True)
+                expected_next = result.logits.cpu()
+            del original, result, positions
+            gc.collect()
+            torch.cuda.empty_cache()
+            event = Recorder(root)
+            try:
+                restored = rebuild_cache(model, prefix, chunks, config, event,
+                                         session="fixture", turn=2,
+                                         deadline=time.perf_counter()+30)
+                self.assertEqual(restored.get_seq_length(), len(prefix))
+                self.assertEqual(restored._seen_tokens, expected_seen_tokens)
+                for layer, (expected_key, expected_value) in enumerate(expected_kv):
+                    torch.testing.assert_close(restored.key_cache[layer].cpu(), expected_key, rtol=0, atol=0)
+                    torch.testing.assert_close(restored.value_cache[layer].cpu(), expected_value, rtol=0, atol=0)
+                with torch.inference_mode():
+                    result = model(
+                        input_ids=torch.tensor([[17]], device="cuda"),
+                        attention_mask=torch.ones((1, len(prefix)+1), dtype=torch.long, device="cuda"),
+                        position_ids=torch.tensor([[len(prefix)]], device="cuda"),
+                        cache_position=torch.tensor([len(prefix)], device="cuda"),
+                        past_key_values=restored, use_cache=True,
+                        output_router_logits=False, return_dict=True)
+                torch.testing.assert_close(result.logits.cpu(), expected_next, rtol=0, atol=0)
+                with self.assertRaisesRegex(ValueError, "cover exactly"):
+                    rebuild_cache(model, prefix, [4, 1], config)
+                # An expired replay deadline must prevent any GPU forward.
+                with patch.object(model, "forward", side_effect=AssertionError("forward should not run")):
+                    with self.assertRaisesRegex(TimeoutError, "before a replay chunk"):
+                        rebuild_cache(model, prefix, chunks, config, deadline=time.perf_counter()-1)
+                del restored, result
+            finally:
+                event.close()
+                del model
+                gc.collect()
+                torch.cuda.empty_cache()
+            events = [json.loads(line) for line in (root / "events.jsonl").read_text().splitlines()]
+            replay = next(item for item in events if item["event"] == "recompute_replay")
+            self.assertEqual(replay["chunk_lengths"], chunks)
+            self.assertEqual(replay["tokens"], len(prefix))
+            self.assertEqual(replay["chunks"], 3)
 
     def test_real_tensor_misses_and_all_kv_actions(self):
         from moe_shared.experts import load_offloaded
@@ -92,7 +171,7 @@ class TinyGPUIntegrationTest(unittest.TestCase):
                             torch.testing.assert_close(value.cpu(), expected_parameters[full_name], rtol=0, atol=0)
                     del expert_module, value
                     experts.close()  # inference starts with cold application caches
-                    manager = KVManager(pool, root / "backing" / "kv" / action)
+                    manager = KVManager(pool, root / "backing" / "kv" / action, verify_restore=True)
                     with torch.inference_mode():
                         cache = DynamicCache()
                         result = model(prefix, past_key_values=cache, use_cache=True)
@@ -126,6 +205,11 @@ class TinyGPUIntegrationTest(unittest.TestCase):
                     self.assertGreater(experts.stats()["host_misses"], 0)
                     self.assertGreater(experts.stats()["gpu_evictions"], 0)
                     self.assertGreater(experts.stats()["cuda_executions"], 0)
+                    if action != "recompute":
+                        self.assertEqual(manager.stats()["restoration_checks"], 4)
+                        self.assertEqual(manager.stats()["restoration_failures"], 0)
+                        self.assertEqual(manager.stats()["payload_integrity_checks"], 1)
+                        self.assertGreater(manager.stats()["validation_d2h_bytes"], 0)
                     self.assertLessEqual(experts.stats()["gpu_peak_bytes"], manifest["max_expert_bytes"])
                     self.assertLessEqual(pool.stats()["peak_bytes"], pool.budget_bytes)
                     manager.close()
@@ -152,9 +236,8 @@ class TinyGPUIntegrationTest(unittest.TestCase):
         ]}
         config = {"max_context_tokens": 32, "total_gpu_budget_bytes": 256 * 1024 * 1024,
                   "logit_atol": 0.004, "logit_rtol": 0.01, "minimum_argmax_agreement": 1.0}
-        # The recompute path uses a different GEMM batch shape from incremental
-        # decoding, so this scheduler check has an explicit BF16 tolerance. The
-        # direct cache-transition test above still requires exact equality.
+        # Keep the explicit BF16 comparison tolerance. Recompute now preserves
+        # forward boundaries; the focused replay test requires exact KV/logits.
         with tempfile.TemporaryDirectory(prefix="moe-scheduler-fixture-") as tmp:
             root = Path(tmp)
             self.create_checkpoint(root)
@@ -210,10 +293,58 @@ class TinyGPUIntegrationTest(unittest.TestCase):
                             .issubset({entry["event"] for entry in events}))
             self.assertTrue(all(entry["stale_gpu_cache_entries"] == 0
                                 for entry in events if entry["event"] == "kv_pause"))
+            replays = [entry for entry in events if entry["event"] == "recompute_replay"]
+            self.assertEqual(len(replays), 1)
+            self.assertEqual(replays[0]["chunk_lengths"], [4, 1])
+            self.assertEqual(replays[0]["tokens"], 5)
 
 
 @unittest.skipUnless(torch is not None, "PyTorch required")
 class KVIntegrityTest(unittest.TestCase):
+    def test_corrupted_retained_payload_is_detected_without_an_extra_snapshot(self):
+        from moe_shared.kv import KVManager
+        from moe_shared.pool import SharedPool
+
+        with tempfile.TemporaryDirectory(prefix="moe-kv-integrity-fixture-") as tmp:
+            pool = SharedPool(4096)
+            manager = KVManager(pool, tmp, device="cpu", verify_restore=True)
+            cache = DynamicCache()
+            cache.update(torch.ones((1, 2, 3, 4), dtype=torch.bfloat16),
+                         torch.zeros((1, 2, 3, 4), dtype=torch.bfloat16), 0)
+            handle = manager.pause(cache, "retain", "fixture")
+            self.assertEqual(pool.used_bytes, handle.nbytes)
+            self.assertIn("payload_sha256", handle.metadata)
+            handle.tensors[0].zero_()
+            with self.assertRaisesRegex(IOError, "payload checksum"):
+                manager.resume(handle)
+            self.assertEqual(manager.stats()["payload_integrity_failures"], 1)
+            manager.close()
+            self.assertEqual(pool.used_bytes, 0)
+
+    def test_restore_readback_is_counted_and_released(self):
+        from moe_shared.kv import KVManager
+        from moe_shared.pool import SharedPool
+
+        with tempfile.TemporaryDirectory(prefix="moe-kv-readback-fixture-") as tmp:
+            for action in ("retain", "spill"):
+                with self.subTest(action=action):
+                    pool = SharedPool(4096)
+                    manager = KVManager(pool, tmp, device="cpu", verify_restore=True)
+                    cache = DynamicCache()
+                    cache.update(torch.ones((1, 2, 3, 4), dtype=torch.bfloat16),
+                                 torch.zeros((1, 2, 3, 4), dtype=torch.bfloat16), 0)
+                    handle = manager.pause(cache, action, "fixture")
+                    nbytes = handle.nbytes
+                    restored = manager.resume(handle)
+                    self.assertEqual(restored.get_seq_length(), 3)
+                    self.assertTrue(torch.equal(restored.key_cache[0], torch.ones_like(restored.key_cache[0])))
+                    self.assertTrue(torch.equal(restored.value_cache[0], torch.zeros_like(restored.value_cache[0])))
+                    self.assertEqual(manager.stats()["restoration_checks"], 2)
+                    self.assertEqual(manager.stats()["restoration_failures"], 0)
+                    self.assertEqual(pool.peak_bytes, nbytes + nbytes // 2)
+                    self.assertEqual(pool.used_bytes, 0)
+                    manager.close()
+
     def test_corrupted_spill_rejected_and_reservation_released(self):
         from moe_shared.kv import KVManager
         from moe_shared.pool import SharedPool

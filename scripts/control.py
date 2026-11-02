@@ -113,8 +113,9 @@ def deploy(args, root):
 
 def process_birth(pid):
     try:
-        return Path(f"/proc/{pid}/stat").read_text().split(")", 1)[1].split()[19]
-    except (FileNotFoundError, PermissionError, IndexError):
+        fields = Path(f"/proc/{pid}/stat").read_text().split(")", 1)[1].split()
+        return None if fields[0] == "Z" else fields[19]
+    except (OSError, IndexError):
         return None
 
 
@@ -134,7 +135,7 @@ def execution_guard(root, kind):
     handles = []
     try:
         names = ["execution.lock"]
-        if kind in {"smoke", "pilot", "fixtures"}:
+        if kind in {"recovery", "reference", "smoke", "pilot", "fixtures"}:
             names.append("setup.lock")
         for name in names:
             handle = (locks / name).open("a+")
@@ -149,6 +150,41 @@ def execution_guard(root, kind):
             handle.close()
 
 
+def successful_pretrained_smoke(root, artifact_hash, model_revision, dependency_lock_sha256, required_sources=None):
+    """A fixture/reference success cannot authorize a bounded performance pilot."""
+    for run in sorted((root / "runs").iterdir(), reverse=True):
+        try:
+            request = json.loads((run / "request.json").read_text())
+            status_receipt = json.loads((run / "status.json").read_text())
+            summary = json.loads((run / "summary.json").read_text())
+            environment = json.loads((run / "environment.json").read_text())
+            if required_sources is not None:
+                prior_sources = json.loads((run / "source-manifest.json").read_text())["files"]
+                if any(prior_sources.get(name) != metadata for name, metadata in required_sources.items()):
+                    continue
+            actions = {case["action"] for case in summary.get("cases", [])}
+            if (request["kind"] == "smoke" and status_receipt["state"] == "completed"
+                    and status_receipt["exit_code"] == 0 and summary.get("complete") and summary.get("passed")
+                    and request.get("dependency_lock_sha256") == dependency_lock_sha256
+                    and {"retain", "spill", "recompute"}.issubset(actions)
+                    and environment.get("artifact_completion_sha256") == artifact_hash
+                    and environment.get("model", {}).get("revision") == model_revision):
+                return run.name
+        except (OSError, ValueError, KeyError, TypeError):
+            continue
+    raise ValueError("Pilot requires a completed passing real pretrained smoke for these persistent artifacts; fixtures/reference alone are insufficient")
+
+
+def record_lifecycle(release, run, stage, request):
+    # Bootstrap deploy copies control.py into incoming without the package; import
+    # only after a verified source release exists.
+    sys.path.insert(0, str(release))
+    from moe_shared.lifecycle import identity_checkpoint
+    return identity_checkpoint(run, stage, {"artifacts": request["artifacts_root"],
+                                           "scratch": request["scratch_root"],
+                                           "release": release, "run": run})
+
+
 def launch(args, root):
     release = root / "releases" / identifier(args.release)
     verify_release(release)
@@ -156,13 +192,21 @@ def launch(args, root):
     lock_hash = sha256(lock.read_bytes()) if lock.exists() else None
     env = root / "envs" / lock_hash if lock_hash else None
     python = str(env / "bin/python") if env and (env / ".complete").exists() else "python3"
-    if args.kind in {"smoke", "pilot", "fixtures"} and python == "python3":
+    if args.kind in {"recovery", "reference", "smoke", "pilot", "fixtures"} and python == "python3":
         raise ValueError("Pinned environment is not complete; run setup -Wait first")
     if not args.scratch or not Path(args.scratch).is_absolute() or not str(Path(args.scratch)).startswith("/tmp/"):
         raise ValueError("Scratch must be a task-owned directory under /tmp")
     run_id = identifier(args.run) if args.run else dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ") + "-" + args.kind + "-" + uuid.uuid4().hex[:8]
     run = root / "runs" / run_id
     run.mkdir()
+    artifacts = root / "artifacts"
+    smoke_prerequisite = None
+    if args.kind == "pilot":
+        artifact_hash = sha256((artifacts / "complete.json").read_bytes())
+        model_revision = json.loads((release / "configs/model.json").read_text())["revision"]
+        source_files = json.loads((release / "source-manifest.json").read_text())["files"]
+        runtime_sources = {name: data for name, data in source_files.items() if name.startswith("moe_shared/")}
+        smoke_prerequisite = successful_pretrained_smoke(root, artifact_hash, model_revision, lock_hash, runtime_sources)
     if args.kind == "setup":
         command = ["bash", "scripts/bootstrap.sh", str(root), args.scratch]
         timeout = 7200
@@ -172,15 +216,21 @@ def launch(args, root):
     elif args.kind == "fixtures":
         command = [python, "-m", "moe_shared.fixtures", "--output", str(run)]
         timeout = 180
+    elif args.kind == "recovery":
+        command = [python, "-m", "moe_shared.staging", "--recovery", "--artifacts", str(artifacts),
+                   "--scratch", args.scratch, "--output", str(run)]
+        timeout = 180
     else:
-        config = release / "configs" / (args.kind + ".json")
-        command = [python, "-m", "moe_shared.run", "--mode", args.kind, "--config", str(config), "--output", str(run), "--scratch", args.scratch]
+        config = release / "configs" / ("smoke.json" if args.kind == "reference" else args.kind + ".json")
+        command = [python, "-m", "moe_shared.run", "--mode", args.kind, "--config", str(config), "--output", str(run), "--scratch", args.scratch, "--artifacts", str(artifacts)]
         shutil.copyfile(config, run / "experiment-config.json")
         timeout = 1200
     request = {"run_id": run_id, "kind": args.kind, "release_id": args.release, "command": command,
                "cwd": str(release), "scratch_root": args.scratch, "dependency_lock_sha256": lock_hash,
+               "artifacts_root": str(artifacts), "smoke_prerequisite": smoke_prerequisite,
                "created_utc": utc(), "hostname": socket.gethostname(), "timeout_seconds": timeout}
     atomic_json(run / "request.json", request)
+    record_lifecycle(release, run, "launch", request)
     shutil.copyfile(release / "source-manifest.json", run / "source-manifest.json")
     shutil.copyfile(release / "release.json", run / "release.json")
     if env and (env / "environment.json").exists():
@@ -202,12 +252,22 @@ def worker(args, root):
     try:
         environ = dict(os.environ, PYTHONUNBUFFERED="1", PYTHONDONTWRITEBYTECODE="1", TOKENIZERS_PARALLELISM="false", MOE_RUN_DIR=str(run))
         with execution_guard(root, request["kind"]), (run / "worker.log").open("ab", buffering=0) as log:
+            record_lifecycle(request["cwd"], run, "worker-before", request)
             child = subprocess.Popen(request["command"], cwd=request["cwd"], env=environ,
                                      stdin=subprocess.DEVNULL, stdout=log, stderr=log, start_new_session=True)
             state["child_pid"] = child.pid
             atomic_json(run / "status.json", state)
             try:
-                code = child.wait(timeout=request["timeout_seconds"])
+                deadline = time.monotonic() + request["timeout_seconds"]
+                while True:
+                    remaining = deadline - time.monotonic()
+                    if remaining <= 0:
+                        raise subprocess.TimeoutExpired(request["command"], request["timeout_seconds"])
+                    try:
+                        code = child.wait(timeout=min(30, remaining))
+                        break
+                    except subprocess.TimeoutExpired:
+                        record_lifecycle(request["cwd"], run, "worker-heartbeat", request)
             except subprocess.TimeoutExpired:
                 os.killpg(child.pid, signal.SIGTERM)
                 try:
@@ -226,8 +286,17 @@ def worker(args, root):
     # Capture setup provenance after it creates the environment/model, including failed setup audits.
     provenance = {
         root / "envs" / request["dependency_lock_sha256"] / "environment.json": "environment.json",
-        Path(request["scratch_root"]) / "model" / "model-provenance.json": "model-provenance.json",
+        root / "artifacts" / "complete.json": "artifact-completion.json",
     } if request.get("dependency_lock_sha256") else {}
+    complete = root / "artifacts" / "complete.json"
+    if complete.is_file():
+        try:
+            model_relative = json.loads(complete.read_text())["model_dir"]
+            model = (root / "artifacts" / model_relative).resolve()
+            if model.is_relative_to((root / "artifacts").resolve()):
+                provenance[model / "model-provenance.json"] = "model-provenance.json"
+        except (OSError, ValueError, KeyError):
+            pass
     if request["kind"] == "setup":
         for name in ("audit-before.json", "audit-after.json"):
             provenance[root / "setup" / name] = name
@@ -238,6 +307,11 @@ def worker(args, root):
         except OSError as exc:
             state.setdefault("provenance_errors", []).append(f"{name}: {exc}")
             state.update(state="failed", exit_code=126)
+    try:
+        record_lifecycle(request["cwd"], run, "worker-after", request)
+    except (OSError, ValueError) as exc:
+        state.setdefault("provenance_errors", []).append(f"lifecycle: {exc}")
+        state.update(state="failed", exit_code=126)
     state.update(finished_utc=utc(), elapsed_seconds=time.monotonic() - start)
     atomic_json(run / "status.json", state)
     return state
@@ -267,8 +341,11 @@ def pack(args, root):
     for p in sorted(run.rglob("*")):
         if p.is_symlink():
             raise ValueError("Symlink in result directory")
-        if not p.is_file() or p.suffix not in {".json", ".jsonl", ".csv", ".log", ".txt", ".md"}:
+        compact_reference = p.name == "reference-logits.npz" and p.parent == run
+        if not p.is_file() or (p.suffix not in {".json", ".jsonl", ".csv", ".log", ".txt", ".md"} and not compact_reference):
             continue
+        if compact_reference and p.stat().st_size > 8 * 1024 * 1024:
+            raise ValueError("Reference logits exceed the explicit 8 MiB compact evidence limit")
         if p.stat().st_size > 32 * 1024 * 1024:
             raise ValueError(f"Result too large for compact transfer: {p.name}")
         files[p.relative_to(run).as_posix()] = p.read_bytes()
@@ -294,7 +371,7 @@ def main():
     deploy_parser.add_argument("--sha256", required=True)
     launch_parser = sub.add_parser("launch")
     launch_parser.add_argument("--release", required=True)
-    launch_parser.add_argument("--kind", choices=["doctor", "setup", "smoke", "pilot", "fixtures"], required=True)
+    launch_parser.add_argument("--kind", choices=["doctor", "setup", "recovery", "reference", "smoke", "pilot", "fixtures"], required=True)
     launch_parser.add_argument("--scratch", required=True)
     launch_parser.add_argument("--run", help="Controller-chosen unique ID, recorded locally before submitting the launch")
     for action in ("status", "pack", "worker"):

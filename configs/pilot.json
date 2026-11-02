@@ -1,5 +1,7 @@
 {
   "name": "small-shared-pool-pilot",
+  "storage_mode": "scratch",
+  "verify_kv_restore": false,
   "seed": 736,
   "paused_prefix_tokens": 96,
   "active_prefix_tokens": 16,
@@ -14,7 +16,7 @@
   "host_expert_slots": [128, 256],
   "host_slack_bytes": 524288,
   "actions": ["retain", "spill", "recompute"],
-  "repeats": 1,
+  "repeats": 2,
   "max_wall_seconds": 900,
   "max_context_tokens": 160,
   "logit_atol": 0.125,

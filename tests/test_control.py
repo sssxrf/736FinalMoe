@@ -39,6 +39,49 @@ class WorkerReceiptTests(unittest.TestCase):
         self.assertEqual(status["state"], "completed")
         self.assertEqual(status["exit_code"], 0)
 
+    def test_pilot_requires_matching_real_smoke(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            run = root / "runs" / "candidate"
+            run.mkdir(parents=True)
+            (run / "request.json").write_text(json.dumps({"kind": "fixtures"}))
+            (run / "status.json").write_text(json.dumps({"state": "completed", "exit_code": 0}))
+            (run / "summary.json").write_text(json.dumps({"complete": True, "passed": True,
+                "cases": [{"action": action} for action in ("retain", "spill", "recompute")]}))
+            (run / "environment.json").write_text(json.dumps({"artifact_completion_sha256": "hash",
+                "model": {"revision": "revision"}}))
+            with self.assertRaises(ValueError):
+                control.successful_pretrained_smoke(root, "hash", "revision", "lock")
+            (run / "request.json").write_text(json.dumps({"kind": "smoke", "dependency_lock_sha256": "lock"}))
+            self.assertEqual(control.successful_pretrained_smoke(root, "hash", "revision", "lock"), "candidate")
+            with self.assertRaises(ValueError):
+                control.successful_pretrained_smoke(root, "other-hash", "revision", "lock")
+
+    def test_pilot_rejects_smoke_from_another_dependency_lock(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            run = root / "runs" / "candidate"
+            run.mkdir(parents=True)
+            (run / "status.json").write_text(json.dumps({"state": "completed", "exit_code": 0}))
+            (run / "summary.json").write_text(json.dumps({"complete": True, "passed": True,
+                "cases": [{"action": action} for action in ("retain", "spill", "recompute")]}))
+            (run / "environment.json").write_text(json.dumps({"artifact_completion_sha256": "hash",
+                "model": {"revision": "revision"}}))
+            for old_lock in ("previous-lock", None):
+                with self.subTest(old_lock=old_lock):
+                    (run / "request.json").write_text(json.dumps({
+                        "kind": "smoke", "dependency_lock_sha256": old_lock}))
+                    with self.assertRaises(ValueError):
+                        control.successful_pretrained_smoke(root, "hash", "revision", "current-lock")
+            (run / "request.json").write_text(json.dumps({
+                "kind": "smoke", "dependency_lock_sha256": "current-lock"}))
+            self.assertEqual(control.successful_pretrained_smoke(root, "hash", "revision", "current-lock"),
+                             "candidate")
+
+    def test_zombie_worker_is_not_running(self):
+        with patch.object(Path, "read_text", return_value="100 (python3) Z " + "0 " * 30):
+            self.assertIsNone(control.process_birth(100))
+
     @unittest.skipIf(sys.platform == "win32", "fcntl lock semantics are exercised on Linux")
     def test_conflicting_experiment_cannot_enter(self):
         with tempfile.TemporaryDirectory() as temporary:
