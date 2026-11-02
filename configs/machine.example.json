@@ -1,0 +1,10 @@
+{
+  "host": "gpu.example.edu",
+  "port": 22,
+  "scp_protocol": "legacy",
+  "user": "your-ssh-user",
+  "identity_file": "C:\\Users\\you\\.ssh\\your_gpu_key",
+  "expected_hostname": "gpu-node",
+  "remote_root": "/home/you/advanced-os-final",
+  "scratch_root": "/tmp/you-moe736"
+}

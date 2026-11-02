@@ -1,0 +1,10 @@
+{
+  "model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+  "revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+  "dtype": "bfloat16",
+  "trust_remote_code": false,
+  "attention_implementation": "eager",
+  "parameter_count": 6919161856,
+  "revision_source": "https://huggingface.co/api/models/allenai/OLMoE-1B-7B-0924-Instruct",
+  "scope": "Mechanism validation on OLMoE; not evidence for Qwen3 FP8."
+}

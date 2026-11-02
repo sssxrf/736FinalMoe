@@ -1,0 +1,1429 @@
+{
+  "runs": [
+    {
+      "run_id": "20261102T022947Z-doctor-786f27b3",
+      "status": "completed",
+      "exit_code": 0,
+      "kind": "doctor",
+      "command_succeeded": true,
+      "experiment_complete": null,
+      "experiment_passed": null,
+      "wall_seconds": 0.3838380449451506,
+      "source_release": {
+        "release_id": "20261102T022941Z-a35c7f4a17",
+        "archive_sha256": "c3920b348d1a8d1acc7bd5373943befb94764804e1c9266a6378e37452d48baa",
+        "file_count": 25,
+        "created_utc": "2026-11-02T02:29:46.853571+00:00",
+        "hostname": "rxu292-advanced-os-final-0"
+      },
+      "git": {
+        "commit": "4d7add998351280d19ed2ef3d92d57d051941b23",
+        "dirty": true,
+        "status": [
+          " M .gitattributes",
+          "?? .gitignore",
+          "?? configs/machine.example.json",
+          "?? configs/model.json",
+          "?? configs/pilot.json",
+          "?? configs/smoke.json",
+          "?? moe_shared/__init__.py",
+          "?? moe_shared/audit.py",
+          "?? moe_shared/experts.py",
+          "?? moe_shared/kv.py",
+          "?? moe_shared/pool.py",
+          "?? moe_shared/prepare.py",
+          "?? moe_shared/run.py",
+          "?? moe_shared/workload.py",
+          "?? requirements.lock",
+          "?? scripts/acquire_model.py",
+          "?? scripts/bootstrap.sh",
+          "?? scripts/control.py",
+          "?? scripts/remote.ps1",
+          "?? scripts/snapshot.py",
+          "?? tests/test_audit.py",
+          "?? tests/test_pool.py",
+          "?? tests/test_snapshot.py",
+          "?? tests/test_workload.py"
+        ],
+        "git_available": true
+      },
+      "source_file_hashes": {
+        ".gitattributes": {
+          "sha256": "a8fe7e450017f38c38c3c4c1069ed01d86cf5d2882e61ea504c898dca639de5c",
+          "bytes": 223
+        },
+        ".gitignore": {
+          "sha256": "6eeb952b71076c293f196bed6633a2fb0834dbd1e80fb157650a845abab23ded",
+          "bytes": 368
+        },
+        "README.md": {
+          "sha256": "0fff76eac79c5f5c5ecfeb09ff6fb7d010491630c351a29277d16471e906f386",
+          "bytes": 15
+        },
+        "configs/machine.example.json": {
+          "sha256": "d5d090486a1b2f0e9d391303974c42bbdc4fe19a9e608671b6e97b7e69a57e58",
+          "bytes": 278
+        },
+        "configs/model.json": {
+          "sha256": "94c184582bf830bc34249bb3bbb02c9d2ae71cd34bf4f4fab7bb622a9a986f8b",
+          "bytes": 402
+        },
+        "configs/pilot.json": {
+          "sha256": "5a232b1345111eb1c880f42405983dd80630f21def42324764362b7e95430011",
+          "bytes": 567
+        },
+        "configs/smoke.json": {
+          "sha256": "3ae893a5df90cdc443f9b986e82e86f965f696ee7c98832b123cf0bd0e6aaf7b",
+          "bytes": 567
+        },
+        "moe_shared/__init__.py": {
+          "sha256": "ea46616d32af4d2c2c254d45c63c136ddba7adb344fea03527a3b30e038573f9",
+          "bytes": 75
+        },
+        "moe_shared/audit.py": {
+          "sha256": "bd31d57cd3fad9fd56755f3c124e47571e8a8a05e19078b3a0735c6f21adf33b",
+          "bytes": 9452
+        },
+        "moe_shared/experts.py": {
+          "sha256": "2808e4399feb2e80f696c71097b769143456935d95abaa7b9de36554abe2565a",
+          "bytes": 9943
+        },
+        "moe_shared/kv.py": {
+          "sha256": "08227539a5338ded823aece6c581e3f99c8d7bca6936e13e2bcfe835f0ff0fe7",
+          "bytes": 11308
+        },
+        "moe_shared/pool.py": {
+          "sha256": "b2cdf6412069358b69c271f62b67e442c54852959e5f3d2fc56d73d5e90dfa36",
+          "bytes": 3201
+        },
+        "moe_shared/prepare.py": {
+          "sha256": "a149b91cc62eccb5468473ea3adaa6881b10dd4e006e697bd9514a6da73b285d",
+          "bytes": 7343
+        },
+        "moe_shared/run.py": {
+          "sha256": "c8065f74d91385a250485182c7fdde5d86120b7fa52b36a776a867da35c52d03",
+          "bytes": 21354
+        },
+        "moe_shared/workload.py": {
+          "sha256": "33ed66557b3bbc8f5ff02169cb9976a3b0c4363bd5483a62f8daf29941e353ad",
+          "bytes": 4032
+        },
+        "requirements.lock": {
+          "sha256": "2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193",
+          "bytes": 1027
+        },
+        "scripts/acquire_model.py": {
+          "sha256": "0fd5b50e20d92847090c40132466c6c13620b6bb0d5116ea62ad1da65aa8c699",
+          "bytes": 5336
+        },
+        "scripts/bootstrap.sh": {
+          "sha256": "b291ebaf986e62ccbaea2ea07eff1cc36a071b8888f389f99352aeb45253253e",
+          "bytes": 4417
+        },
+        "scripts/control.py": {
+          "sha256": "e8f92a7b1de457593cd2f9d097b852c343c720631c8232d84c7fa123602880ff",
+          "bytes": 13092
+        },
+        "scripts/remote.ps1": {
+          "sha256": "2a2b2498c97f7723dc57ba2c43926dbd83ec88f140dfca183e02c510f63cf658",
+          "bytes": 8744
+        },
+        "scripts/snapshot.py": {
+          "sha256": "d8fbd8ed50a6e0525506766803a9824eb939a23e73417fb19f4861a36c8b21ab",
+          "bytes": 7937
+        },
+        "tests/test_audit.py": {
+          "sha256": "7c93df93b24d05d86faf20b6f10770f46b6b14730c003ba8d103f79b3910db48",
+          "bytes": 1642
+        },
+        "tests/test_pool.py": {
+          "sha256": "5a7fac5cf7d10531d6c32973a96e0ffff27ee6054220923c9555ef730679ec19",
+          "bytes": 1774
+        },
+        "tests/test_snapshot.py": {
+          "sha256": "0c3b3978e0c3b519e8c10daab97baf563951c17cc5f8b9d15cb58e8fad10d421",
+          "bytes": 2981
+        },
+        "tests/test_workload.py": {
+          "sha256": "485999c98044f6b92c4f26954f9bc8fd1a275f4acb1264bb61c6cb3cad4dce51",
+          "bytes": 1577
+        }
+      },
+      "model": null,
+      "torch": null,
+      "transformers": null,
+      "gpu": null,
+      "trajectory_sha256": null,
+      "config": null,
+      "transfer": {
+        "archive_sha256": "adfaf9b89a698aa7748d27c2f076208288220d284715ce0d212b8014bef88fa5",
+        "verified_files": 8,
+        "verified_bytes": 46833,
+        "fetched_utc": "2026-11-02T02:38:05.286008+00:00"
+      },
+      "fixtures": null,
+      "limitations": [],
+      "cases": [],
+      "log_tail": "{\"audit\": \"/home/rxu292/advanced-os-final/runs/20261102T022947Z-doctor-786f27b3/audit.json\", \"hostname\": \"rxu292-advanced-os-final-0\", \"torch\": {\"unavailable\": \"No module named 'torch'\"}, \"scratch_guard\": {\"scratch\": \"/tmp/cs736-rxu292-moe\", \"task_logical_bytes\": 0, \"filesystem_free_bytes\": 112722522112, \"additional_bytes\": 0, \"max_scratch_bytes\": 37580963840, \"headroom_bytes\": 21474836480, \"free_space_is_reserved\": false}}\n",
+      "scratch_guard": {
+        "scratch": "/tmp/cs736-rxu292-moe",
+        "task_logical_bytes": 0,
+        "filesystem_free_bytes": 112722522112,
+        "additional_bytes": 0,
+        "max_scratch_bytes": 37580963840,
+        "headroom_bytes": 21474836480,
+        "free_space_is_reserved": false
+      },
+      "cgroup_memory_max": 68719476736,
+      "cgroup_historical_peak": 671174656,
+      "cpu_max": "2400000 100000",
+      "storage_label": "ext4; physical backing unverified"
+    },
+    {
+      "run_id": "20261102T023003Z-setup-17eea790",
+      "status": "lost",
+      "exit_code": null,
+      "kind": "setup",
+      "command_succeeded": false,
+      "experiment_complete": null,
+      "experiment_passed": null,
+      "wall_seconds": null,
+      "source_release": {
+        "release_id": "20261102T022958Z-185032ae8b",
+        "archive_sha256": "e949c34c2d23ca5ec0449d15dfe32a0cffae81f13504c9f871cbeaa56225b39b",
+        "file_count": 25,
+        "created_utc": "2026-11-02T02:30:02.736690+00:00",
+        "hostname": "rxu292-advanced-os-final-0"
+      },
+      "git": {
+        "commit": "4d7add998351280d19ed2ef3d92d57d051941b23",
+        "dirty": true,
+        "status": [
+          " M .gitattributes",
+          "?? .gitignore",
+          "?? configs/machine.example.json",
+          "?? configs/model.json",
+          "?? configs/pilot.json",
+          "?? configs/smoke.json",
+          "?? moe_shared/__init__.py",
+          "?? moe_shared/audit.py",
+          "?? moe_shared/experts.py",
+          "?? moe_shared/kv.py",
+          "?? moe_shared/pool.py",
+          "?? moe_shared/prepare.py",
+          "?? moe_shared/run.py",
+          "?? moe_shared/workload.py",
+          "?? requirements.lock",
+          "?? scripts/acquire_model.py",
+          "?? scripts/bootstrap.sh",
+          "?? scripts/control.py",
+          "?? scripts/remote.ps1",
+          "?? scripts/snapshot.py",
+          "?? tests/test_audit.py",
+          "?? tests/test_pool.py",
+          "?? tests/test_snapshot.py",
+          "?? tests/test_workload.py"
+        ],
+        "git_available": true
+      },
+      "source_file_hashes": {
+        ".gitattributes": {
+          "sha256": "a8fe7e450017f38c38c3c4c1069ed01d86cf5d2882e61ea504c898dca639de5c",
+          "bytes": 223
+        },
+        ".gitignore": {
+          "sha256": "6eeb952b71076c293f196bed6633a2fb0834dbd1e80fb157650a845abab23ded",
+          "bytes": 368
+        },
+        "README.md": {
+          "sha256": "0fff76eac79c5f5c5ecfeb09ff6fb7d010491630c351a29277d16471e906f386",
+          "bytes": 15
+        },
+        "configs/machine.example.json": {
+          "sha256": "d5d090486a1b2f0e9d391303974c42bbdc4fe19a9e608671b6e97b7e69a57e58",
+          "bytes": 278
+        },
+        "configs/model.json": {
+          "sha256": "94c184582bf830bc34249bb3bbb02c9d2ae71cd34bf4f4fab7bb622a9a986f8b",
+          "bytes": 402
+        },
+        "configs/pilot.json": {
+          "sha256": "5a232b1345111eb1c880f42405983dd80630f21def42324764362b7e95430011",
+          "bytes": 567
+        },
+        "configs/smoke.json": {
+          "sha256": "3ae893a5df90cdc443f9b986e82e86f965f696ee7c98832b123cf0bd0e6aaf7b",
+          "bytes": 567
+        },
+        "moe_shared/__init__.py": {
+          "sha256": "ea46616d32af4d2c2c254d45c63c136ddba7adb344fea03527a3b30e038573f9",
+          "bytes": 75
+        },
+        "moe_shared/audit.py": {
+          "sha256": "bd31d57cd3fad9fd56755f3c124e47571e8a8a05e19078b3a0735c6f21adf33b",
+          "bytes": 9452
+        },
+        "moe_shared/experts.py": {
+          "sha256": "2808e4399feb2e80f696c71097b769143456935d95abaa7b9de36554abe2565a",
+          "bytes": 9943
+        },
+        "moe_shared/kv.py": {
+          "sha256": "08227539a5338ded823aece6c581e3f99c8d7bca6936e13e2bcfe835f0ff0fe7",
+          "bytes": 11308
+        },
+        "moe_shared/pool.py": {
+          "sha256": "b2cdf6412069358b69c271f62b67e442c54852959e5f3d2fc56d73d5e90dfa36",
+          "bytes": 3201
+        },
+        "moe_shared/prepare.py": {
+          "sha256": "a149b91cc62eccb5468473ea3adaa6881b10dd4e006e697bd9514a6da73b285d",
+          "bytes": 7343
+        },
+        "moe_shared/run.py": {
+          "sha256": "c8065f74d91385a250485182c7fdde5d86120b7fa52b36a776a867da35c52d03",
+          "bytes": 21354
+        },
+        "moe_shared/workload.py": {
+          "sha256": "33ed66557b3bbc8f5ff02169cb9976a3b0c4363bd5483a62f8daf29941e353ad",
+          "bytes": 4032
+        },
+        "requirements.lock": {
+          "sha256": "2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193",
+          "bytes": 1027
+        },
+        "scripts/acquire_model.py": {
+          "sha256": "0fd5b50e20d92847090c40132466c6c13620b6bb0d5116ea62ad1da65aa8c699",
+          "bytes": 5336
+        },
+        "scripts/bootstrap.sh": {
+          "sha256": "b291ebaf986e62ccbaea2ea07eff1cc36a071b8888f389f99352aeb45253253e",
+          "bytes": 4417
+        },
+        "scripts/control.py": {
+          "sha256": "e8f92a7b1de457593cd2f9d097b852c343c720631c8232d84c7fa123602880ff",
+          "bytes": 13092
+        },
+        "scripts/remote.ps1": {
+          "sha256": "2a2b2498c97f7723dc57ba2c43926dbd83ec88f140dfca183e02c510f63cf658",
+          "bytes": 8744
+        },
+        "scripts/snapshot.py": {
+          "sha256": "d8fbd8ed50a6e0525506766803a9824eb939a23e73417fb19f4861a36c8b21ab",
+          "bytes": 7937
+        },
+        "tests/test_audit.py": {
+          "sha256": "7c93df93b24d05d86faf20b6f10770f46b6b14730c003ba8d103f79b3910db48",
+          "bytes": 1642
+        },
+        "tests/test_pool.py": {
+          "sha256": "5a7fac5cf7d10531d6c32973a96e0ffff27ee6054220923c9555ef730679ec19",
+          "bytes": 1774
+        },
+        "tests/test_snapshot.py": {
+          "sha256": "0c3b3978e0c3b519e8c10daab97baf563951c17cc5f8b9d15cb58e8fad10d421",
+          "bytes": 2981
+        },
+        "tests/test_workload.py": {
+          "sha256": "485999c98044f6b92c4f26954f9bc8fd1a275f4acb1264bb61c6cb3cad4dce51",
+          "bytes": 1577
+        }
+      },
+      "model": null,
+      "torch": null,
+      "transformers": null,
+      "gpu": null,
+      "trajectory_sha256": null,
+      "config": null,
+      "transfer": {
+        "archive_sha256": "874a0028d752f760fd861f4e0d12099af4f09a96d5ab634908be9509a4e9b5d7",
+        "verified_files": 8,
+        "verified_bytes": 68094,
+        "fetched_utc": "2026-11-02T02:54:14.017603+00:00"
+      },
+      "fixtures": null,
+      "limitations": [],
+      "cases": [],
+      "log_tail": "\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 1.7/1.7 MB 324.7 MB/s eta 0:00:00\nDownloading https://download.pytorch.org/whl/Jinja2-3.1.4-py3-none-any.whl (133 kB)\nDownloading https://download.pytorch.org/whl/MarkupSafe-3.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (23 kB)\nDownloading sympy-1.13.1-py3-none-any.whl (6.2 MB)\n   \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 6.2/6.2 MB 209.7 MB/s eta 0:00:00\nDownloading mpmath-1.3.0-py3-none-any.whl (536 kB)\n   \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 536.2/536.2 kB 628.3 MB/s eta 0:00:00\nDownloading charset_normalizer-3.4.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (143 kB)\nDownloading idna-3.10-py3-none-any.whl (70 kB)\nDownloading urllib3-2.2.3-py3-none-any.whl (126 kB)\nDownloading certifi-2024.8.30-py3-none-any.whl (167 kB)\nInstalling collected packages: mpmath, wheel, urllib3, typing_extensions, tqdm, sympy, setuptools, safetensors, regex, PyYAML, psutil, packaging, nvidia-nvtx-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-curand-cu12, nvidia-cufft-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, numpy, networkx, MarkupSafe, idna, fsspec, filelock, charset-normalizer, certifi, triton, requests, nvidia-cusparse-cu12, nvidia-cudnn-cu12, Jinja2, nvidia-cusolver-cu12, huggingface-hub, torch, tokenizers, transformers, accelerate\nSuccessfully installed Jinja2-3.1.4 MarkupSafe-3.0.2 PyYAML-6.0.2 accelerate-1.1.1 certifi-2024.8.30 charset-normalizer-3.4.0 filelock-3.16.1 fsspec-2024.10.0 huggingface-hub-0.26.2 idna-3.10 mpmath-1.3.0 networkx-3.4.2 numpy-2.1.3 nvidia-cublas-cu12-12.4.5.8 nvidia-cuda-cupti-cu12-12.4.127 nvidia-cuda-nvrtc-cu12-12.4.127 nvidia-cuda-runtime-cu12-12.4.127 nvidia-cudnn-cu12-9.1.0.70 nvidia-cufft-cu12-11.2.1.3 nvidia-curand-cu12-10.3.5.147 nvidia-cusolver-cu12-11.6.1.9 nvidia-cusparse-cu12-12.3.1.170 nvidia-nccl-cu12-2.21.5 nvidia-nvjitlink-cu12-12.4.127 nvidia-nvtx-cu12-12.4.127 packaging-24.2 psutil-6.1.0 regex-2024.11.6 requests-2.32.3 safetensors-0.4.5 setuptools-75.6.0 sympy-1.13.1 tokenizers-0.20.3 torch-2.5.1+cu124 tqdm-4.67.0 transformers-4.46.3 triton-3.1.0 typing_extensions-4.12.2 urllib3-2.2.3 wheel-0.45.1\nNo broken requirements found.\n{\"download_bytes\": 13841132070, \"estimated_conversion_bytes\": 13838721960, \"scratch\": \"/tmp/cs736-rxu292-moe\", \"revision\": \"7f1c97f440f06ce36705e4f2b843edb5925f4498\"}\n\rFetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]\rFetching 9 files:  33%|\u2588\u2588\u2588\u258e      | 3/9 [00:48<01:36, 16.06s/it]"
+    },
+    {
+      "run_id": "20261102T023925Z-setup-6b8a78ac",
+      "status": "completed",
+      "exit_code": 0,
+      "kind": "setup",
+      "command_succeeded": true,
+      "experiment_complete": null,
+      "experiment_passed": null,
+      "wall_seconds": 167.63520461367443,
+      "source_release": {
+        "release_id": "20261102T023920Z-8162440d7b",
+        "archive_sha256": "fa3a07d797b0c08f9f853ba657806da63b7e3f6657475e55ecaea3f3671b5a81",
+        "file_count": 29,
+        "created_utc": "2026-11-02T02:39:24.960071+00:00",
+        "hostname": "rxu292-advanced-os-final-0"
+      },
+      "git": {
+        "commit": "4d7add998351280d19ed2ef3d92d57d051941b23",
+        "dirty": true,
+        "status": [
+          " M .gitattributes",
+          " M README.md",
+          "?? .gitignore",
+          "?? configs/machine.example.json",
+          "?? configs/model.json",
+          "?? configs/pilot.json",
+          "?? configs/smoke.json",
+          "?? moe_shared/__init__.py",
+          "?? moe_shared/audit.py",
+          "?? moe_shared/experts.py",
+          "?? moe_shared/kv.py",
+          "?? moe_shared/pool.py",
+          "?? moe_shared/prepare.py",
+          "?? moe_shared/run.py",
+          "?? moe_shared/workload.py",
+          "?? requirements.lock",
+          "?? scripts/acquire_model.py",
+          "?? scripts/bootstrap.sh",
+          "?? scripts/control.py",
+          "?? scripts/linux.py",
+          "?? scripts/remote.ps1",
+          "?? scripts/snapshot.py",
+          "?? scripts/summarize.py",
+          "?? tests/test_audit.py",
+          "?? tests/test_control.py",
+          "?? tests/test_pool.py",
+          "?? tests/test_snapshot.py",
+          "?? tests/test_tiny_gpu.py",
+          "?? tests/test_workload.py"
+        ],
+        "git_available": true
+      },
+      "source_file_hashes": {
+        ".gitattributes": {
+          "sha256": "a8fe7e450017f38c38c3c4c1069ed01d86cf5d2882e61ea504c898dca639de5c",
+          "bytes": 223
+        },
+        ".gitignore": {
+          "sha256": "6eeb952b71076c293f196bed6633a2fb0834dbd1e80fb157650a845abab23ded",
+          "bytes": 368
+        },
+        "README.md": {
+          "sha256": "90c1dd3df4308e50729710457fdceec4452c72628300c2318798baceb78e0650",
+          "bytes": 13652
+        },
+        "configs/machine.example.json": {
+          "sha256": "d5d090486a1b2f0e9d391303974c42bbdc4fe19a9e608671b6e97b7e69a57e58",
+          "bytes": 278
+        },
+        "configs/model.json": {
+          "sha256": "94c184582bf830bc34249bb3bbb02c9d2ae71cd34bf4f4fab7bb622a9a986f8b",
+          "bytes": 402
+        },
+        "configs/pilot.json": {
+          "sha256": "659a85202b0eab45776db62107cd922c33b32dd0e0f50092a8c1f33e02915f6d",
+          "bytes": 657
+        },
+        "configs/smoke.json": {
+          "sha256": "a65677b4447871ffb5f324ac60a7b7a9363b0dd0354c5131686f36fa1bd46e79",
+          "bytes": 657
+        },
+        "moe_shared/__init__.py": {
+          "sha256": "ea46616d32af4d2c2c254d45c63c136ddba7adb344fea03527a3b30e038573f9",
+          "bytes": 75
+        },
+        "moe_shared/audit.py": {
+          "sha256": "498dc8ee2cfcde8c19787fa4240669745765d917dcb85a1df636dbe0dc08bdf9",
+          "bytes": 12088
+        },
+        "moe_shared/experts.py": {
+          "sha256": "8ccf37097168062554f0f61b6a8b8dcc39932dc3ececd88b2686a30ea6e7f03c",
+          "bytes": 10328
+        },
+        "moe_shared/kv.py": {
+          "sha256": "08227539a5338ded823aece6c581e3f99c8d7bca6936e13e2bcfe835f0ff0fe7",
+          "bytes": 11308
+        },
+        "moe_shared/pool.py": {
+          "sha256": "b2cdf6412069358b69c271f62b67e442c54852959e5f3d2fc56d73d5e90dfa36",
+          "bytes": 3201
+        },
+        "moe_shared/prepare.py": {
+          "sha256": "a149b91cc62eccb5468473ea3adaa6881b10dd4e006e697bd9514a6da73b285d",
+          "bytes": 7343
+        },
+        "moe_shared/run.py": {
+          "sha256": "7d26550a4e18cbde14e093ac470776976eaf410a782124ec69a3e9eeee9733b8",
+          "bytes": 26845
+        },
+        "moe_shared/workload.py": {
+          "sha256": "33ed66557b3bbc8f5ff02169cb9976a3b0c4363bd5483a62f8daf29941e353ad",
+          "bytes": 4032
+        },
+        "requirements.lock": {
+          "sha256": "2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193",
+          "bytes": 1027
+        },
+        "scripts/acquire_model.py": {
+          "sha256": "0fd5b50e20d92847090c40132466c6c13620b6bb0d5116ea62ad1da65aa8c699",
+          "bytes": 5336
+        },
+        "scripts/bootstrap.sh": {
+          "sha256": "b291ebaf986e62ccbaea2ea07eff1cc36a071b8888f389f99352aeb45253253e",
+          "bytes": 4417
+        },
+        "scripts/control.py": {
+          "sha256": "ccbe804713cbe0cb8ce6d5f2abf9cc451413544f3d8fbf27d9c35505376ad868",
+          "bytes": 14400
+        },
+        "scripts/linux.py": {
+          "sha256": "7c9bc4f7e993ae2ce208dba9b7bd4a324f0625798de713c54d0d5dc63ceb66ef",
+          "bytes": 4350
+        },
+        "scripts/remote.ps1": {
+          "sha256": "c94556c14c5e5ef6ad8ea8e95e8bfef85d4445d86d2e00bde1cfb96523da73d7",
+          "bytes": 8988
+        },
+        "scripts/snapshot.py": {
+          "sha256": "d8fbd8ed50a6e0525506766803a9824eb939a23e73417fb19f4861a36c8b21ab",
+          "bytes": 7937
+        },
+        "scripts/summarize.py": {
+          "sha256": "5a9d9db73d6a8fd41b6ffd913da11036fd6b7f75970199695ad60ac407e87da9",
+          "bytes": 2746
+        },
+        "tests/test_audit.py": {
+          "sha256": "f6fed7d257889dcc39be64c2c43a704ec090eb600de9d8f93aa663806986664d",
+          "bytes": 1858
+        },
+        "tests/test_control.py": {
+          "sha256": "40be26bb601350628d59876e1691ab4a731d4b97ee521d7268d901ff392f33c9",
+          "bytes": 2576
+        },
+        "tests/test_pool.py": {
+          "sha256": "5a7fac5cf7d10531d6c32973a96e0ffff27ee6054220923c9555ef730679ec19",
+          "bytes": 1774
+        },
+        "tests/test_snapshot.py": {
+          "sha256": "0c3b3978e0c3b519e8c10daab97baf563951c17cc5f8b9d15cb58e8fad10d421",
+          "bytes": 2981
+        },
+        "tests/test_tiny_gpu.py": {
+          "sha256": "f8238221c850090a4345269d5d34f48cf42481eed1d5d4d26d0c9160085f5542",
+          "bytes": 6300
+        },
+        "tests/test_workload.py": {
+          "sha256": "485999c98044f6b92c4f26954f9bc8fd1a275f4acb1264bb61c6cb3cad4dce51",
+          "bytes": 1577
+        }
+      },
+      "model": null,
+      "torch": "2.5.1+cu124",
+      "transformers": "4.46.3",
+      "gpu": "NVIDIA RTX A5000",
+      "trajectory_sha256": null,
+      "config": null,
+      "transfer": {
+        "archive_sha256": "9fe7d4f82ef3c08aef1a34583375712ee3a6b0ecb2b99be62cf47cd76f2f99fd",
+        "verified_files": 11,
+        "verified_bytes": 99462,
+        "fetched_utc": "2026-11-02T02:45:58.355051+00:00"
+      },
+      "fixtures": null,
+      "limitations": [],
+      "cases": [],
+      "log_tail": "{\"audit\": \"/home/rxu292/advanced-os-final/runs/20261102T023925Z-setup-6b8a78ac/audit-before.json\", \"hostname\": \"rxu292-advanced-os-final-0\", \"torch\": {\"unavailable\": \"No module named 'torch'\"}, \"scratch_guard\": {\"scratch\": \"/tmp/cs736-rxu292-moe\", \"task_logical_bytes\": 31, \"filesystem_free_bytes\": 113773162496, \"additional_bytes\": 0, \"max_scratch_bytes\": 37580963840, \"headroom_bytes\": 21474836480, \"free_space_is_reserved\": false}}\nReusing dependency-locked environment 2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193\n{\"download_bytes\": 13841132070, \"estimated_conversion_bytes\": 13838721960, \"scratch\": \"/tmp/cs736-rxu292-moe\", \"revision\": \"7f1c97f440f06ce36705e4f2b843edb5925f4498\"}\n\rFetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]\rFetching 9 files:  11%|\u2588         | 1/9 [00:00<00:01,  7.72it/s]\rFetching 9 files:  33%|\u2588\u2588\u2588\u258e      | 3/9 [00:53<01:59, 19.95s/it]\rFetching 9 files:  44%|\u2588\u2588\u2588\u2588\u258d     | 4/9 [01:02<01:19, 15.91s/it]\rFetching 9 files:  56%|\u2588\u2588\u2588\u2588\u2588\u258c    | 5/9 [02:00<01:59, 29.83s/it]\rFetching 9 files: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 9/9 [02:00<00:00, 13.35s/it]\n{\"model\": \"/tmp/cs736-rxu292-moe/model\", \"revision\": \"7f1c97f440f06ce36705e4f2b843edb5925f4498\", \"verified_files\": 9}\n{\n  \"format_version\": 1,\n  \"expert_bytes\": 12884901888,\n  \"dense_bytes\": 953421824,\n  \"max_expert_bytes\": 12582912\n}\n{\"audit\": \"/home/rxu292/advanced-os-final/runs/20261102T023925Z-setup-6b8a78ac/audit-after.json\", \"hostname\": \"rxu292-advanced-os-final-0\", \"torch\": {\"version\": \"2.5.1+cu124\", \"cuda_build\": \"12.4\", \"cuda_available\": true, \"device\": \"NVIDIA RTX A5000\", \"capability\": [8, 6], \"bf16_supported\": true}, \"scratch_guard\": {\"scratch\": \"/tmp/cs736-rxu292-moe\", \"task_logical_bytes\": 27680302389, \"filesystem_free_bytes\": 86088941568, \"additional_bytes\": 0, \"max_scratch_bytes\": 37580963840, \"headroom_bytes\": 21474836480, \"free_space_is_reserved\": false}}\nSetup complete: env=/home/rxu292/advanced-os-final/envs/2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193 model=/tmp/cs736-rxu292-moe/model backing=/tmp/cs736-rxu292-moe/backing\n",
+      "actual_model_revision": "7f1c97f440f06ce36705e4f2b843edb5925f4498",
+      "actual_model_id": "allenai/OLMoE-1B-7B-0924-Instruct",
+      "scratch_guard": {
+        "scratch": "/tmp/cs736-rxu292-moe",
+        "task_logical_bytes": 27680302389,
+        "filesystem_free_bytes": 86088941568,
+        "additional_bytes": 0,
+        "max_scratch_bytes": 37580963840,
+        "headroom_bytes": 21474836480,
+        "free_space_is_reserved": false
+      },
+      "cgroup_memory_max": 68719476736,
+      "cgroup_historical_peak": 29032001536,
+      "cpu_max": "2400000 100000",
+      "storage_label": "ext4; physical backing unverified"
+    },
+    {
+      "run_id": "20261102T024300Z-smoke-f1470994",
+      "status": "failed",
+      "exit_code": 1,
+      "kind": "smoke",
+      "command_succeeded": false,
+      "experiment_complete": null,
+      "experiment_passed": null,
+      "wall_seconds": 9.910534609109163,
+      "source_release": {
+        "release_id": "20261102T024255Z-1761940784",
+        "archive_sha256": "5ee0201bfcfbdbf1f47ecc39ad41c209747acccba450998fec1244bf6d068f02",
+        "file_count": 29,
+        "created_utc": "2026-11-02T02:43:00.633599+00:00",
+        "hostname": "rxu292-advanced-os-final-0"
+      },
+      "git": {
+        "commit": "4d7add998351280d19ed2ef3d92d57d051941b23",
+        "dirty": true,
+        "status": [
+          " M .gitattributes",
+          " M README.md",
+          "?? .gitignore",
+          "?? configs/machine.example.json",
+          "?? configs/model.json",
+          "?? configs/pilot.json",
+          "?? configs/smoke.json",
+          "?? moe_shared/__init__.py",
+          "?? moe_shared/audit.py",
+          "?? moe_shared/experts.py",
+          "?? moe_shared/kv.py",
+          "?? moe_shared/pool.py",
+          "?? moe_shared/prepare.py",
+          "?? moe_shared/run.py",
+          "?? moe_shared/workload.py",
+          "?? requirements.lock",
+          "?? scripts/acquire_model.py",
+          "?? scripts/bootstrap.sh",
+          "?? scripts/control.py",
+          "?? scripts/linux.py",
+          "?? scripts/remote.ps1",
+          "?? scripts/snapshot.py",
+          "?? scripts/summarize.py",
+          "?? tests/test_audit.py",
+          "?? tests/test_control.py",
+          "?? tests/test_pool.py",
+          "?? tests/test_snapshot.py",
+          "?? tests/test_tiny_gpu.py",
+          "?? tests/test_workload.py"
+        ],
+        "git_available": true
+      },
+      "source_file_hashes": {
+        ".gitattributes": {
+          "sha256": "a8fe7e450017f38c38c3c4c1069ed01d86cf5d2882e61ea504c898dca639de5c",
+          "bytes": 223
+        },
+        ".gitignore": {
+          "sha256": "6eeb952b71076c293f196bed6633a2fb0834dbd1e80fb157650a845abab23ded",
+          "bytes": 368
+        },
+        "README.md": {
+          "sha256": "90c1dd3df4308e50729710457fdceec4452c72628300c2318798baceb78e0650",
+          "bytes": 13652
+        },
+        "configs/machine.example.json": {
+          "sha256": "d5d090486a1b2f0e9d391303974c42bbdc4fe19a9e608671b6e97b7e69a57e58",
+          "bytes": 278
+        },
+        "configs/model.json": {
+          "sha256": "94c184582bf830bc34249bb3bbb02c9d2ae71cd34bf4f4fab7bb622a9a986f8b",
+          "bytes": 402
+        },
+        "configs/pilot.json": {
+          "sha256": "659a85202b0eab45776db62107cd922c33b32dd0e0f50092a8c1f33e02915f6d",
+          "bytes": 657
+        },
+        "configs/smoke.json": {
+          "sha256": "a65677b4447871ffb5f324ac60a7b7a9363b0dd0354c5131686f36fa1bd46e79",
+          "bytes": 657
+        },
+        "moe_shared/__init__.py": {
+          "sha256": "ea46616d32af4d2c2c254d45c63c136ddba7adb344fea03527a3b30e038573f9",
+          "bytes": 75
+        },
+        "moe_shared/audit.py": {
+          "sha256": "498dc8ee2cfcde8c19787fa4240669745765d917dcb85a1df636dbe0dc08bdf9",
+          "bytes": 12088
+        },
+        "moe_shared/experts.py": {
+          "sha256": "8ccf37097168062554f0f61b6a8b8dcc39932dc3ececd88b2686a30ea6e7f03c",
+          "bytes": 10328
+        },
+        "moe_shared/kv.py": {
+          "sha256": "08227539a5338ded823aece6c581e3f99c8d7bca6936e13e2bcfe835f0ff0fe7",
+          "bytes": 11308
+        },
+        "moe_shared/pool.py": {
+          "sha256": "b2cdf6412069358b69c271f62b67e442c54852959e5f3d2fc56d73d5e90dfa36",
+          "bytes": 3201
+        },
+        "moe_shared/prepare.py": {
+          "sha256": "a149b91cc62eccb5468473ea3adaa6881b10dd4e006e697bd9514a6da73b285d",
+          "bytes": 7343
+        },
+        "moe_shared/run.py": {
+          "sha256": "7d26550a4e18cbde14e093ac470776976eaf410a782124ec69a3e9eeee9733b8",
+          "bytes": 26845
+        },
+        "moe_shared/workload.py": {
+          "sha256": "33ed66557b3bbc8f5ff02169cb9976a3b0c4363bd5483a62f8daf29941e353ad",
+          "bytes": 4032
+        },
+        "requirements.lock": {
+          "sha256": "2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193",
+          "bytes": 1027
+        },
+        "scripts/acquire_model.py": {
+          "sha256": "0fd5b50e20d92847090c40132466c6c13620b6bb0d5116ea62ad1da65aa8c699",
+          "bytes": 5336
+        },
+        "scripts/bootstrap.sh": {
+          "sha256": "b291ebaf986e62ccbaea2ea07eff1cc36a071b8888f389f99352aeb45253253e",
+          "bytes": 4417
+        },
+        "scripts/control.py": {
+          "sha256": "ccbe804713cbe0cb8ce6d5f2abf9cc451413544f3d8fbf27d9c35505376ad868",
+          "bytes": 14400
+        },
+        "scripts/linux.py": {
+          "sha256": "7c9bc4f7e993ae2ce208dba9b7bd4a324f0625798de713c54d0d5dc63ceb66ef",
+          "bytes": 4350
+        },
+        "scripts/remote.ps1": {
+          "sha256": "c94556c14c5e5ef6ad8ea8e95e8bfef85d4445d86d2e00bde1cfb96523da73d7",
+          "bytes": 8988
+        },
+        "scripts/snapshot.py": {
+          "sha256": "d8fbd8ed50a6e0525506766803a9824eb939a23e73417fb19f4861a36c8b21ab",
+          "bytes": 7937
+        },
+        "scripts/summarize.py": {
+          "sha256": "5a9d9db73d6a8fd41b6ffd913da11036fd6b7f75970199695ad60ac407e87da9",
+          "bytes": 2746
+        },
+        "tests/test_audit.py": {
+          "sha256": "f6fed7d257889dcc39be64c2c43a704ec090eb600de9d8f93aa663806986664d",
+          "bytes": 1858
+        },
+        "tests/test_control.py": {
+          "sha256": "40be26bb601350628d59876e1691ab4a731d4b97ee521d7268d901ff392f33c9",
+          "bytes": 2576
+        },
+        "tests/test_pool.py": {
+          "sha256": "5a7fac5cf7d10531d6c32973a96e0ffff27ee6054220923c9555ef730679ec19",
+          "bytes": 1774
+        },
+        "tests/test_snapshot.py": {
+          "sha256": "0c3b3978e0c3b519e8c10daab97baf563951c17cc5f8b9d15cb58e8fad10d421",
+          "bytes": 2981
+        },
+        "tests/test_tiny_gpu.py": {
+          "sha256": "f8238221c850090a4345269d5d34f48cf42481eed1d5d4d26d0c9160085f5542",
+          "bytes": 6300
+        },
+        "tests/test_workload.py": {
+          "sha256": "485999c98044f6b92c4f26954f9bc8fd1a275f4acb1264bb61c6cb3cad4dce51",
+          "bytes": 1577
+        }
+      },
+      "model": null,
+      "torch": "2.5.1+cu124",
+      "transformers": "4.46.3",
+      "gpu": "NVIDIA RTX A5000",
+      "trajectory_sha256": null,
+      "config": {
+        "name": "real-pretrained-correctness-smoke",
+        "seed": 736,
+        "paused_prefix_tokens": 8,
+        "active_prefix_tokens": 8,
+        "first_turn_tokens": 2,
+        "active_output_tokens": 5,
+        "return_prompt_tokens": 2,
+        "return_output_tokens": 2,
+        "think_seconds": 0.05,
+        "gpu_expert_slots": 4,
+        "total_gpu_budget_bytes": 23622320128,
+        "gpu_workspace_reservation_bytes": 2147483648,
+        "host_expert_slots": [
+          64
+        ],
+        "host_slack_bytes": 524288,
+        "actions": [
+          "retain",
+          "spill",
+          "recompute"
+        ],
+        "repeats": 1,
+        "max_wall_seconds": 900,
+        "max_context_tokens": 128,
+        "logit_atol": 0.125,
+        "logit_rtol": 0.02,
+        "minimum_argmax_agreement": 0.95,
+        "torch_threads": 4
+      },
+      "transfer": {
+        "archive_sha256": "1a1319df7ec37883ce555dc7c16774709eeb07e5fac75817563e0ae3d113983e",
+        "verified_files": 10,
+        "verified_bytes": 12719,
+        "fetched_utc": "2026-11-02T02:45:58.787347+00:00"
+      },
+      "fixtures": null,
+      "limitations": [],
+      "cases": [],
+      "log_tail": "The cache for model files in Transformers v4.22.0 has been updated. Migrating your old cache. This is a one-time only operation. You can interrupt this and resume the migration later on by calling `transformers.utils.move_cache()`.\n\r0it [00:00, ?it/s]\r0it [00:00, ?it/s]\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/home/rxu292/advanced-os-final/releases/20261102T024255Z-1761940784/moe_shared/run.py\", line 460, in <module>\n    main()\n  File \"/home/rxu292/advanced-os-final/releases/20261102T024255Z-1761940784/moe_shared/run.py\", line 456, in main\n    raise SystemExit(run(args))\n                     ^^^^^^^^^\n  File \"/home/rxu292/advanced-os-final/releases/20261102T024255Z-1761940784/moe_shared/run.py\", line 299, in run\n    model_provenance = json.loads((model_dir / \"model-provenance.json\").read_text())\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/pathlib.py\", line 1029, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/pathlib.py\", line 1015, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/tmp/cs736-rxu292-moe/model/model-provenance.json'\n"
+    },
+    {
+      "run_id": "20261102T025113Z-fixtures-c660141f",
+      "status": "completed",
+      "exit_code": 0,
+      "kind": "fixtures",
+      "command_succeeded": true,
+      "experiment_complete": null,
+      "experiment_passed": null,
+      "wall_seconds": 11.460465073119849,
+      "source_release": {
+        "release_id": "20261102T025108Z-097c0644a0",
+        "archive_sha256": "c5809317b7e921d9a837ea2fa7b5e8eff0f907ded6ae82adb4cb0d5930d87580",
+        "file_count": 30,
+        "created_utc": "2026-11-02T02:51:13.143935+00:00",
+        "hostname": "rxu292-advanced-os-final-0"
+      },
+      "git": {
+        "commit": "4d7add998351280d19ed2ef3d92d57d051941b23",
+        "dirty": true,
+        "status": [
+          " M .gitattributes",
+          " M README.md",
+          "?? .gitignore",
+          "?? configs/machine.example.json",
+          "?? configs/model.json",
+          "?? configs/pilot.json",
+          "?? configs/smoke.json",
+          "?? moe_shared/__init__.py",
+          "?? moe_shared/audit.py",
+          "?? moe_shared/experts.py",
+          "?? moe_shared/fixtures.py",
+          "?? moe_shared/kv.py",
+          "?? moe_shared/pool.py",
+          "?? moe_shared/prepare.py",
+          "?? moe_shared/run.py",
+          "?? moe_shared/workload.py",
+          "?? requirements.lock",
+          "?? scripts/acquire_model.py",
+          "?? scripts/bootstrap.sh",
+          "?? scripts/control.py",
+          "?? scripts/linux.py",
+          "?? scripts/remote.ps1",
+          "?? scripts/snapshot.py",
+          "?? scripts/summarize.py",
+          "?? tests/test_audit.py",
+          "?? tests/test_control.py",
+          "?? tests/test_pool.py",
+          "?? tests/test_snapshot.py",
+          "?? tests/test_tiny_gpu.py",
+          "?? tests/test_workload.py"
+        ],
+        "git_available": true
+      },
+      "source_file_hashes": {
+        ".gitattributes": {
+          "sha256": "a8fe7e450017f38c38c3c4c1069ed01d86cf5d2882e61ea504c898dca639de5c",
+          "bytes": 223
+        },
+        ".gitignore": {
+          "sha256": "6eeb952b71076c293f196bed6633a2fb0834dbd1e80fb157650a845abab23ded",
+          "bytes": 368
+        },
+        "README.md": {
+          "sha256": "dffc4142e05537b65a6735a39f7eebbf8b86c01474d22e623f81bc907641b80e",
+          "bytes": 14301
+        },
+        "configs/machine.example.json": {
+          "sha256": "d5d090486a1b2f0e9d391303974c42bbdc4fe19a9e608671b6e97b7e69a57e58",
+          "bytes": 278
+        },
+        "configs/model.json": {
+          "sha256": "94c184582bf830bc34249bb3bbb02c9d2ae71cd34bf4f4fab7bb622a9a986f8b",
+          "bytes": 402
+        },
+        "configs/pilot.json": {
+          "sha256": "659a85202b0eab45776db62107cd922c33b32dd0e0f50092a8c1f33e02915f6d",
+          "bytes": 657
+        },
+        "configs/smoke.json": {
+          "sha256": "a65677b4447871ffb5f324ac60a7b7a9363b0dd0354c5131686f36fa1bd46e79",
+          "bytes": 657
+        },
+        "moe_shared/__init__.py": {
+          "sha256": "ea46616d32af4d2c2c254d45c63c136ddba7adb344fea03527a3b30e038573f9",
+          "bytes": 75
+        },
+        "moe_shared/audit.py": {
+          "sha256": "498dc8ee2cfcde8c19787fa4240669745765d917dcb85a1df636dbe0dc08bdf9",
+          "bytes": 12088
+        },
+        "moe_shared/experts.py": {
+          "sha256": "8ccf37097168062554f0f61b6a8b8dcc39932dc3ececd88b2686a30ea6e7f03c",
+          "bytes": 10328
+        },
+        "moe_shared/fixtures.py": {
+          "sha256": "ed164471daeb9103851d4fa72db42e10b59bccf1c7881aed0efc4807d5720a73",
+          "bytes": 1411
+        },
+        "moe_shared/kv.py": {
+          "sha256": "08227539a5338ded823aece6c581e3f99c8d7bca6936e13e2bcfe835f0ff0fe7",
+          "bytes": 11308
+        },
+        "moe_shared/pool.py": {
+          "sha256": "b2cdf6412069358b69c271f62b67e442c54852959e5f3d2fc56d73d5e90dfa36",
+          "bytes": 3201
+        },
+        "moe_shared/prepare.py": {
+          "sha256": "a149b91cc62eccb5468473ea3adaa6881b10dd4e006e697bd9514a6da73b285d",
+          "bytes": 7343
+        },
+        "moe_shared/run.py": {
+          "sha256": "3be5323075e4e38551c3f88e0947825a2476aaa5ffc4a887b0cf0ca30422c8df",
+          "bytes": 27609
+        },
+        "moe_shared/workload.py": {
+          "sha256": "33ed66557b3bbc8f5ff02169cb9976a3b0c4363bd5483a62f8daf29941e353ad",
+          "bytes": 4032
+        },
+        "requirements.lock": {
+          "sha256": "2cf614cde251c90668a116280293f936af0da821636c4ceef7d15478b1908193",
+          "bytes": 1027
+        },
+        "scripts/acquire_model.py": {
+          "sha256": "0fd5b50e20d92847090c40132466c6c13620b6bb0d5116ea62ad1da65aa8c699",
+          "bytes": 5336
+        },
+        "scripts/bootstrap.sh": {
+          "sha256": "b291ebaf986e62ccbaea2ea07eff1cc36a071b8888f389f99352aeb45253253e",
+          "bytes": 4417
+        },
+        "scripts/control.py": {
+          "sha256": "ac159b24392871052e6bdd73acc35243b87eda440249c95a9dfde04ab7e8f514",
+          "bytes": 14570
+        },
+        "scripts/linux.py": {
+          "sha256": "1c188ee7ab5371f5ad31b8b07fa3cc4d5ecad947d8e0266a54dafffdf55cb344",
+          "bytes": 4383
+        },
+        "scripts/remote.ps1": {
+          "sha256": "46adc70ce82e885c11158852ffbab64f60176a70a3baf3ce96851bb7243f6583",
+          "bytes": 9010
+        },
+        "scripts/snapshot.py": {
+          "sha256": "d8fbd8ed50a6e0525506766803a9824eb939a23e73417fb19f4861a36c8b21ab",
+          "bytes": 7937
+        },
+        "scripts/summarize.py": {
+          "sha256": "c45331512a06b1c91b3fa9cd07639bdade05afe67b9a37c0f1f7d4e90435547a",
+          "bytes": 4108
+        },
+        "tests/test_audit.py": {
+          "sha256": "f6fed7d257889dcc39be64c2c43a704ec090eb600de9d8f93aa663806986664d",
+          "bytes": 1858
+        },
+        "tests/test_control.py": {
+          "sha256": "40be26bb601350628d59876e1691ab4a731d4b97ee521d7268d901ff392f33c9",
+          "bytes": 2576
+        },
+        "tests/test_pool.py": {
+          "sha256": "5a7fac5cf7d10531d6c32973a96e0ffff27ee6054220923c9555ef730679ec19",
+          "bytes": 1774
+        },
+        "tests/test_snapshot.py": {
+          "sha256": "0c3b3978e0c3b519e8c10daab97baf563951c17cc5f8b9d15cb58e8fad10d421",
+          "bytes": 2981
+        },
+        "tests/test_tiny_gpu.py": {
+          "sha256": "2105c756e087840e336bcaec8ee380e3826cf9774e1bf75d935aaafba7c63658",
+          "bytes": 13761
+        },
+        "tests/test_workload.py": {
+          "sha256": "485999c98044f6b92c4f26954f9bc8fd1a275f4acb1264bb61c6cb3cad4dce51",
+          "bytes": 1577
+        }
+      },
+      "model": null,
+      "torch": "2.5.1+cu124",
+      "transformers": "4.46.3",
+      "gpu": "NVIDIA RTX A5000",
+      "trajectory_sha256": null,
+      "config": null,
+      "transfer": {
+        "archive_sha256": "26ae15088d8ff778a414eef17660453df92153e57b23493220516a1de0313614",
+        "verified_files": 9,
+        "verified_bytes": 27787,
+        "fetched_utc": "2026-11-02T02:51:42.014827+00:00"
+      },
+      "fixtures": {
+        "model_kind": "tiny random fixture; NOT pretrained-model acceptance",
+        "tests_run": 19,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true,
+        "wall_seconds": 7.708361656870693,
+        "gpu_peak_allocated_bytes": 8603648,
+        "gpu_peak_reserved_bytes": 23068672,
+        "resources_before": {
+          "wall_time_utc": "2026-11-02T02:51:17.439555+00:00",
+          "monotonic_ns": 2701706458765022,
+          "process_io": {
+            "rchar": 19676788,
+            "wchar": 0,
+            "syscr": 2096,
+            "syscw": 0,
+            "read_bytes": 0,
+            "write_bytes": 0,
+            "cancelled_write_bytes": 0
+          },
+          "process_status": {
+            "Name": "python",
+            "Umask": 2,
+            "State": "R (running)",
+            "Tgid": 1262,
+            "Ngid": 0,
+            "Pid": 1262,
+            "PPid": 1261,
+            "TracerPid": 0,
+            "Uid": 100166,
+            "Gid": 100166,
+            "FDSize": 64,
+            "Groups": 100166,
+            "NStgid": 1262,
+            "NSpid": 1262,
+            "NSpgid": 1262,
+            "NSsid": 1262,
+            "Kthread": 0,
+            "VmPeak": 4582516,
+            "VmSize": 4582516,
+            "VmLck": 0,
+            "VmPin": 0,
+            "VmHWM": 370740,
+            "VmRSS": 370740,
+            "RssAnon": 207436,
+            "RssFile": 163304,
+            "RssShmem": 0,
+            "VmData": 1890652,
+            "VmStk": 132,
+            "VmExe": 2956,
+            "VmLib": 1706508,
+            "VmPTE": 1520,
+            "VmSwap": 0,
+            "HugetlbPages": 0,
+            "CoreDumping": 0,
+            "THP_enabled": 1,
+            "untag_mask": "0xffffffffffffffff",
+            "Threads": 32,
+            "SigQ": "0/1029790",
+            "SigPnd": 0,
+            "ShdPnd": 0,
+            "SigBlk": 0,
+            "SigIgn": 1001000,
+            "SigCgt": 100000002,
+            "CapInh": 0,
+            "CapPrm": 0,
+            "CapEff": 0,
+            "CapBnd": "00000000a80425fb",
+            "CapAmb": 0,
+            "NoNewPrivs": 0,
+            "Seccomp": 0,
+            "Seccomp_filters": 0,
+            "Speculation_Store_Bypass": "thread vulnerable",
+            "SpeculationIndirectBranch": "conditional enabled",
+            "Cpus_allowed": "ffffffff",
+            "Cpus_allowed_list": "0-31",
+            "Mems_allowed": "00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001",
+            "Mems_allowed_list": 0,
+            "voluntary_ctxt_switches": 5463,
+            "nonvoluntary_ctxt_switches": 104
+          },
+          "process_status_memory_units": "KiB (values from /proc/self/status)",
+          "process_memory_bytes": {
+            "VmRSS_bytes": 379637760,
+            "VmHWM_bytes": 379637760,
+            "VmSize_bytes": 4692496384,
+            "VmPeak_bytes": 4692496384,
+            "RssAnon_bytes": 212414464,
+            "RssFile_bytes": 167223296,
+            "RssShmem_bytes": 0
+          },
+          "cgroup": {
+            "groups": [
+              {
+                "path": "/sys/fs/cgroup",
+                "memory.current": 681861120,
+                "memory.max": 68719476736,
+                "memory.high": "max",
+                "memory.peak": 1472679936,
+                "memory.stat": {
+                  "anon": 223293440,
+                  "file": 441249792,
+                  "kernel": 16908288,
+                  "kernel_stack": 573440,
+                  "pagetables": 1769472,
+                  "sec_pagetables": 0,
+                  "percpu": 2176,
+                  "sock": 0,
+                  "vmalloc": 0,
+                  "shmem": 4096,
+                  "zswap": 0,
+                  "zswapped": 0,
+                  "file_mapped": 152276992,
+                  "file_dirty": 0,
+                  "file_writeback": 0,
+                  "swapcached": 0,
+                  "anon_thp": 0,
+                  "file_thp": 0,
+                  "shmem_thp": 0,
+                  "inactive_anon": 0,
+                  "active_anon": 223195136,
+                  "inactive_file": 56365056,
+                  "active_file": 384880640,
+                  "unevictable": 0,
+                  "slab_reclaimable": 13411936,
+                  "slab_unreclaimable": 1100160,
+                  "slab": 14512096,
+                  "workingset_refault_anon": 0,
+                  "workingset_refault_file": 0,
+                  "workingset_activate_anon": 0,
+                  "workingset_activate_file": 0,
+                  "workingset_restore_anon": 0,
+                  "workingset_restore_file": 0,
+                  "workingset_nodereclaim": 0,
+                  "pgscan": 0,
+                  "pgsteal": 0,
+                  "pgscan_kswapd": 0,
+                  "pgscan_direct": 0,
+                  "pgscan_khugepaged": 0,
+                  "pgsteal_kswapd": 0,
+                  "pgsteal_direct": 0,
+                  "pgsteal_khugepaged": 0,
+                  "pgfault": 901937,
+                  "pgmajfault": 2389,
+                  "pgrefill": 0,
+                  "pgactivate": 0,
+                  "pgdeactivate": 0,
+                  "pglazyfree": 0,
+                  "pglazyfreed": 0,
+                  "zswpin": 0,
+                  "zswpout": 0,
+                  "zswpwb": 0,
+                  "thp_fault_alloc": 0,
+                  "thp_collapse_alloc": 0,
+                  "thp_swpout": 0,
+                  "thp_swpout_fallback": 0
+                },
+                "memory.events": {
+                  "low": 0,
+                  "high": 0,
+                  "max": 0,
+                  "oom": 0,
+                  "oom_kill": 0,
+                  "oom_group_kill": 0
+                },
+                "memory.events.local": {
+                  "low": 0,
+                  "high": 0,
+                  "max": 0,
+                  "oom": 0,
+                  "oom_kill": 0,
+                  "oom_group_kill": 0
+                },
+                "memory.swap.current": 0,
+                "memory.swap.max": 0,
+                "memory.swap.peak": 0,
+                "cpu.max": "2400000 100000",
+                "cpu.stat": {
+                  "usage_usec": 28041467,
+                  "user_usec": 23459673,
+                  "system_usec": 4581794,
+                  "core_sched.force_idle_usec": 0,
+                  "nr_periods": 731,
+                  "nr_throttled": 0,
+                  "throttled_usec": 32759,
+                  "nr_bursts": 0,
+                  "burst_usec": 0
+                },
+                "cpuset.cpus": "",
+                "cpuset.cpus.effective": "0-31",
+                "io.stat": "259:0 rbytes=0 wbytes=823296 rios=0 wios=170 dbytes=0 dios=0\n252:0 rbytes=0 wbytes=823296 rios=0 wios=170 dbytes=0 dios=0",
+                "io.max": "",
+                "pids.current": 38,
+                "pids.max": 308937,
+                "io_counters": {
+                  "259:0": {
+                    "rbytes": 0,
+                    "wbytes": 823296,
+                    "rios": 0,
+                    "wios": 170,
+                    "dbytes": 0,
+                    "dios": 0
+                  },
+                  "252:0": {
+                    "rbytes": 0,
+                    "wbytes": 823296,
+                    "rios": 0,
+                    "wios": 170,
+                    "dbytes": 0,
+                    "dios": 0
+                  }
+                }
+              }
+            ],
+            "membership": "0::/",
+            "ancestor_visibility": "Only ancestors visible in this cgroup namespace are readable; hidden host ancestors cannot be ruled out.",
+            "io_counters": {
+              "/sys/fs/cgroup": {
+                "259:0": {
+                  "rbytes": 0,
+                  "wbytes": 823296,
+                  "rios": 0,
+                  "wios": 170,
+                  "dbytes": 0,
+                  "dios": 0
+                },
+                "252:0": {
+                  "rbytes": 0,
+                  "wbytes": 823296,
+                  "rios": 0,
+                  "wios": 170,
+                  "dbytes": 0,
+                  "dios": 0
+                }
+              }
+            }
+          }
+        },
+        "resources_after": {
+          "wall_time_utc": "2026-11-02T02:51:25.149015+00:00",
+          "monotonic_ns": 2701714168223025,
+          "process_io": {
+            "rchar": 55484583,
+            "wchar": 515468,
+            "syscr": 8477,
+            "syscw": 504,
+            "read_bytes": 0,
+            "write_bytes": 823296,
+            "cancelled_write_bytes": 344064
+          },
+          "process_status": {
+            "Name": "python",
+            "Umask": 2,
+            "State": "R (running)",
+            "Tgid": 1262,
+            "Ngid": 0,
+            "Pid": 1262,
+            "PPid": 1261,
+            "TracerPid": 0,
+            "Uid": 100166,
+            "Gid": 100166,
+            "FDSize": 64,
+            "Groups": 100166,
+            "NStgid": 1262,
+            "NSpid": 1262,
+            "NSpgid": 1262,
+            "NSsid": 1262,
+            "Kthread": 0,
+            "VmPeak": 10643928,
+            "VmSize": 10643928,
+            "VmLck": 0,
+            "VmPin": 0,
+            "VmHWM": 1311828,
+            "VmRSS": 1311828,
+            "RssAnon": 961208,
+            "RssFile": 335256,
+            "RssShmem": 15364,
+            "VmData": 2865876,
+            "VmStk": 132,
+            "VmExe": 2956,
+            "VmLib": 1783128,
+            "VmPTE": 4264,
+            "VmSwap": 0,
+            "HugetlbPages": 0,
+            "CoreDumping": 0,
+            "THP_enabled": 1,
+            "untag_mask": "0xffffffffffffffff",
+            "Threads": 35,
+            "SigQ": "0/1029790",
+            "SigPnd": 0,
+            "ShdPnd": 0,
+            "SigBlk": 0,
+            "SigIgn": 1001000,
+            "SigCgt": 100000002,
+            "CapInh": 0,
+            "CapPrm": 0,
+            "CapEff": 0,
+            "CapBnd": "00000000a80425fb",
+            "CapAmb": 0,
+            "NoNewPrivs": 0,
+            "Seccomp": 0,
+            "Seccomp_filters": 0,
+            "Speculation_Store_Bypass": "thread vulnerable",
+            "SpeculationIndirectBranch": "conditional enabled",
+            "Cpus_allowed": "ffffffff",
+            "Cpus_allowed_list": "0-31",
+            "Mems_allowed": "00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001",
+            "Mems_allowed_list": 0,
+            "voluntary_ctxt_switches": 18068,
+            "nonvoluntary_ctxt_switches": 120
+          },
+          "process_status_memory_units": "KiB (values from /proc/self/status)",
+          "process_memory_bytes": {
+            "VmRSS_bytes": 1343311872,
+            "VmHWM_bytes": 1343311872,
+            "VmSize_bytes": 10899382272,
+            "VmPeak_bytes": 10899382272,
+            "RssAnon_bytes": 984276992,
+            "RssFile_bytes": 343302144,
+            "RssShmem_bytes": 15732736
+          },
+          "cgroup": {
+            "groups": [
+              {
+                "path": "/sys/fs/cgroup",
+                "memory.current": 1472266240,
+                "memory.max": 68719476736,
+                "memory.high": "max",
+                "memory.peak": 1472679936,
+                "memory.stat": {
+                  "anon": 994922496,
+                  "file": 457383936,
+                  "kernel": 20025344,
+                  "kernel_stack": 622592,
+                  "pagetables": 4579328,
+                  "sec_pagetables": 0,
+                  "percpu": 2176,
+                  "sock": 0,
+                  "vmalloc": 0,
+                  "shmem": 15736832,
+                  "zswap": 0,
+                  "zswapped": 0,
+                  "file_mapped": 266948608,
+                  "file_dirty": 241664,
+                  "file_writeback": 0,
+                  "swapcached": 0,
+                  "anon_thp": 0,
+                  "file_thp": 0,
+                  "shmem_thp": 0,
+                  "inactive_anon": 0,
+                  "active_anon": 1010638848,
+                  "inactive_file": 56766464,
+                  "active_file": 384880640,
+                  "unevictable": 0,
+                  "slab_reclaimable": 13548616,
+                  "slab_unreclaimable": 1218056,
+                  "slab": 14766672,
+                  "workingset_refault_anon": 0,
+                  "workingset_refault_file": 0,
+                  "workingset_activate_anon": 0,
+                  "workingset_activate_file": 0,
+                  "workingset_restore_anon": 0,
+                  "workingset_restore_file": 0,
+                  "workingset_nodereclaim": 0,
+                  "pgscan": 0,
+                  "pgsteal": 0,
+                  "pgscan_kswapd": 0,
+                  "pgscan_direct": 0,
+                  "pgscan_khugepaged": 0,
+                  "pgsteal_kswapd": 0,
+                  "pgsteal_direct": 0,
+                  "pgsteal_khugepaged": 0,
+                  "pgfault": 1106093,
+                  "pgmajfault": 2389,
+                  "pgrefill": 0,
+                  "pgactivate": 0,
+                  "pgdeactivate": 0,
+                  "pglazyfree": 0,
+                  "pglazyfreed": 0,
+                  "zswpin": 0,
+                  "zswpout": 0,
+                  "zswpwb": 0,
+                  "thp_fault_alloc": 0,
+                  "thp_collapse_alloc": 0,
+                  "thp_swpout": 0,
+                  "thp_swpout_fallback": 0
+                },
+                "memory.events": {
+                  "low": 0,
+                  "high": 0,
+                  "max": 0,
+                  "oom": 0,
+                  "oom_kill": 0,
+                  "oom_group_kill": 0
+                },
+                "memory.events.local": {
+                  "low": 0,
+                  "high": 0,
+                  "max": 0,
+                  "oom": 0,
+                  "oom_kill": 0,
+                  "oom_group_kill": 0
+                },
+                "memory.swap.current": 0,
+                "memory.swap.max": 0,
+                "memory.swap.peak": 0,
+                "cpu.max": "2400000 100000",
+                "cpu.stat": {
+                  "usage_usec": 31785138,
+                  "user_usec": 26462115,
+                  "system_usec": 5323023,
+                  "core_sched.force_idle_usec": 0,
+                  "nr_periods": 808,
+                  "nr_throttled": 0,
+                  "throttled_usec": 32759,
+                  "nr_bursts": 0,
+                  "burst_usec": 0
+                },
+                "cpuset.cpus": "",
+                "cpuset.cpus.effective": "0-31",
+                "io.stat": "259:0 rbytes=0 wbytes=1306624 rios=0 wios=241 dbytes=0 dios=0\n252:0 rbytes=0 wbytes=1306624 rios=0 wios=241 dbytes=0 dios=0",
+                "io.max": "",
+                "pids.current": 41,
+                "pids.max": 308937,
+                "io_counters": {
+                  "259:0": {
+                    "rbytes": 0,
+                    "wbytes": 1306624,
+                    "rios": 0,
+                    "wios": 241,
+                    "dbytes": 0,
+                    "dios": 0
+                  },
+                  "252:0": {
+                    "rbytes": 0,
+                    "wbytes": 1306624,
+                    "rios": 0,
+                    "wios": 241,
+                    "dbytes": 0,
+                    "dios": 0
+                  }
+                }
+              }
+            ],
+            "membership": "0::/",
+            "ancestor_visibility": "Only ancestors visible in this cgroup namespace are readable; hidden host ancestors cannot be ruled out.",
+            "io_counters": {
+              "/sys/fs/cgroup": {
+                "259:0": {
+                  "rbytes": 0,
+                  "wbytes": 1306624,
+                  "rios": 0,
+                  "wios": 241,
+                  "dbytes": 0,
+                  "dios": 0
+                },
+                "252:0": {
+                  "rbytes": 0,
+                  "wbytes": 1306624,
+                  "rios": 0,
+                  "wios": 241,
+                  "dbytes": 0,
+                  "dios": 0
+                }
+              }
+            }
+          }
+        }
+      },
+      "limitations": [],
+      "cases": [],
+      "log_tail": "test_counters (test_audit.AuditTests.test_counters) ... ok\ntest_scratch_cap_and_headroom (test_audit.AuditTests.test_scratch_cap_and_headroom) ... ok\ntest_visible_ancestors (test_audit.AuditTests.test_visible_ancestors) ... ok\ntest_completed_receipt_survives_disconnected_worker (test_control.WorkerReceiptTests.test_completed_receipt_survives_disconnected_worker) ... ok\ntest_conflicting_experiment_cannot_enter (test_control.WorkerReceiptTests.test_conflicting_experiment_cannot_enter) ... ok\ntest_dead_worker_is_lost_not_success (test_control.WorkerReceiptTests.test_dead_worker_is_lost_not_success) ... ok\ntest_reused_pid_is_lost_not_success (test_control.WorkerReceiptTests.test_reused_pid_is_lost_not_success) ... ok\ntest_failure_does_not_discard_existing_entries (test_pool.PoolTest.test_failure_does_not_discard_existing_entries) ... ok\ntest_reservations_and_validation (test_pool.PoolTest.test_reservations_and_validation) ... ok\ntest_retained_kv_evicts_actual_oldest_expert (test_pool.PoolTest.test_retained_kv_evicts_actual_oldest_expert) ... ok\ntest_corrupted_transfer_rejected_before_extract (test_snapshot.SnapshotTests.test_corrupted_transfer_rejected_before_extract) ... ok\ntest_includes_working_bytes_and_excludes_local_secret_and_results (test_snapshot.SnapshotTests.test_includes_working_bytes_and_excludes_local_secret_and_results) ... ok\ntest_manifest_integrity_and_traversal (test_snapshot.SnapshotTests.test_manifest_integrity_and_traversal) ... ok\ntest_corrupted_spill_rejected_and_reservation_released (test_tiny_gpu.KVIntegrityTest.test_corrupted_spill_rejected_and_reservation_released) ... ok\ntest_real_tensor_misses_and_all_kv_actions (test_tiny_gpu.TinyGPUIntegrationTest.test_real_tensor_misses_and_all_kv_actions) ... ok\ntest_token_scheduler_and_returning_turns (test_tiny_gpu.TinyGPUIntegrationTest.test_token_scheduler_and_returning_turns) ... ok\ntest_actual_token_ids_reused_and_segments_contiguous (test_workload.WorkloadTests.test_actual_token_ids_reused_and_segments_contiguous) ... ok\ntest_later_turn_is_not_admitted_before_completion_plus_think (test_workload.WorkloadTests.test_later_turn_is_not_admitted_before_completion_plus_think) ... ok\ntest_summary_has_sample_counts_not_extreme_quantiles (test_workload.WorkloadTests.test_summary_has_sample_counts_not_extreme_quantiles) ... ok\n\n----------------------------------------------------------------------\nRan 19 tests in 4.709s\n\nOK\n"
+    }
+  ]
+}

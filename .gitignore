@@ -1,0 +1,27 @@
+# Machine-local connection details and controller state
+configs/*.local.json
+.controller/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+# Runtime data stays out of Git. Put deliberately selected small reports in summaries/.
+results/
+weights/
+models/
+backing/
+cache/
+.cache/
+.venv/
+venv/
+envs/
+__pycache__/
+*.py[cod]
+*.safetensors
+*.pt
+*.bin
+*.tar.gz
+*.log
